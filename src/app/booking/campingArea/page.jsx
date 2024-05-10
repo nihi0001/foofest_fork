@@ -1,4 +1,4 @@
-// ticket overview and accept terms
+// choose your area
 
 import React from 'react'
 

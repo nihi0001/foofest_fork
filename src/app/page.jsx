@@ -1,4 +1,4 @@
-
+// forside, landingpage
 
 export default function Home() {
   return (

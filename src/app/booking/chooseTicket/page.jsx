@@ -1,4 +1,4 @@
-// ticket overview and accept terms
+// choose your ticket (normal or vip)
 
 import React from 'react'
 

@@ -1,4 +1,4 @@
-// ticket overview and accept terms
+// guest information / form
 
 import React from 'react'
 

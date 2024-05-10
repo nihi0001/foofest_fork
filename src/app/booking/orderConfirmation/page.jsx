@@ -1,4 +1,4 @@
-// ticket overview and accept terms
+// order conformation - tak for dit køb
 
 import React from 'react'
 
