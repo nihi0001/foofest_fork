@@ -1,23 +1,21 @@
-import React from 'react'
+import SecondParentComponent from '../TicketComponent/SecondParentComponent';
+import ParentComponent from '../TicketComponent/ParentComponent';
+import ChooseTicket from './ChooseTicket';
+
+
+
 
 export default function Ticket() {
   return (
-        <div className=''>
-            <h2>TICEKT</h2>
+    <div className='grid gap-4 border-solid border-Hotpink border-2 rounded-3xl p-8'>
+    <h2 className='text-White'>ITEMS</h2>
 
-            <ul>
-            <li>Lorem</li>
-            <li>Lorem</li>
-            <li>Lorem</li>
-            </ul>
-
-            {/* Children */}
-            <h3>From 799 DKK</h3>
-
-            <button>
-                BUY TICKET
-            </button>
-        </div>
+    <ParentComponent />
+    <SecondParentComponent />
+    
+    <ChooseTicket />
+    </div>
   );
 }
+
 
