@@ -5,10 +5,9 @@ import Artistcard from '../components/Artistcard'
 
 function page() {
   return (
-    <div>
-        <h1 className='text-center'>LINE UP</h1>
-
-        <div className='flex mr-2'>
+    <div className='max-w-xl mx-auto'>
+      <h1 className='text-White text-center'>LINE UP</h1>
+        <div className='flex gap-4'>
             <button className='bg-Hotpink text-White'>ALLE DAGE</button>
             <button className='bg-Hotpink text-White'>TORSDAG</button>
             <button className='bg-Hotpink text-White'>FREDAG</button>

@@ -2,11 +2,11 @@ import React from 'react'
 
 export default function Artistcard() {
   return (
-    <div className='border-solid border-Hotpink '>
-      <img src="" alt="" />
-      <h4>FRIDAY</h4>
-      <h3>BEATLES</h3>
-      <p>MAIN STAGE</p>
+    <div className=' border-Hotpink max-w-xl mx-auto '>
+      <img src="/dummyImage.jpg" alt="dummy" height={150} width={150}/>
+      <h4 className='text-White'>FRIDAY</h4>
+      <h3 className='text-Hotpink'>BEATLES</h3>
+      <p className='text-White'>MAIN STAGE</p>
     </div>
   );
 }
