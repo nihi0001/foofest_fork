@@ -1,25 +1,22 @@
 // forside, landingpage
 
 import ArtistPoster from "./components/ArtistPoster";
+import LpBanner from "./components/LpBanner";
 
 export default function Home() {
   return (
     <>
-      <div className="h-screen flex justify-center items-center ">
-        <div className="text-center">
-          <h1 className="text-White text-8xl">FOO FESTIVAL</h1>
-          <p className="text-White text-6xl">2024</p>
-        </div>
-      </div>
+    <LpBanner/>
+  
 
       <ArtistPoster />
 
       <div className="flex flex-col items-center ">
         <h2 className="text-White text-4xl mb-5">CAMPING AREAS</h2>
         <div className="grid grid-cols-3 gap-4 text-White">
-          <section>img 1</section>
-          <section>img 2</section>
-          <section>img 3</section>
+          <section><img src="/dummyImage.jpg" alt="dummy" height={300} width={300}/></section>
+          <section><img src="/dummyImage.jpg" alt="dummy" height={300} width={300}/></section>
+          <section><img src="/dummyImage.jpg" alt="dummy" height={300} width={300}/></section>
         </div>
       </div>
 

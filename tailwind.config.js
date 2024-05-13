@@ -15,6 +15,13 @@ module.exports = {
     },
 
     extend: {
+      fontFamily:{
+        'pText':['var(--outfit)', 'sans-serif'],
+      },
+      fontWeight:{
+        'pText': 400,
+      },
+
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
