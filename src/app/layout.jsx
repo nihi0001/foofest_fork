@@ -1,12 +1,8 @@
 import { Outfit } from "next/font/google";
 import "./globals.css";
 
-const outfit = Outfit({
-  weight: ['400', '500'],
-   subsets: ["latin"],
-   variable: '--outfit'
-  });
 
+const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
   title: "Create Next App",
