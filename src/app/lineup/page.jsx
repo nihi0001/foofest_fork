@@ -21,10 +21,11 @@ export default async function Page({ searchParams }) {
   console.log(data)
 
   return (
-    <div>
+    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
       {data.map(band => (
 
         <h1 className='text-White'>{band.name}</h1>
+
       ))}
 
       <h1 className='text-White'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda libero suscipit distinctio commodi possimus cupiditate quasi ducimus provident facere dicta obcaecati, placeat et corporis adipisci, dolores, ea ut? Neque, cupiditate.</h1>
