@@ -21,26 +21,6 @@ export default async function Page({ searchParams }) {
   console.log(data)
 
   return (
-<<<<<<< HEAD
-    <div className="bg-[url('/lpBanner.png')] bg-cover bg-center p-12 h-screen">
-
-    <div className='max-w-xl mx-auto'>
-      <h1 className='text-White text-center'>LINE UP</h1>
-
-          </div>
-
-
-      
-        <div className='flex gap-4'>
-            <button className='bg-Hotpink text-White'>ALLE DAGE</button>
-            <button className='bg-Hotpink text-White'>TORSDAG</button>
-            <button className='bg-Hotpink text-White'>FREDAG</button>
-            <button className='bg-Hotpink text-White'>LØRDAG</button>
-        </div>
-
-        <Artistcard/>
-      
-=======
     <div>
       {data.map(band => (
 
@@ -49,7 +29,6 @@ export default async function Page({ searchParams }) {
 
       <h1 className='text-White'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda libero suscipit distinctio commodi possimus cupiditate quasi ducimus provident facere dicta obcaecati, placeat et corporis adipisci, dolores, ea ut? Neque, cupiditate.</h1>
 
->>>>>>> man13maj
     </div>
   )
 }
