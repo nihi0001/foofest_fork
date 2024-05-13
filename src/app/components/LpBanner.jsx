@@ -8,8 +8,8 @@ function LpBanner() {
     <div className="h-screen flex justify-center items-center">
         <div className="text-center">
           <h1 className="text-White text-8xl">FOO FESTIVAL</h1>
-          <p className="text-White text-6xl">2024</p>
-          <Link className="bg-Hotpink text-White text-base" href={`/lineup`} prefetch={false}>
+          <p className="text-White text-6xl mb-6">2024</p>
+          <Link className="bg-Hotpink text-White text-base p-3 px-6 rounded-full" href={`/lineup`} prefetch={false}>
             LINE UP
           </Link>
         </div>
