@@ -16,8 +16,7 @@ export default function GuestForm() {
   required
   />
   
-  <div class="flex flex-wrap -mx-3 mb-6">
-    <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+
   <label for="first">First name:</label>
   <input className="rounded-md p-2 border-2 border-Hotpink"
   type="text" 
@@ -26,9 +25,9 @@ export default function GuestForm() {
   placeholder="First name"
   required
   />
-</div>
 
-<div class="w-full md:w-1/2 px-3">
+
+
   <label for="last">Last name:</label>
   <input className="rounded-md p-2 border-2 border-Hotpink"
   type="text" 
@@ -37,8 +36,8 @@ export default function GuestForm() {
   placeholder="last name"
   required 
   />
-</div>
-</div>
+
+
 
   <label for="last">Address:</label>
   <input className="rounded-md p-2 border-2 border-Hotpink"
