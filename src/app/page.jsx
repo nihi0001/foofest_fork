@@ -52,7 +52,7 @@ export default function Home() {
         <h2 className="text-White text-4xl mb-8 text-center">Q&A</h2>
         <details className="border-b mb-6 border-Hotpink">
           <summary style={{ color: 'Hotpink' }}>
-            <span className="text-xl text-White">How can I apply to become a volunteer?</span>
+            <span className="text-2xl text-White">How can I apply to become a volunteer?</span>
 
           </summary>
           <p className="text-White mt-5">You can sign up as a volunteer at Foo Festival in two ways:</p>
@@ -62,7 +62,7 @@ export default function Home() {
 
         <details className="border-b mb-6 border-Hotpink">
           <summary style={{ color: 'Hotpink' }}>
-            <span className="text-xl text-White">How can I easily arrive at Foo Festival?</span>
+            <span className="text-2xl text-White">How can I easily arrive at Foo Festival?</span>
 
           </summary>
           <p className="text-White mt-5 mb-5">If you want to peacefully arrive at the venue a few hours before the opening and avoid standing in hour-long queues, you once again have the opportunity this year to purchase Early Entry access to Camping East, Camping South, Camping West, Caravan North, and Caravan South. You can also buy an Early Entry ticket, which includes a train ticket from Roskilde St. to Roskilde Festival Station in West or a bus ticket.</p>
@@ -70,7 +70,7 @@ export default function Home() {
 
         <details className="border-b mb-6 border-Hotpink">
           <summary style={{ color: 'Hotpink' }}>
-            <span className="text-xl text-White">What are the options for camping at Foo Festival?</span>
+            <span className="text-2xl text-White">What are the options for camping at Foo Festival?</span>
 
           </summary>
           <p className="text-White mt-5 mb-5">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Harum nostrum impedit, quibusdam labore sint corporis neque repellat quisquam cupiditate officia, error hic reiciendis sed dignissimos quas doloribus mollitia. Dolorem, repellat.</p>
