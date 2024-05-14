@@ -29,10 +29,13 @@ export default async function Page({ searchParams }) {
   // hvad siden returnere
 
   return <section>
+    <h1 className="text-White text-6xl text-center mb-5 p-16">LINE UP</h1>
+
+    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
     {data.map((band) => {
       return <div key={band.name}>
         <Link href={`/lineup/${band.slug}`} prefetch={false}>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+          <div>
 
             <div className="border-2 border-Hotpink p-2 rounded-sm">
               <Image
@@ -41,17 +44,15 @@ export default async function Page({ searchParams }) {
                 width={350}
                 height={350}
               />
-              <h2 className='text-White mt-5'>{band.genre}</h2>
-              <h1 className='text-Hotpink text-2xl'>{band.name}</h1>
+              <h2 className='text-White mt-5 text-lg font-light'>{band.genre}</h2>
+              <h1 className='text-Hotpink text-3xl font-semibold'>{band.name}</h1>
 
             </div>
-
-
-
           </div>
         </Link>
       </div>
     })}
+    </div>
   </section>
 
 }
