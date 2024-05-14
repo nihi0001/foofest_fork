@@ -11,6 +11,7 @@
 getArtists(); */
 
 import Image from "next/image";
+import Link from "next/link";
 
 
 
@@ -26,27 +27,31 @@ export default async function Page({ searchParams }) {
 
 
   // hvad siden returnere
-  return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 max-w-4xl mx-auto">
-      {data.map(band => (
 
-        <div key={band.name}>
+  return <section>
+    {data.map((band) => {
+      return <div key={band.name}>
+        <Link href={`/lineup/${band.slug}`} prefetch={false}>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+
+            <div className="border-2 border-Hotpink p-2 rounded-sm">
+              <Image
+                alt="Artist presentation"
+                src={`https://yielding-cooperative-tarsal.glitch.me/logos/${band.logo}`}
+                width={350}
+                height={350}
+              />
+              <h2 className='text-White mt-5'>{band.genre}</h2>
+              <h1 className='text-Hotpink text-2xl'>{band.name}</h1>
+
+            </div>
 
 
-          <Image
-            alt="Artist presentation"
-            src={`https://yielding-cooperative-tarsal.glitch.me/logos/${band.logo}`}
-            width={200}
-            height={200}
-          />
-          <h2 className='text-White'>{band.genre}</h2>
-          <h1 className='text-White'>{band.name}</h1>
 
+          </div>
+        </Link>
+      </div>
+    })}
+  </section>
 
-        </div>
-      ))}
-
-
-    </div>
-  );
 }
