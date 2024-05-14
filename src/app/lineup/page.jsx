@@ -10,25 +10,48 @@
 }
 getArtists(); */
 
+import Image from "next/image";
+import Link from "next/link";
+
+
 
 
 export default async function Page({ searchParams }) {
+
+  // første url
   const response = await fetch(
     `https://yielding-cooperative-tarsal.glitch.me/bands`
   );
-
   const data = await response.json();
   console.log(data)
 
-  return (
-    <div>
-      {data.map(band => (
 
-        <h1 className='text-White'>{band.name}</h1>
-      ))}
+  // hvad siden returnere
 
-      <h1 className='text-White'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda libero suscipit distinctio commodi possimus cupiditate quasi ducimus provident facere dicta obcaecati, placeat et corporis adipisci, dolores, ea ut? Neque, cupiditate.</h1>
+  return <section>
+    {data.map((band) => {
+      return <div key={band.name}>
+        <Link href={`/lineup/${band.slug}`} prefetch={false}>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
 
-    </div>
-  )
+            <div className="border-2 border-Hotpink p-2 rounded-sm">
+              <Image
+                alt="Artist presentation"
+                src={`https://yielding-cooperative-tarsal.glitch.me/logos/${band.logo}`}
+                width={350}
+                height={350}
+              />
+              <h2 className='text-White mt-5'>{band.genre}</h2>
+              <h1 className='text-Hotpink text-2xl'>{band.name}</h1>
+
+            </div>
+
+
+
+          </div>
+        </Link>
+      </div>
+    })}
+  </section>
+
 }
