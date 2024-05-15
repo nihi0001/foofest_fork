@@ -1,8 +1,10 @@
 // forside, landingpage
 
 import ArtistPoster from "./components/ArtistPoster";
+import FooTicket from "./components/FooTicket";
 import LpBanner from "./components/LpBanner";
 import { Bowlby_One } from "next/font/google";
+import VipTicket from "./components/VipTicket";
 
 const BowlbyOne = Bowlby_One({
   subsets: ["latin"],
@@ -54,6 +56,10 @@ export default function Home() {
 
       <div className="text-center mt-12">
         <h2 className={`text-White text-4xl mb-5 ${BowlbyOne.className}`}>TICKETS</h2>
+        <div className='flex flex-col items-center gap-10 p-10 text-White md:flex-row md:justify-center md:gap-20 md:p-15'>
+          <FooTicket />
+          <VipTicket />
+        </div>
       </div>
 
       <div className="max-w-2xl mx-auto">

@@ -4,12 +4,12 @@ import BuyTicket from './BuyTicket'
 export default function VipTicket() {
   return (
     <div className='grid gap-4 bg-Darkblue border-solid border-Hotpink border-2 p-10 rounded-2xl w-72'>
-      <h2 className='text-2xl'>
+      <h2 className='text-2xl text-start'>
         <span className='text-Hotpink font-bold'>VIP </span>
         TICKET
       </h2>
       
-      <div>
+      <div className='text-start'>
       <li>Lorem</li>
       <li>Lorem</li>
       <li>Lorem</li>
@@ -17,7 +17,7 @@ export default function VipTicket() {
       
       
       {/* Children */}
-      <h3 className='text-xl'>From 1299 DKK</h3>
+      <h3 className='text-xl text-start'>From 1299 DKK</h3>
       
       <BuyTicket />
       </div>
