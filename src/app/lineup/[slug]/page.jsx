@@ -2,6 +2,13 @@
 
 import React from 'react'
 import Image from "next/image";
+import { Bowlby_One } from "next/font/google";
+ 
+const BowlbyOne = Bowlby_One({
+  subsets: ["latin"],
+  weight: "400",
+  display: "swap",
+});
 
 
 
@@ -37,9 +44,9 @@ export default async function Page({ params }) {
         height={350}
         className='mx-auto'
       />
-      <h2 className='text-White text-center text-4xl mt-5'>{artist.name}</h2>
-      <h3 className='text-White text-center'>{artist.genre}</h3>
-      <p className='bg-Hotpink text-Navyblue mt-5 p-2 text-center font-medium'>{artist.members}</p>
+      <h2 className={`text-White text-center text-4xl mt-5 ${BowlbyOne.className}`}>{artist.name}</h2>
+      <h3 className='text-White text-center mt-2'>{artist.genre}</h3>
+      <p className='bg-Hotpink text-Navyblue mt-8 p-2 text-center font-medium'>{artist.members}</p>
 
       <p className='text-White mt-5 text-md leading-6 font-normal	'>{artist.bio}</p>
 

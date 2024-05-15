@@ -12,6 +12,13 @@ getArtists(); */
 
 import Image from "next/image";
 import Link from "next/link";
+import { Bowlby_One } from "next/font/google";
+ 
+const BowlbyOne = Bowlby_One({
+  subsets: ["latin"],
+  weight: "400",
+  display: "swap",
+});
 
 
 
@@ -29,7 +36,7 @@ export default async function Page({ searchParams }) {
   // hvad siden returnere
 
   return <section>
-    <h1 className="text-White text-6xl text-center mb-5 p-16">LINE UP</h1>
+    <h1 className={`text-White text-6xl text-center mb-5 p-16 ${BowlbyOne.className}`}>LINE UP</h1>
 
     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
     {data.map((band) => {
@@ -45,7 +52,7 @@ export default async function Page({ searchParams }) {
                 height={350}
               />
               <h2 className='text-White mt-5 text-lg font-light'>{band.genre}</h2>
-              <h1 className='text-Hotpink text-3xl font-semibold'>{band.name}</h1>
+              <h1 className={`text-Hotpink text-2xl font-medium ${BowlbyOne.className}`}>{band.name}</h1>
 
             </div>
           </div>

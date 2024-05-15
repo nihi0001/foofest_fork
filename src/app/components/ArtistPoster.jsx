@@ -1,12 +1,19 @@
 import React from 'react'
 import Link from "next/link";
+import { Bowlby_One } from "next/font/google";
+ 
+const BowlbyOne = Bowlby_One({
+  subsets: ["latin"],
+  weight: "400",
+  display: "swap",
+});
 
 
 function ArtistPoster() {
     return (
         <div className='flex justify-center items-center h-screen'>
             <div className='text-White'>
-            <h2 className='text-center mb-5 text-4xl'>PROGRAM</h2>
+            <h2 className={`text-center mb-5 text-4xl ${BowlbyOne.className}`}>PROGRAM</h2>
 
                 <div className='flex mb-2 gap-6 text-4xl text-center'>
                     <section className=''>Justin Bieber</section>

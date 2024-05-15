@@ -2,6 +2,13 @@
 
 import ArtistPoster from "./components/ArtistPoster";
 import LpBanner from "./components/LpBanner";
+import { Bowlby_One } from "next/font/google";
+
+const BowlbyOne = Bowlby_One({
+  subsets: ["latin"],
+  weight: "400",
+  display: "swap",
+});
 
 export default function Home() {
   return (
@@ -11,45 +18,46 @@ export default function Home() {
 
       <ArtistPoster />
 
-<div className="max-w-4xl mx-auto">
-      <div className="flex flex-col items-center ">
-        <h2 className="text-White text-4xl mb-5">CAMPING AREAS</h2>
+      <div className="max-w-4xl mx-auto">
+        <div className="flex flex-col items-center ">
+          <h2 className={`text-White text-4xl mb-5 ${BowlbyOne.className}`}>CAMPING AREAS</h2>
 
-        <div className="grid sm:grid-cols-1 md:grid-cols-3 gap-6  text-White">
+          <div className="grid sm:grid-cols-1 md:grid-cols-3 gap-9  text-White">
 
-          <div className="bg-Hotpink rounded-lg hover:bg-Lightpink transition duration-300 ">
-            <img src="/dummyImage.jpg" alt="dummy" className="w-full h-48 object-cover" />
-            <div className="p-4">
-              <h3 className="text-xl font-bold mb-2">Friday and Saturday are sold out!</h3>
-              <p className="text-sm">All single-day tickets for Friday and Saturday at FOO FESTIVAL 2024 are gone. We expect a fully sold-out festival, so buy your ticket in time.</p>
+            <div className="bg-Hotpink rounded-xl hover:bg-Lightpink transition duration-300 ">
+              <img src="/dummyImage.jpg" alt="dummy" className="w-full h-48 object-cover" />
+              <div className="p-4">
+                <h3 className="text-xl font-bold mb-2 text-Navyblue">Friday and Saturday are sold out!</h3>
+                <p className="text-sm">All single-day tickets for Friday and Saturday at FOO FESTIVAL 2024 are gone. We expect a fully sold-out festival, so buy your ticket in time.</p>
+              </div>
             </div>
-          </div>
 
-          <div className="bg-Hotpink rounded-lg  hover:bg-Lightpink transition duration-300 ">
-            <img src="/dummyImage.jpg" alt="dummy" className="w-full h-48 object-cover" />
-            <div className="p-4">
-              <h3 className="text-xl font-bold mb-2">Get guided through the music</h3>
-              <p className="text-sm">FOO Festival 2024 presents 186 music acts! Dreaming of getting to know some of the many gems before you arrive at the festival? Then this is your guide.</p>
+            <div className="bg-Hotpink rounded-xl  hover:bg-Lightpink transition duration-300 ">
+              <img src="/dummyImage.jpg" alt="dummy" className="w-full h-48 object-cover" />
+              <div className="p-4">
+                <h3 className="text-xl font-bold mb-2 text-Navyblue">Get guided through the music</h3>
+                <p className="text-sm">FOO Festival 2024 presents 186 music acts! Dreaming of getting to know some of the many gems before you arrive at the festival? Then this is your guide.</p>
+              </div>
             </div>
-          </div>
 
-          <div className="bg-Hotpink rounded-lg  hover:bg-Lightpink transition duration-300 ">
-            <img src="/dummyImage.jpg" alt="dummy" className="w-full h-48 object-cover" />
-            <div className="p-4">
-              <h3 className="text-xl font-bold mb-2">The schedule is ready!</h3>
-              <p className="text-sm">Now you can truly plan FOO Festival 2024 down to the details. Today, we present the completed schedule.</p>
+            <div className="bg-Hotpink rounded-xl  hover:bg-Lightpink transition duration-300 ">
+              <img src="/dummyImage.jpg" alt="dummy" className="w-full h-48 object-cover" />
+              <div className="p-4">
+                <h3 className="text-xl font-bold mb-2 text-Navyblue">The schedule is ready!</h3>
+                <p className="text-sm">Now you can truly plan FOO Festival 2024 down to the details. Today, we present the completed schedule.</p>
+              </div>
             </div>
           </div>
         </div>
       </div>
-      </div>
+
 
       <div className="text-center mt-12">
-        <h2 className="text-White text-4xl mb-5">TICKETS</h2>
+        <h2 className={`text-White text-4xl mb-5 ${BowlbyOne.className}`}>TICKETS</h2>
       </div>
 
       <div className="max-w-2xl mx-auto">
-        <h2 className="text-White text-4xl mb-8 text-center">Q&A</h2>
+        <h2 className={`text-White text-4xl mb-8 text-center ${BowlbyOne.className}`}>Q&A</h2>
         <details className="border-b mb-6 border-Hotpink">
           <summary style={{ color: 'Hotpink' }}>
             <span className="text-2xl text-White">How can I apply to become a volunteer?</span>
@@ -76,7 +84,6 @@ export default function Home() {
           <p className="text-White mt-5 mb-5">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Harum nostrum impedit, quibusdam labore sint corporis neque repellat quisquam cupiditate officia, error hic reiciendis sed dignissimos quas doloribus mollitia. Dolorem, repellat.</p>
         </details>
       </div>
-
     </>
   );
 }
