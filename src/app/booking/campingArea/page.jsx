@@ -1,6 +1,5 @@
 // choose your area
 
-import Campingarea from '@/app/components/Campingarea'
 import Ticket from '@/app/components/Ticket';
 import React from 'react'
 
@@ -44,7 +43,7 @@ export default function page() {
       </div>
 
       <div>
-        <Campingarea />
+        <Ticket />
       </div>
     </div>
   </div>

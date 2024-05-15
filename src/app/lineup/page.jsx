@@ -23,7 +23,6 @@ export default async function Page({ searchParams }) {
   return (
     <div>
       {data.map(band => (
-
         <h1 className='text-White'>{band.name}</h1>
       ))}
 

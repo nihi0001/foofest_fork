@@ -20,3 +20,5 @@ const TicketCalculator = ({ ticketPrice, ticketAmount }) => {
 };
 
 export default TicketCalculator;
+
+

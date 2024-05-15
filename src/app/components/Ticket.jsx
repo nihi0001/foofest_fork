@@ -1,5 +1,4 @@
-"use client"
-import { useState } from 'react'
+
 import SecondParentComponent from '../TicketComponent/SecondParentComponent';
 import ParentComponent from '../TicketComponent/ParentComponent';
 import ChooseTicket from './ChooseTicket';
@@ -8,40 +7,20 @@ import ChooseTicket from './ChooseTicket';
 
 
 
-export default function Ticket() {
-  const [ticketCount, setTicketCount] = useState(0);
-
-  const handleTicketChange = (count) => {
-    setTicketCount(count);
-  };
-  
-  const handleRemoveTicket = () => {
-    if (ticketCount > 0) {
-      setTicketCount(prevCount => prevCount - 1);
-    }
-  };
-
-  const [ticketCount2, setTicketCount2] = useState(0);
-
-  const handleTicketChange2 = (count) => {
-    setTicketCount2(count);
-  };
-  
-  const handleRemoveTicket2 = () => {
-    if (ticketCount > 0) {
-      setTicketCount2(prevCount => prevCount - 1);
-    }
-  };
+export default function Ticket(props) {
 
   return (
-    <div className='grid gap-4 border-solid border-Hotpink border-2 rounded-3xl p-8 text-White'>
-    <h2 className='text-White'>ITEMS</h2>
+    <div className='grid gap-4 border-solid border-Hotpink border-2 rounded-3xl p-8 text-White w-64'>
+    <h2 className='text-White text-2xl font-bold'>ITEMS</h2>
+    
+    <ParentComponent ticketCount={props.ticketCount} handleTicketChange={props.handleTicketChange} handleRemoveTicket={props.handleRemoveTicket} ticketPrice={799}/>
+    <SecondParentComponent ticketCount={props.ticketCount2} handleTicketChange={props.handleTicketChange2} handleRemoveTicket={props.handleRemoveTicket2} ticketPrice={1299}/>
 
-    <ParentComponent ticketCount={ticketCount} handleTicketChange={handleTicketChange} handleRemoveTicket={handleRemoveTicket} ticketPrice={799}/>
-    <SecondParentComponent ticketCount={ticketCount2} handleTicketChange={handleTicketChange2} handleRemoveTicket={handleRemoveTicket2} ticketPrice={1299}/>
+    <h2>{props.ticketCount2 + props.ticketCount} TICKETS {props.ticketCount * 799 + props.ticketCount2 * 1299}</h2>
+    <p>BOOKING FEE 99 DKK</p>
 
-    <p>Total {ticketCount * 799
-    + ticketCount2 * 1299} DKK</p>
+    <p className='text-xl'><span className='text-Hotpink'>TOTAL</span> {props.ticketCount * 799
+    + props.ticketCount2 * 1299} DKK</p>
     
     
     <ChooseTicket />
