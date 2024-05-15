@@ -1,54 +1,102 @@
-// choose your area
+"use client"
+import { useState } from 'react'
+import Ticket from "@/app/components/Ticket";
+import RemoveButton from '@/app/components/RemoveButton';
+import AddButton from '@/app/components/AddButton';
 
-import Ticket from '@/app/components/Ticket';
-import React from 'react'
 
-export default function page() {
+export default function Home() {
+  const [ticketCount, setTicketCount] = useState(0);
+
+  const handleTicketChange = (count) => {
+    setTicketCount(count);
+  };
+  
+  const handleRemoveTicket = () => {
+    if (ticketCount > 0) {
+      setTicketCount(prevCount => prevCount - 1);
+      // saveData();
+    }
+  };
+
+  const [ticketCount2, setTicketCount2] = useState(0);
+
+  const handleTicketChange2 = (count) => {
+    setTicketCount2(count);
+  };
+  
+  const handleRemoveTicket2 = () => {
+    if (ticketCount2 > 0) {
+      setTicketCount2(prevCount => prevCount - 1);
+    }
+  };
+
+  // function saveData() {
+  //   localStorage.setItem("data", ticketCount.innerHTML);
+  // }
+
+  // function showData() {
+  //   ticketCount.innerHTML = localStorage.getItem("data");
+  // }
+  // showData();
+
+
+
   return (
-
-  <div className='grid border-solid border-Hotpink border-2 p-10 rounded-3xl text-White w-7/12 m-auto mt-12 '>
-    <h1 className='text-4xl font-bold mb-8'>CHOOSE YOUR CAMPING AREA:</h1>
-
-    <div className='grid grid-cols-2'>
-      <div>
-        <div className='grid grid-cols-2'>
-          <li>Lorem</li>
-          <li>Lorem</li>
-          <li>Lorem</li>
-          <li>Lorem</li>
-        </div>
-        <br />
-
-        
-        <div className='grid'>
-        <h2 className='text-xl'>TENT</h2>
-          <div className='flex justify-start gap-28'>
-            <div>
-              <h3 className='items-center'><span className='text-Hotpink'>2 </span>PERSON TENT <br />799 DKK</h3>
+    <>
+    <div className="border-solid bg-Darkblue border-Hotpink border-2 rounded-3xl p-8 w-7/12 m-auto mt-10">
+      <h1 className="text-White md:text-6xl">CHOOSE YOUR CAMPING AREA:</h1>
+        <div className="flex justify-start p-8 gap-20">
+    
+          <div>
+            <div className='grid grid-cols-2 text-White'>
+              <li>Lorem</li>
+              <li>Lorem</li>
+              <li>Lorem</li>
+              <li>Lorem</li>
             </div>
-          </div>
-          <br />
+            <br />
 
-          <div className='flex justify-start gap-28'>
-            <div>
-              <h3 className='items-center'><span className='text-Hotpink'>3 </span>PERSON TENT <br />1299 DKK</h3>
+            <div className='flex gap-24'>
+              <div className='text-White'>
+                <h2 className="text-xl text-White"><span className='font-bold text-Lightpink'>2</span> PERSON TENT</h2>
+                <p>799 DKK</p>
+              </div>
+              <div className='flex flex-row gap-3 h-6 items-center mt-4'>
+                <RemoveButton onRemoveButtonClick={handleRemoveTicket} /> 
+                <input className='border-solid border-2 border-Lightpink rounded-full w-32 bg-White p-2' value={ticketCount} />
+                <AddButton onButtonClick={() => handleTicketChange(ticketCount + 1)} />
+              </div>
             </div>
 
+            <br />
+            <div className='flex gap-28'>
+              <div>
+                <h2 className='text-White text-xl'><span className='font-bold text-Lightpink'>3</span>PERSON TENT</h2>
+                <p className='text-White text-base'>1299 DKK</p>
+              </div>
+
+              <div className='flex flex-row gap-3 h-6 items-center mt-4'>
+                <RemoveButton onRemoveButtonClick={handleRemoveTicket2} /> 
+                <input className='border-solid border-2 border-Lightpink rounded-full w-32 bg-White p-2' value={ticketCount2} />
+                <AddButton onButtonClick={() => handleTicketChange2(ticketCount2 + 1)} />
+              </div>
+            </div>
+            <br />
+
+            <div className='text-White'>
+              <h2 className='text-xl'>EXTRA</h2>
+              <li>GREEN CAMPING</li>
+            </div>
           </div>
-          <br />
-
-          <h2>EXTRA</h2>
-          <li>GREEN CAMPING</li>
+    
+      
+          <div>
+            <Ticket ticketCount={ticketCount} handleTicketChange={handleTicketChange} handleRemoveTicket={handleRemoveTicket} ticketPrice={799}
+             ticketCount2={ticketCount2} handleTicketChange2={handleTicketChange2} handleRemoveTicket2={handleRemoveTicket2} ticketPrice2={1299} />
+          </div>
         </div>
-      </div>
-
-      <div>
-        <Ticket />
-      </div>
     </div>
-  </div>
+    </>
   );
 }
-
-
-
