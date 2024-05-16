@@ -15,6 +15,7 @@ const BowlbyOne = Bowlby_One({
 export default function Home() {
   return (
     <>
+    
       <LpBanner />
 
 
