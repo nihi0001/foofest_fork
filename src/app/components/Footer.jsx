@@ -3,50 +3,39 @@ import React from 'react'
 
 export default function Footer() {
   return (
-    <section className='p-8 bg-Darkblue'>
-        <div className='mb-8'>
-            <h2 className='mb-4 text-Hotpink font-medium text-3xl'>Join our newsletter</h2>
-            <p className="text-White text-md mb-7 md:text-l md:leading-normal md:w-1/2">Sign up for our newsletter and be among the first to receive news about the line-up, ticket sales, and other exciting things!</p>
+    <section className='p-12 bg-Darkblue'>
+       
 
-    <form action="/" className="">
-      <input 
-      className="border border-1 rounded-md p-2 bg-input text-base md:w-1/4  sm:w-80"
-      type="text"
-      /*pattern=""*/
-      name="email"
-      placeholder="example@gmail.com"
-      required/>
+
+      <div className='max-w-4xl mx-auto grid grid-cols-3'>
+
       
-
-      <button 
-      className=" ml-2 p-2 rounded-xl bg-Hotpink hover:bg-Lightpink text-White mt-3 w-30"
-      type="submit" 
-      value="check website">
-        Send
-      </button>
-    </form>
-
+      <div>
+        <h2 className=' text-Hotpink font-medium text-3xl'>LINKS</h2>
+       
+        <p className='text-lg  text-White'>About Foo Festival</p>
+        <p className='text-lg  text-White'>Privacy policy</p>
+        <p className='text-lg  text-White'>Terms of use</p>
+        <p className='text-lg  text-White'>FAQ</p>
         </div>
 
-
-      <div className='grid grid-cols-2 '>
         <div>
-        <h2 className='mb-4 text-Hotpink font-medium text-3xl'>Links</h2>
-       
-        <p className='text-xl text-White'>About Foo Festival</p>
-        <p className='text-xl text-White'>FAQ</p>
-        <p className='text-xl text-White'>Privacy policy</p>
-        <p className='text-xl text-White'>Terms of use</p>
-        </div>
-
-
-     <div>
-        <h2 className='mb-4 text-Hotpink font-medium text-3xl'>Contact</h2>
-       
-        <p className='text-xl text-White'>info@foofestival.com</p>
-        <p className='text-xl text-White'>+4512345432</p>
-        <p className='text-xl text-White'>Guldbergsgade 29N, 2200 København</p>
+        <h2 className=' text-White font-medium text-3xl text-center'><span className='text-Hotpink'>© </span>FOO FESTIVAL</h2>
+        <p className='text-lg text-White text-center'>KEA - MMD 3. SEM</p>
+      
+      
     </div>
+
+
+     <div className='md:ml-40'>
+        <h2 className=' text-Hotpink font-medium text-3xl'>CONTACT</h2>
+       
+        <p className='text-lg  text-White'>info@foofestival.com</p>
+        <p className='text-lg  text-White'>+4512345432</p>
+        <p className='text-lg text-White'>Festvej 1, 8000 Aarhus </p>
+       
+    </div>
+
 </div>
      
     </section>
