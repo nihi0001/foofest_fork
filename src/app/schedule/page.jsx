@@ -32,7 +32,19 @@ console.log(schedule.Midgard);
   //mapper image fra /bands ind og scener + ugedage fra /schedule
   return (
   <section>
-    <h1 className="text-White text-6xl text-center mb-5 p-16">SCHEDULE</h1>
+    <h1 className={`text-White text-4xl md:text-4xl lg:text-5xl xl:text-6xl mb-6 ${BowlbyOne.className} text-center text-fooYellow-200 mt-32`}>Schedule</h1>
+    <div className="flex items-center justify-center">
+        <form action="{`lineup/${band.slug}`} prefetch={false}>">
+        <label for="artist"></label>
+        <select className="rounded-2xl p-3 border-2 w-60 border-Hotpink" id="artist" name="id">
+            <option value="Alternative Rock">Alternative Rock</option>
+            <option value="Alternative Metal">Alternative Metal</option>
+            <option value="Hypertrash">Hypertrash</option>
+     
+            </select>
+        <input type="submit" value="filter"/>
+    </form>
+    </div>
     <div>
     {bands.map((band, schedule) => {
       return <div key={band.name}>

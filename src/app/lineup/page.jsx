@@ -43,7 +43,6 @@ export default async function Page({ searchParams }) {
       return <div key={band.name}>
         <Link href={`/lineup/${band.slug}`} prefetch={false}>
           <div>
-
             <div className="border-2 border-Hotpink p-2 rounded-sm">
               <Image
                 alt="Artist presentation"
