@@ -15,8 +15,13 @@ function LpBanner() {
     <div className="h-screen flex justify-center items-center">
         <div className="text-center">
           <h1 className={` text-White text-8xl ${BowlbyOne.className}`}>FOO FESTIVAL</h1>
-          <p className={`text-White text-6xl mb-6 ${BowlbyOne.className}`}>2024</p>
-          <img src="/buttonpil.png" alt="" className="h-16 w-16 mx-auto mt-24"/>
+          <p className={`text-White text-3xl mb-6 ${BowlbyOne.className}`}>Join our techo festival</p>
+          <Link href="/lineup">
+          <img src="/buttonpil.png" alt="Billede af en knap" className="h-16 w-16 mx-auto mt-24 cursor-pointer animate-bounce"/>
+
+          </Link>
+
+        
         </div>
     </div>
     </div>
