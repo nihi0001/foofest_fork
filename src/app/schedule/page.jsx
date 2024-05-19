@@ -1,7 +1,6 @@
-
 import React from "react";
+import Schedule from "@/app/components/Schedule";
 import { Bowlby_One } from "next/font/google";
-import Image from "next/image";
 
 const BowlbyOne = Bowlby_One({
   subsets: ["latin"],
@@ -9,64 +8,53 @@ const BowlbyOne = Bowlby_One({
   display: "swap",
 });
 
-// export const metadata = {
-// title: "FooFest | Program",
-//}; 
+export const metadata = {
+  title: "FooFest | Program",
+};
 
 
-export default async function SchedulePage() {
-
-  //data fetching fra band
+async function SchedulePage() {
+  // Jonas har hjulpet med denne kodedel, hvor vi merger de to links sammen
   const bands = await fetch(
     "https://yielding-cooperative-tarsal.glitch.me/bands"
   ).then((r) => r.json());
-
-  //data fetching fra schedule
   const schedule = await fetch(
     "https://yielding-cooperative-tarsal.glitch.me/schedule"
   ).then((r) => r.json());
 
   const scenes = ["Midgard", "Jotunheim", "Vanaheim"];
-  const weekdays = ["mon", "tue", "wed", "thu", "fri", "sat", "sun"];
-console.log(schedule.Midgard);
-  //mapper image fra /bands ind og scener + ugedage fra /schedule
+  const days = ["mon", "tue", "wed", "thu", "fri", "sat", "sun"];
+
+  const merged = bands.map((band) => {
+    const newBand = { ...band };
+    scenes.forEach((scene) => {
+      days.forEach((day) => {
+        if (schedule[scene][day].find((item) => item.act === band.name)) {
+          const eventInfo = schedule[scene][day].find(
+            (item) => item.act === band.name
+          );
+          newBand.eventInfo = eventInfo;
+          newBand.scene = scene;
+          newBand.day = day;
+        }
+      });
+    });
+    return newBand;
+  });
+
   return (
-  <section>
-    <h1 className={`text-White text-4xl md:text-4xl lg:text-5xl xl:text-6xl mb-6 ${BowlbyOne.className} text-center text-fooYellow-200 mt-32`}>Schedule</h1>
-    <div className="flex items-center justify-center">
-        <form action="{`lineup/${band.slug}`} prefetch={false}>">
-        <label for="artist"></label>
-        <select className="rounded-2xl p-3 border-2 w-60 border-Hotpink" id="artist" name="id">
-            <option value="Alternative Rock">Alternative Rock</option>
-            <option value="Alternative Metal">Alternative Metal</option>
-            <option value="Hypertrash">Hypertrash</option>
-     
-            </select>
-        <input type="submit" value="filter"/>
-    </form>
-    </div>
-    <div>
-    {bands.map((band, schedule) => {
-      return <div key={band.name}>
-       
-      <div>
-        <p className="text-White">{schedule["start"]}</p>
-          <Image
-                alt="Artist presentation"
-                src={`https://yielding-cooperative-tarsal.glitch.me/logos/${band.logo}`}
-                width={350}
-                height={350}
-              />
-      </div>
+    <>
+      <main>
+        <h1
+          className={`text-6xl ${BowlbyOne.className} text-center text-Hotpink mt-20`}
+        >
+          SCHEDULE
+        </h1>
 
-          
-          
-      </div>
-    })}
-    </div>
-  </section>
-
-
+        <Schedule newArray={merged} days={days} />
+      </main>
+    </>
   );
 }
 
+export default SchedulePage;
