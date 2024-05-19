@@ -1,51 +1,84 @@
+"use client"
+import { useState, useEffect } from 'react'
+import Image from 'next/image';
+ 
+export default function Schedule() {
+  const [schedule, setSchedule] = useState(null)
+  const [bands, setBands] = useState(null);
+  const [loading, setLoading] = useState(true)
 
-import React from "react";
-import { Bowlby_One } from "next/font/google";
-import Image from "next/image";
+  const dayNames = {
+    mon: 'Monday',
+    tue: 'Tuesday',
+    wed: 'Wednesday',
+    thu: 'Thursday',
+    fri: 'Friday',
+    sat: 'Saturday',
+    sun: 'Sunday'
+  };
+ 
+  useEffect(() => {
+    const fetchSchedule = fetch('https://yielding-cooperative-tarsal.glitch.me/schedule')
+      .then((res) => res.json());
 
-const BowlbyOne = Bowlby_One({
-  subsets: ["latin"],
-  weight: "400",
-  display: "swap",
-});
+    const fetchBands = fetch('https://yielding-cooperative-tarsal.glitch.me/bands')
+      .then((res) => res.json());
 
-// export const metadata = {
-// title: "FooFest | Program",
-//}; 
-
-
-export default async function SchedulePage() {
-
-  //data fetching fra band
-  const bands = await fetch(
-    "https://yielding-cooperative-tarsal.glitch.me/bands"
-  ).then((r) => r.json());
-
-  //data fetching fra schedule
-  const schedule = await fetch(
-    "https://yielding-cooperative-tarsal.glitch.me/schedule"
-  ).then((r) => r.json());
-
-  const scenes = ["Midgard", "Jotunheim", "Vanaheim"];
-  const weekdays = ["mon", "tue", "wed", "thu", "fri", "sat", "sun"];
-console.log(schedule.Midgard);
-  //mapper image fra /bands ind og scener + ugedage fra /schedule
+      Promise.all([fetchSchedule, fetchBands])
+      .then(([scheduleData, bandsData]) => {
+        setSchedule(scheduleData);
+        setBands(bandsData);
+        setLoading(false);
+      })
+      .catch((error) => {
+        console.error('Error fetching data:', error);
+        setLoading(false);
+      });
+  }, []);
+ 
+  if (loading) return <p>Loading...</p>
+  if (!schedule) return <p>No profile data</p>
+ 
   return (
-  <section>
-    <h1 className={`text-White text-4xl md:text-4xl lg:text-5xl xl:text-6xl mb-6 ${BowlbyOne.className} text-center text-fooYellow-200 mt-32`}>Schedule</h1>
-    <div className="flex items-center justify-center">
-        <form action="{`lineup/${band.slug}`} prefetch={false}>">
-        <label for="artist"></label>
-        <select className="rounded-2xl p-3 border-2 w-60 border-Hotpink" id="artist" name="id">
-            <option value="Alternative Rock">Alternative Rock</option>
-            <option value="Alternative Metal">Alternative Metal</option>
-            <option value="Hypertrash">Hypertrash</option>
-     
-            </select>
-        <input type="submit" value="filter"/>
-    </form>
+    <div className='text-White'>
+      <h1>Schedule</h1>
+      <div>
+      <ul>
+        {Object.entries(schedule.Midgard || bands).map(([day, activities]) => (
+          <li key={day}>
+            <h2>{dayNames[day]}</h2>
+
+
+            <ul>
+              {activities.map((activity, index) => (
+                <li key={index}>
+                  <div className='flex gap-10 items-center p-2 border-2 border-solid border-Hotpink rounded-xl w-1/3'>
+                  <p>{activity.start} - {activity.end}</p>
+                  <p>{activity.act}</p>
+                    <Image
+                    alt="Artist presentation"
+                    src={`https://yielding-cooperative-tarsal.glitch.me/logos/${bands.logo}`}
+                    width={100}
+                    height={100}
+                  />
+                  </div>
+                </li>
+              ))}
+            </ul>
+
+          </li>
+        ))}
+      </ul>
+      </div>
     </div>
-    <div>
+  );
+}
+
+
+
+      
+
+    {/* <div>
     {bands.map((band, schedule) => {
       return <div key={band.name}>
        
@@ -58,15 +91,10 @@ console.log(schedule.Midgard);
                 height={350}
               />
       </div>
-
-          
-          
       </div>
     })}
-    </div>
-  </section>
+    </div> */}
 
 
-  );
-}
+
 
