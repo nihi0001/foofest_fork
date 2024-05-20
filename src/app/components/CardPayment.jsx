@@ -2,6 +2,14 @@
 import 'react-credit-cards-2/dist/es/styles-compiled.css';
 import React, { useState } from 'react';
 import Cards from 'react-credit-cards-2';
+import { Bowlby_One } from "next/font/google";
+import Link from "next/link";
+ 
+const BowlbyOne = Bowlby_One({
+  subsets: ["latin"],
+  weight: "400",
+  display: "swap",
+});
 
 
 const CardPayment = () => {
@@ -24,7 +32,10 @@ const CardPayment = () => {
   }
 
   return (
-    <div>
+    <div className='p-6 m-12 rounded-md border-2 border-Hotpink bg-Darkblue max-w-5xl mx-auto'>
+       <h1 className={`text-center text-White text-4xl m-4 ${BowlbyOne.className}`}>PAYMENT</h1>
+      <div className='grid grid-cols-2 justify-center items-center'>
+        <section>
       <Cards
         number={state.number}
         expiry={state.expiry}
@@ -32,33 +43,60 @@ const CardPayment = () => {
         name={state.name}
         focused={state.focus}
       />
-      <form>
-        <input
-          type="number"
+      </section>
+      <section>
+      <form className='flex flex-col m-6'>
+        <input className='m-4 p-2 rounded-md bg-White hover:bg-White active:bg-White focus:outline-none focus:ring focus:ring-Hotpink'
+          type="numeric"
           name="number"
           placeholder="Card Number"
+          pattern="\d{4}\s\d{4}\s\d{4}\s\d{4}"
+          maxLength="16"
+          required
           value={state.number}
           onChange={handleInputChange}
           onFocus={handleInputFocus}
         />
-        <input
+        <input className='m-4 p-2 rounded-md  bg-White hover:bg-White active:bg-White focus:outline-none focus:ring focus:ring-Hotpink'
           type="text"
           name="name"
           placeholder="Full Name"
+          required
           value={state.name}
           onChange={handleInputChange}
           onFocus={handleInputFocus}
         />
-        <input
-          type="number"
+        <div className='grid grid-cols-2'>
+          <input className='m-4 p-2 rounded-md  bg-White hover:bg-White active:bg-White focus:outline-none focus:ring focus:ring-Hotpink'
+          type="numeric"
+          name="expiry"
+          placeholder="Expiration date"
+          pattern="\d\d/\d\d"
+          maxLength="4"
+          required
+          value={state.expiry}
+          onChange={handleInputChange}
+          onFocus={handleInputFocus}
+        />
+        <input className='m-4 p-2 rounded-md  bg-White hover:bg-White active:bg-White focus:outline-none focus:ring focus:ring-Hotpink'
+          type="numeric"
           name="cvc"
           placeholder="CVC"
+          pattern="\d{3}"
+          maxLength="3"
+        required
           value={state.cvc}
           onChange={handleInputChange}
           onFocus={handleInputFocus}
         />
-        ...
+        </div>
+        
+        <Link className=" text-center text-White p-2 m-4 rounded-lg bg-Hotpink hover:bg-Lightpink text-white w-60" href={`/`}>
+        COMPLETE PURCHASE</Link>
+       
       </form>
+      </section>
+    </div>
     </div>
   );
 }
