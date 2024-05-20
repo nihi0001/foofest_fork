@@ -7,7 +7,7 @@ export default function Footer() {
        
 
 
-      <div className='max-w-4xl mx-auto grid grid-cols-3 mt-12 mb-12'>
+      <div className='max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 mt-12 mb-12'>
 
       
       <div>

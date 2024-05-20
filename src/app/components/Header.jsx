@@ -14,7 +14,7 @@ export default async function Header() {
     return (
         <>
               <div className="bg-Hotpink py-2">
-                <p className="text-md text-White text-center font-normal tracking-wider">Camping Spots Still Available - Reserve Yours Today!</p>
+                <p className="text-sm md:text-md text-White text-center font-normal tracking-wider">Camping Spots Still Available - Reserve Yours Today!</p>
             </div>
 
             <nav className=" flex justify-between bg-Darkblue text-White px-10 py-2 items-center">
