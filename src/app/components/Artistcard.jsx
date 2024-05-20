@@ -1,20 +1,47 @@
-import Image from "next/image";
-import Link from "next/link";
-import { Bowlby_One } from "next/font/google";
+import React, { useState, useEffect } from 'react';
+import Image from 'next/image';
+import Link from 'next/link';
+import { Bowlby_One } from 'next/font/google';
 
 const BowlbyOne = Bowlby_One({
-  subsets: ["latin"],
-  weight: "400",
-  display: "swap",
+  subsets: ['latin'],
+  weight: '400',
+  display: 'swap',
 });
 
-export default async function Page({ searchParams }) {
-  // Fetcher data fra endpoint
-  const response = await fetch(`https://yielding-cooperative-tarsal.glitch.me/bands`);
-  const data = await response.json();
+export default function LineUp({ searchParams }) {
+  const [bands, setBands] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [selectedGenre, setSelectedGenre] = useState('All');
 
-  // Gruppere bands efter genre
-  const groupedByGenre = data.reduce((acc, band) => {
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch(`https://yielding-cooperative-tarsal.glitch.me/bands`);
+        const data = await response.json();
+        setBands(data);
+        setLoading(false);
+      } catch (error) {
+        console.error('Error fetching data:', error);
+        setLoading(false);
+      }
+    };
+
+    fetchData();
+  }, []);
+
+  const handleGenreChange = (event) => {
+    setSelectedGenre(event.target.value);
+  };
+
+  if (loading) return <p>Loading...</p>;
+  if (!bands) return <p>No bands data</p>;
+
+  // Filtrering af bands efter valgt genre
+  const filteredBands = selectedGenre === 'All' ? bands : bands.filter((band) => band.genre === selectedGenre);
+
+  // Gruppering af bands efter genre
+  const groupedByGenre = bands.reduce((acc, band) => {
     if (!acc[band.genre]) {
       acc[band.genre] = [];
     }
@@ -22,7 +49,7 @@ export default async function Page({ searchParams }) {
     return acc;
   }, {});
 
-  // Sortere efter alfabetisk rækkefølge
+  // Sortering af genrer
   const sortedGenres = Object.keys(groupedByGenre).sort((a, b) => a.localeCompare(b));
 
   return (
@@ -31,44 +58,50 @@ export default async function Page({ searchParams }) {
         LINE UP
       </h1>
 
-      {/* Oversigt over genrene */}
+      {/* Dropdown for valg af genre */}
+      <div className="flex justify-center items-center h-full">
       <div className="mb-8">
-        <h2 className="text-Hotpink text-2xl mb-3">Genres:</h2>
-        <ul className="flex space-x-4">
+        <label htmlFor="genre" className="text-Hotpink text-2xl mb-3 mr-4">Choose a genre:</label>
+        <select
+          id="genre"
+          name="genre"
+          className="rounded-lg p-2 border-2 border-Hotpink"
+          onChange={handleGenreChange}
+          value={selectedGenre}
+        >
+          <option value="All">All genres</option>
           {sortedGenres.map((genre) => (
-            <li key={genre}>
-              <a href={`#${genre}`} className="text-White hover:underline">{genre}</a>
-            </li>
+            <option key={genre} value={genre}>{genre}</option>
           ))}
-        </ul>
+        </select>
+      </div>
       </div>
 
       {/* Bands opdelt efter genre */}
-      {sortedGenres.map((genre) => (
-        <div key={genre} id={genre} className="mb-12">
-          <h2 className="text-Hotpink text-4xl mb-5 p-4">{genre}</h2>
-          <div className="flex overflow-x-auto snap-x snap-mandatory space-x-4">
-            {groupedByGenre[genre].map((band) => (
-              <div key={band.name} className="snap-center flex-shrink-0 w-80">
-                <Link href={`/lineup/${band.slug}`} prefetch={false}>
-                  <div className="border-2 border-Hotpink p-2 rounded-sm">
-                    <Image
-                      alt="Artist presentation"
-                      src={`https://yielding-cooperative-tarsal.glitch.me/logos/${band.logo}`}
-                      width={350}
-                      height={350}
-                    />
-                    <h2 className="text-White mt-5 text-lg font-light">{band.genre}</h2>
-                    <h1 className={`text-Hotpink text-2xl font-medium ${BowlbyOne.className}`}>
-                      {band.name}
-                    </h1>
-                  </div>
-                </Link>
-              </div>
-            ))}
-          </div>
+      {filteredBands.length > 0 ? (
+    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 justify-center max-w-6xl mx-auto p-6">
+      {filteredBands.map((band) => (
+        <div key={band.name}>
+          <Link href={`/lineup/${band.slug}`} prefetch={false}>
+            <div className="border-2 border-Hotpink p-2 rounded-sm cursor-pointer">
+              <Image
+                alt="Artist presentation"
+                src={`https://yielding-cooperative-tarsal.glitch.me/logos/${band.logo}`}
+                width={350}
+                height={350}
+              />
+              <p className="text-White mt-5 text-lg font-light">{band.genre}</p>
+              <p className={`text-Hotpink text-2xl font-medium ${BowlbyOne.className}`}>
+                {band.name}
+              </p>
+            </div>
+          </Link>
         </div>
-      ))}
+          ))}
+        </div>
+      ) : (
+        <p className="text-White">No bands found for the selected genre.</p>
+      )}
     </section>
   );
 }
