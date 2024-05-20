@@ -6,6 +6,9 @@ import { Bowlby_One } from "next/font/google";
 import VipTicket from "./components/VipTicket";
 import ForsideCamping from "./components/ForsideCamping";
 import ForsideQnA from "./components/ForsideQnA";
+import Nyhedsbrev from "./components/Nyhedsbrev";
+import RotateBanner from "./components/RotateBanner";
+
 
 const BowlbyOne = Bowlby_One({
   subsets: ["latin"],
@@ -31,6 +34,8 @@ export default function Home() {
       </div>
 
       <ForsideQnA/>
+      <Nyhedsbrev/>
+      <RotateBanner/>
 
     </>
   );

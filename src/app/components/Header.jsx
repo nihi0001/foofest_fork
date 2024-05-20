@@ -13,10 +13,14 @@ export default async function Header() {
 
     return (
         <>
-            <nav className=" flex justify-between bg-Darkblue text-White text-xl px-10 py-4 items-center">
+              <div className="bg-Hotpink py-2">
+                <p className="text-md text-White text-center font-normal tracking-wider">Camping Spots Still Available - Reserve Yours Today!</p>
+            </div>
+
+            <nav className=" flex justify-between bg-Darkblue text-White px-10 py-2 items-center">
                 <ul className="flex gap-2">
                     <li>
-                        <Link className={`font-bold ${BowlbyOne.className}`} href={"/"} prefetch={false}>
+                        <Link className={`font-bold text-2xl ${BowlbyOne.className}`} href={"/"} prefetch={false}>
                             FOOFEST
                         </Link>
                     </li>
@@ -29,44 +33,19 @@ export default async function Header() {
                         </Link>
                     </li>
                     <li>
-                        <Link className='font-bold text-md' href={"/lineup"} prefetch={false}>
+                        <Link className='font-bold text-mg' href={"/lineup"} prefetch={false}>
                             LINEUP
                         </Link>
                     </li>
                     <li>
-                        <Link className='font-bold text-md' href={"/schedule"} prefetch={false}>
+                        <Link className='font-bold text-mg' href={"/schedule"} prefetch={false}>
                             SCHEDULE
                         </Link>
                     </li>
                 </ul>
             </nav>
 
-            <div className="bg-Hotpink text-White text-md relative flex overflow-x-hidden font-medium">
-                <div className="py-2 animate-marquee whitespace-nowrap">
-                    <span className="mx-12">FOO FESTIVAL</span>
-                    <span className="mx-12 ">JULY 3RD - 7TH 2024</span>
-                    <span className="mx-12">FOO FESTIVAL</span>
-                    <span className="mx-12">JULY 3RD - 7TH 2024</span>
-                    <span className="mx-12">FOO FESTIVAL</span>
-                    <span className="mx-12">JULY 3RD - 7TH 2024</span>
-                    <span className="mx-12">FOO FESTIVAL</span>
-                    <span className="mx-12">JULY 3RD - 7TH 2024</span>
-
-
-
-
-                </div>
-{/*
-                <div className="absolute top-0 py-2 animate-marquee2 whitespace-nowrap">
-                    <span className="text-lg mx-6">FOO FESTIVAL</span>
-                    <span className="text-lg mx-6">JULY 3RD - 7TH 2024</span>
-                    <span className="text-lg mx-6">FOO FESTIVAL</span>
-                    <span className="text-lg mx-6">JULY 3RD - 7TH 2024</span>
-                    <span className="text-lg mx-6">FOO FESTIVAL</span>
-                    <span className="text-lg mx-6">JULY 3RD - 7TH 2024</span>
-                </div>
-    */}
-            </div>
+         
         </>
     );
 }

@@ -7,11 +7,11 @@ export default function Footer() {
        
 
 
-      <div className='max-w-4xl mx-auto grid grid-cols-3'>
+      <div className='max-w-4xl mx-auto grid grid-cols-3 mt-12 mb-12'>
 
       
       <div>
-        <h2 className=' text-Hotpink font-medium text-3xl'>LINKS</h2>
+        <h2 className=' text-Hotpink font-medium text-3xl mb-2'>LINKS</h2>
        
         <p className='text-lg  text-White'>About Foo Festival</p>
         <p className='text-lg  text-White'>Privacy policy</p>
@@ -28,7 +28,7 @@ export default function Footer() {
 
 
      <div className='md:ml-40'>
-        <h2 className=' text-Hotpink font-medium text-3xl'>CONTACT</h2>
+        <h2 className=' text-Hotpink font-medium text-3xl mb-2'>CONTACT</h2>
        
         <p className='text-lg  text-White'>info@foofestival.com</p>
         <p className='text-lg  text-White'>+4512345432</p>
