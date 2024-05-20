@@ -15,7 +15,7 @@ export default function Formpage() {
     <GuestForm/>
     </div>
     <div>
-      <Ticket/>
+   
       </div>
     </div>
     </div>
