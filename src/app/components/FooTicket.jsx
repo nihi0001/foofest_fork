@@ -10,9 +10,9 @@ export default function FooTicket() {
       <h2 className='text-2xl text-start'>FOO TICKET</h2>
       
       <div className='text-start'>
-      <li>Lorem</li>
-      <li>Lorem</li>
-      <li>Lorem</li>
+      <li>Festival area access</li>
+      <li>Basic camping facilities</li>
+      <li>Access to all stages</li>
       </div>
       
       {/* Children */}
