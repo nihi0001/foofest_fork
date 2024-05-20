@@ -53,29 +53,34 @@ export default function LineUp({ searchParams }) {
   const sortedGenres = Object.keys(groupedByGenre).sort((a, b) => a.localeCompare(b));
 
   return (
-    <section className="max-w-7xl mx-auto p-4">
-      <h1 className={`text-White text-6xl text-center mb-5 p-16 ${BowlbyOne.className}`}>
+    <section className="relative">
+      <div className='relative h-1/54 overflow-hidden'>
+        <img src="/artists-shorter-BANNER.webp" alt="banner" layout="fill" objectFit="cover"/>
+
+        <div className='absolute inset-0 bg-black opacity-50'></div>
+      <h1 className={`text-White text-6xl text-center mb-5 p-16 ${BowlbyOne.className}  absolute inset-0 flex justify-center items-center`}>
         LINE UP
       </h1>
+      </div>
 
       {/* Dropdown for valg af genre */}
       <div className="flex justify-center items-center h-full">
-      <div className="mb-8">
-        <label htmlFor="genre" className="text-Hotpink text-2xl mb-3 mr-4">Choose a genre:</label>
-        <select
-          id="genre"
-          name="genre"
-          className="rounded-lg p-2 border-2 border-Hotpink"
-          onChange={handleGenreChange}
-          value={selectedGenre}
-        >
-          <option value="All">All genres</option>
-          {sortedGenres.map((genre) => (
-            <option key={genre} value={genre}>{genre}</option>
-          ))}
-        </select>
-      </div>
-      </div>
+  <div className="m-8">
+    <label htmlFor="genre" className="text-Hotpink text-3xl mb-3 mr-4">Choose a genre:</label>
+    <select
+      id="genre"
+      name="genre"
+      className="rounded-lg p-2 border-2 border-Hotpink"
+      onChange={handleGenreChange}
+      value={selectedGenre}
+    >
+      <option value="All">All genres</option>
+      {sortedGenres.map((genre) => (
+        <option key={genre} value={genre}>{genre}</option>
+      ))}
+    </select>
+  </div>
+</div>
 
       {/* Bands opdelt efter genre */}
       {filteredBands.length > 0 ? (
