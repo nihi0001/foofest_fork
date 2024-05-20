@@ -1,5 +1,4 @@
 // forside, landingpage
-
 import ArtistPoster from "./components/ArtistPoster";
 import FooTicket from "./components/FooTicket";
 import LpBanner from "./components/LpBanner";
@@ -19,6 +18,7 @@ export default function Home() {
     <>
     
       <LpBanner />
+      <div id="artistPoster"></div>
       <ArtistPoster />
       <ForsideCamping/>
 
