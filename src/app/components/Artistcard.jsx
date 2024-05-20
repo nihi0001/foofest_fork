@@ -89,12 +89,13 @@ export default function LineUp({ searchParams }) {
         <div key={band.name}>
           <Link href={`/lineup/${band.slug}`} prefetch={false}>
             <div className="border-2 border-Hotpink p-2 rounded-sm cursor-pointer">
-              <Image
-                alt="Artist presentation"
-                src={`https://yielding-cooperative-tarsal.glitch.me/logos/${band.logo}`}
-                width={350}
-                height={350}
-              />
+            <Image
+                    alt="Artist presentation"
+                    src={band.logo.startsWith("http") ? band.logo : `https://yielding-cooperative-tarsal.glitch.me/logos/${band.logo}`}
+                    width={350}
+                    height={350}
+                    className="object-cover"
+                  />
               <p className="text-White mt-5 text-lg font-light">{band.genre}</p>
               <p className={`text-Hotpink text-2xl font-medium ${BowlbyOne.className}`}>
                 {band.name}
