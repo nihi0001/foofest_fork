@@ -47,7 +47,7 @@ body: JSON.stringify(info)
  <h2>Guest 1</h2>
  <label>
   <span>Country:</span>
-<select className="rounded-md p-3 border-2 w-60 border-Hotpink text-Darkblue"
+<select className="rounded-md p-3 border-2 w-60  hover:bg-White active:bg-White focus:outline-none focus:ring focus:ring-Hotpink text-Darkblue"
   onChange={(e) => setCountry(e.target.value)}
   value={country} 
 >
@@ -58,7 +58,7 @@ body: JSON.stringify(info)
 </label>
 <label>
   <span>First name:</span>
-  <input className="rounded-md p-2 border-2 border-Hotpink text-Darkblue" 
+  <input className="rounded-md p-2 border-2  hover:bg-White active:bg-White focus:outline-none focus:ring focus:ring-Hotpink text-Darkblue" 
   required
   type="text"
   placeholder="Jane"
@@ -68,7 +68,7 @@ body: JSON.stringify(info)
 </label>
 <label>
   <span>Last name:</span>
-  <input className="rounded-md p-2 border-2 border-Hotpink text-Darkblue" 
+  <input className="rounded-md p-2 border-2 hover:bg-White active:bg-White focus:outline-none focus:ring focus:ring-Hotpink text-Darkblue" 
   required
   type="text"
   placeholder="Doe"
@@ -78,7 +78,7 @@ body: JSON.stringify(info)
 </label>
 <label>
   <span>Email:</span>
-  <input className="rounded-md p-2 border-2 border-Hotpink text-Darkblue" 
+  <input className="rounded-md p-2 border-2 hover:bg-White active:bg-White focus:outline-none focus:ring focus:ring-Hotpink text-Darkblue" 
   required
   type="Email"
   placeholder="example@gmail.com"
@@ -88,7 +88,7 @@ body: JSON.stringify(info)
 </label>
 <label>
   <span>Postal code:</span>
-  <input className="rounded-md p-2 border-2 border-Hotpink text-Darkblue" 
+  <input className="rounded-md p-2 border-2  hover:bg-White active:bg-White focus:outline-none focus:ring focus:ring-Hotpink text-Darkblue" 
   required
   type="numeric"
   placeholder="2950"
@@ -98,7 +98,7 @@ body: JSON.stringify(info)
 </label>
 <label>
   <span>Address:</span>
-  <input className="rounded-md p-2 border-2 border-Hotpink text-Darkblue" 
+  <input className="rounded-md p-2 border-2  hover:bg-White active:bg-White focus:outline-none focus:ring focus:ring-Hotpink text-Darkblue" 
   required
   type="text"
   placeholder="Address"
@@ -108,7 +108,7 @@ body: JSON.stringify(info)
 </label>
 <label>
   <span>City:</span>
-  <input className="rounded-md p-2 border-2 border-Hotpink text-Darkblue" 
+  <input className="rounded-md p-2 border-2 hover:bg-White active:bg-White focus:outline-none focus:ring focus:ring-Hotpink text-Darkblue" 
   required
   type="text"
   placeholder="Paris"
@@ -118,7 +118,7 @@ body: JSON.stringify(info)
 </label>
 <label>
   <span>Phone number:</span>
-  <input className="rounded-md p-2 border-2 border-Hotpink  text-Darkblue" 
+  <input className="rounded-md p-2 border-2  hover:bg-White active:bg-White focus:outline-none focus:ring focus:ring-Hotpink  text-Darkblue" 
   required
   type="numeric"
   placeholder="+45 12 34 56 78"
@@ -128,7 +128,7 @@ body: JSON.stringify(info)
   />
 </label>
 
-<button className="text-center text-Darkblue p-4 mt-8 rounded-3xl bg-Lightpink hover:bg-Hotpink text-white w-80"
+<button className="text-center text-White p-4 mt-8 rounded-lg bg-Hotpink hover:bg-Lightoink w-80"
 disabled={isLoading}
 >
 {isLoading && <span>Add</span>}
