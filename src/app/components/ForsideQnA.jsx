@@ -10,7 +10,7 @@ const BowlbyOne = Bowlby_One({
 function ForsideQnA() {
   return (
     <div>
-          <div className="max-w-3xl mx-auto">
+          <div className="max-w-3xl mx-auto mb-32">
         <h2 className={`text-White text-5xl mb-12 text-center ${BowlbyOne.className}`}>Q&A</h2>
         <details className="border-b mb-6 border-Hotpink">
           <summary style={{ color: 'Hotpink' }}>
