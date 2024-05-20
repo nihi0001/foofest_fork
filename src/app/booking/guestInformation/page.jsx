@@ -1,22 +1,26 @@
-// guest information / form
+// guest information / form 
 
 import GuestForm from "@/app/components/GuestForm";
+import Ticket from "@/app/components/Ticket";
 
 
-
-export default function page() {
+export default function Formpage() {
   return (
-    <div className="text-White">
-      <div className="text-White bg-Darkblue p-12 m-16 mt-20 rounded-md border-2 border-Hotpink">
+    <main>
+ <div className="text-White bg-Darkblue p-12 m-16 mt-20 rounded-md border-2 border-Hotpink" >
       <h1 className="text-4xl font-semibold mb-12">INFORMATION</h1>
-      <div className="mb-6">
-        <GuestForm/>
-      </div>
-<div>
-   <GuestForm/>
-</div>
-</div>
+      <div className="grid grid-cols-2">
+      <div>
+    <GuestForm/>
+    <GuestForm/>
     </div>
+    <div>
+      <Ticket/>
+      </div>
+    </div>
+    </div>
+   
+  </main>
   )
 }
 
