@@ -7,6 +7,7 @@ import AddButton from '@/app/components/AddButton';
 
 export default function Home() {
   const [ticketCount, setTicketCount] = useState(0);
+  const [ticketCount2, setTicketCount2] = useState(0);
 
   const handleTicketChange = (count) => {
     setTicketCount(count);
@@ -19,8 +20,6 @@ export default function Home() {
     }
   };
 
-  const [ticketCount2, setTicketCount2] = useState(0);
-
   const handleTicketChange2 = (count) => {
     setTicketCount2(count);
   };
@@ -30,6 +29,8 @@ export default function Home() {
       setTicketCount2(prevCount => prevCount - 1);
     }
   };
+
+
 
   // function saveData() {
   //   localStorage.setItem("data", ticketCount.innerHTML);
@@ -50,10 +51,11 @@ export default function Home() {
     
           <div>
             <div className='grid grid-cols-2 text-White'>
-              <li>Lorem</li>
-              <li>Lorem</li>
-              <li>Lorem</li>
-              <li>Lorem</li>
+              <li value="">Svartheim</li>
+              <li value="">Nilfheim</li>
+              <li value="">Helheim</li>
+              <li value="">Muspelheim</li>
+              <li value="">Alfheim</li>
             </div>
             <br />
 
@@ -84,16 +86,23 @@ export default function Home() {
             </div>
             <br />
 
-            <div className='text-White'>
+            {/* <div className='text-White'>
               <h2 className='text-xl'>EXTRA</h2>
               <li>GREEN CAMPING</li>
-            </div>
+            </div> */}
           </div>
     
       
           <div>
-            <Ticket ticketCount={ticketCount} handleTicketChange={handleTicketChange} handleRemoveTicket={handleRemoveTicket} ticketPrice={799}
-             ticketCount2={ticketCount2} handleTicketChange2={handleTicketChange2} handleRemoveTicket2={handleRemoveTicket2} ticketPrice2={1299} />
+            <Ticket 
+            ticketCount={ticketCount} 
+            handleTicketChange={handleTicketChange} 
+            handleRemoveTicket={handleRemoveTicket} 
+            ticketPrice={799}
+             ticketCount2={ticketCount2} 
+             handleTicketChange2={handleTicketChange2} 
+             handleRemoveTicket2={handleRemoveTicket2} 
+             ticketPrice2={1299} />
           </div>
         </div>
     </div>

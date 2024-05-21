@@ -78,8 +78,15 @@ export default function Home() {
     
       
           <div>
-            <Ticket ticketCount={ticketCount} handleTicketChange={handleTicketChange} handleRemoveTicket={handleRemoveTicket} ticketPrice={799}
-             ticketCount2={ticketCount2} handleTicketChange2={handleTicketChange2} handleRemoveTicket2={handleRemoveTicket2} ticketPrice2={1299} />
+            <Ticket 
+            ticketCount={ticketCount} 
+            handleTicketChange={handleTicketChange} 
+            handleRemoveTicket={handleRemoveTicket} 
+            ticketPrice={799}
+             ticketCount2={ticketCount2} 
+             handleTicketChange2={handleTicketChange2} 
+             handleRemoveTicket2={handleRemoveTicket2} 
+             ticketPrice2={1299} />
           </div>
         </div>
     </div>
