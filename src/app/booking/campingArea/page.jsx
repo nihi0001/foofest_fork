@@ -8,6 +8,7 @@ import { useSearchParams } from 'next/navigation'
 
 export default function Home() {
   const [ticketCount, setTicketCount] = useState(0);
+  const [ticketCount2, setTicketCount2] = useState(0);
 
   const handleTicketChange = (count) => {
     setTicketCount(count);
@@ -19,8 +20,6 @@ export default function Home() {
       // saveData();
     }
   };
-
-  const [ticketCount2, setTicketCount2] = useState(0);
 
   const handleTicketChange2 = (count) => {
     setTicketCount2(count);
@@ -57,10 +56,11 @@ export default function Home() {
     
           <div>
             <div className='grid grid-cols-2 text-White'>
-              <li>Lorem</li>
-              <li>Lorem</li>
-              <li>Lorem</li>
-              <li>Lorem</li>
+              <li value="">Svartheim</li>
+              <li value="">Nilfheim</li>
+              <li value="">Helheim</li>
+              <li value="">Muspelheim</li>
+              <li value="">Alfheim</li>
             </div>
             <br />
 
@@ -91,16 +91,23 @@ export default function Home() {
             </div>
             <br />
 
-            <div className='text-White'>
+            {/* <div className='text-White'>
               <h2 className='text-xl'>EXTRA</h2>
               <li>GREEN CAMPING</li>
-            </div>
+            </div> */}
           </div>
     
       
           <div>
-            <Ticket ticketCount={ticketcount1} handleTicketChange={handleTicketChange} handleRemoveTicket={handleRemoveTicket} ticketPrice={799}
-             ticketCount2={ticketcount2} handleTicketChange2={handleTicketChange2} handleRemoveTicket2={handleRemoveTicket2} ticketPrice2={1299} />
+            <Ticket 
+            ticketCount={ticketcount1} 
+            handleTicketChange={handleTicketChange} 
+            handleRemoveTicket={handleRemoveTicket} 
+            ticketPrice={799}
+             ticketCount2={ticketcount2} 
+             handleTicketChange2={handleTicketChange2} 
+             handleRemoveTicket2={handleRemoveTicket2} 
+             ticketPrice2={1299} />
           </div>
         </div>
     </div>

@@ -5,24 +5,38 @@ import ChooseTicket from './ChooseTicket';
 
 
 
-
-
 export default function Ticket(props) {
+
+  const ticketCount = props.ticketCount2 + props.ticketCount;
+  const TotalTicketCount = props.ticketCount * 799 + props.ticketCount2 * 1299;
+  const bookingFee = TotalTicketCount > 0 ? 99 : 0;
+  const totalPrice = TotalTicketCount + bookingFee;
+
 
   return (
     <div className='grid gap-4 border-solid border-Hotpink border-2 rounded-3xl p-8 text-White w-64'>
     <h2 className='text-White text-2xl font-bold'>ITEMS</h2>
     
-    <ParentComponent ticketCount={props.ticketCount} handleTicketChange={props.handleTicketChange} handleRemoveTicket={props.handleRemoveTicket} ticketPrice={799}/>
-    <SecondParentComponent ticketCount={props.ticketCount2} handleTicketChange={props.handleTicketChange2} handleRemoveTicket={props.handleRemoveTicket2} ticketPrice={1299}/>
+    <ParentComponent 
+    ticketCount={props.ticketCount} 
+    handleTicketChange={props.handleTicketChange} 
+    handleRemoveTicket={props.handleRemoveTicket} 
+    ticketPrice={799}/>
 
-    <h2>{props.ticketCount2 + props.ticketCount} TICKETS {props.ticketCount * 799 + props.ticketCount2 * 1299}</h2>
-    <p>BOOKING FEE 99 DKK</p>
+    <SecondParentComponent 
+    ticketCount={props.ticketCount2} 
+    handleTicketChange={props.handleTicketChange2} 
+    handleRemoveTicket={props.handleRemoveTicket2} 
+    ticketPrice={1299}/>
 
-    <p className='text-xl'><span className='text-Hotpink'>TOTAL</span> {props.ticketCount * 799
-    + props.ticketCount2 * 1299} DKK</p>
-    
-    
+    {/* <h2>Camping Area</h2>
+    <p>{props.selectedArea}</p> */}
+
+    <h2>{ticketCount} TICKETS {TotalTicketCount}</h2>
+    <p>BOOKING FEE {bookingFee} DKK</p>
+
+    <p className='text-xl'><span className='text-Hotpink'>TOTAL</span> {totalPrice} DKK </p>
+  
     <ChooseTicket />
     </div>
   );
