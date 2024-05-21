@@ -3,6 +3,7 @@ import { useState } from 'react'
 import Ticket from "@/app/components/Ticket";
 import RemoveButton from '@/app/components/RemoveButton';
 import AddButton from '@/app/components/AddButton';
+import { useSearchParams } from 'next/navigation'
 
 
 export default function Home() {
@@ -30,6 +31,12 @@ export default function Home() {
       setTicketCount2(prevCount => prevCount - 1);
     }
   };
+
+  const searchParams = useSearchParams()
+ 
+  const ticketcount1 = searchParams.get('ticketcount1')
+  const ticketcount2 = searchParams.get('ticketcount2')
+
 
   // function saveData() {
   //   localStorage.setItem("data", ticketCount.innerHTML);
@@ -92,8 +99,8 @@ export default function Home() {
     
       
           <div>
-            <Ticket ticketCount={ticketCount} handleTicketChange={handleTicketChange} handleRemoveTicket={handleRemoveTicket} ticketPrice={799}
-             ticketCount2={ticketCount2} handleTicketChange2={handleTicketChange2} handleRemoveTicket2={handleRemoveTicket2} ticketPrice2={1299} />
+            <Ticket ticketCount={ticketcount1} handleTicketChange={handleTicketChange} handleRemoveTicket={handleRemoveTicket} ticketPrice={799}
+             ticketCount2={ticketcount2} handleTicketChange2={handleTicketChange2} handleRemoveTicket2={handleRemoveTicket2} ticketPrice2={1299} />
           </div>
         </div>
     </div>
