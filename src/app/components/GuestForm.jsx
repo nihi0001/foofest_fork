@@ -40,11 +40,10 @@ body: JSON.stringify(info)
 }
 
   return (
-    <div className=" mt-10 grid grid-cols-2 sm:grid-cols-2">
+    <div className=" mt-10">
 
    
-
- <form onSubmit={handleSubmit} className="flex flex-col m-6">
+ <form onSubmit={handleSubmit} className=" m-6">
  <h2 className="mb-4">Guest 1</h2>
  <label>
   <span>Country</span>
