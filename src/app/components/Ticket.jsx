@@ -4,11 +4,10 @@ import ParentComponent from '../TicketComponent/ParentComponent';
 import ChooseTicket from './ChooseTicket';
 
 
-
 export default function Ticket(props) {
 
-  const ticketCount = props.ticketCount2 + props.ticketCount;
-  const TotalTicketCount = props.ticketCount * 799 + props.ticketCount2 * 1299;
+  const ticketCount = props.ticketcount2 + props.ticketcount1;
+  const TotalTicketCount = props.ticketcount1 * 799 + props.ticketcount2 * 1299;
   const bookingFee = TotalTicketCount > 0 ? 99 : 0;
   const totalPrice = TotalTicketCount + bookingFee;
 
@@ -18,13 +17,13 @@ export default function Ticket(props) {
     <h2 className='text-White text-2xl font-bold'>ITEMS</h2>
     
     <ParentComponent 
-    ticketCount={props.ticketCount} 
-    handleTicketChange={props.handleTicketChange} 
-    handleRemoveTicket={props.handleRemoveTicket} 
-    ticketPrice={799}/>
+     ticketCount={props.ticketcount1} 
+     handleTicketChange={props.handleTicketChange} 
+     handleRemoveTicket={props.handleRemoveTicket} 
+     ticketPrice={799}/>
 
     <SecondParentComponent 
-    ticketCount={props.ticketCount2} 
+    ticketcount={props.ticketcount2} 
     handleTicketChange={props.handleTicketChange2} 
     handleRemoveTicket={props.handleRemoveTicket2} 
     ticketPrice={1299}/>

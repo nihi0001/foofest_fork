@@ -1,11 +1,10 @@
 
 "use client"
-import React, { useState } from 'react';
 import TicketCalculator from '../components/TicketCalculator';
 
 
 
-const ParentComponent = ({ticketCount, handleTicketChange, handleRemoveTicket, ticketPrice}) => {
+const ParentComponent = ({ticketCount, ticketPrice}) => {
  
   return (
     <>

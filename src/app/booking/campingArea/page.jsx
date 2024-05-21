@@ -17,7 +17,6 @@ export default function Home() {
   const handleRemoveTicket = () => {
     if (ticketCount > 0) {
       setTicketCount(prevCount => prevCount - 1);
-      // saveData();
     }
   };
 
@@ -35,16 +34,6 @@ export default function Home() {
  
   const ticketcount1 = searchParams.get('ticketcount1')
   const ticketcount2 = searchParams.get('ticketcount2')
-
-
-  // function saveData() {
-  //   localStorage.setItem("data", ticketCount.innerHTML);
-  // }
-
-  // function showData() {
-  //   ticketCount.innerHTML = localStorage.getItem("data");
-  // }
-  // showData();
 
 
 
@@ -71,7 +60,7 @@ export default function Home() {
               </div>
               <div className='flex flex-row gap-3 h-6 items-center mt-4'>
                 <RemoveButton onRemoveButtonClick={handleRemoveTicket} /> 
-                <input className='border-solid border-2 border-Lightpink rounded-full w-32 bg-White p-2' value={ticketCount} />
+                <input name="ticketcount1" className='border-solid border-2 border-Lightpink rounded-full w-32 bg-White p-2' value={ticketCount} />
                 <AddButton onButtonClick={() => handleTicketChange(ticketCount + 1)} />
               </div>
             </div>
@@ -85,16 +74,11 @@ export default function Home() {
 
               <div className='flex flex-row gap-3 h-6 items-center mt-4'>
                 <RemoveButton onRemoveButtonClick={handleRemoveTicket2} /> 
-                <input className='border-solid border-2 border-Lightpink rounded-full w-32 bg-White p-2' value={ticketCount2} />
+                <input name="ticketcount2" className='border-solid border-2 border-Lightpink rounded-full w-32 bg-White p-2' value={ticketCount2} />
                 <AddButton onButtonClick={() => handleTicketChange2(ticketCount2 + 1)} />
               </div>
             </div>
             <br />
-
-            {/* <div className='text-White'>
-              <h2 className='text-xl'>EXTRA</h2>
-              <li>GREEN CAMPING</li>
-            </div> */}
           </div>
     
       

@@ -6,39 +6,29 @@ import AddButton from '@/app/components/AddButton';
 
 
 export default function Home() {
-  const [ticketCount, setTicketCount] = useState(0);
+  const [ticketcount1, setTicketcount1] = useState(0);
+  const [ticketcount2, setTicketcount2] = useState(0);
 
   const handleTicketChange = (count) => {
-    setTicketCount(count);
+    setTicketcount1(count);
   };
   
   const handleRemoveTicket = () => {
-    if (ticketCount > 0) {
-      setTicketCount(prevCount => prevCount - 1);
-      // saveData();
+    if (ticketcount1 > 0) {
+      setTicketcount1(prevCount => prevCount - 1);
     }
   };
 
-  const [ticketCount2, setTicketCount2] = useState(0);
-
   const handleTicketChange2 = (count) => {
-    setTicketCount2(count);
+    setTicketcount2(count);
   };
   
   const handleRemoveTicket2 = () => {
-    if (ticketCount2 > 0) {
-      setTicketCount2(prevCount => prevCount - 1);
+    if (ticketcount2 > 0) {
+      setTicketcount2(prevCount => prevCount - 1);
     }
   };
-
-  // function saveData() {
-  //   localStorage.setItem("data", ticketCount.innerHTML);
-  // }
-
-  // function showData() {
-  //   ticketCount.innerHTML = localStorage.getItem("data");
-  // }
-  // showData();
+  
 
 
 
@@ -57,8 +47,8 @@ export default function Home() {
               </div>
               <div className='flex flex-row gap-3 h-6 items-center mt-4'>
                 <RemoveButton onRemoveButtonClick={handleRemoveTicket} /> 
-                <input name="ticketcount1" className='border-solid border-2 border-Lightpink rounded-full w-32 bg-White p-2' value={ticketCount} />
-                <AddButton onButtonClick={() => handleTicketChange(ticketCount + 1)} />
+                <input name="ticketcount1" className='border-solid border-2 border-Lightpink rounded-full w-32 bg-White p-2' value={ticketcount1} />
+                <AddButton onButtonClick={() => handleTicketChange(ticketcount1 + 1)} />
               </div>
             </div>
 
@@ -71,20 +61,26 @@ export default function Home() {
 
               <div className='flex flex-row gap-3 h-6 items-center mt-4'>
                 <RemoveButton onRemoveButtonClick={handleRemoveTicket2} /> 
-                <input name="ticketcount2" className='border-solid border-2 border-Lightpink rounded-full w-32 bg-White p-2' value={ticketCount2} />
-                <AddButton onButtonClick={() => handleTicketChange2(ticketCount2 + 1)} />
+                <input name="ticketcount2" className='border-solid border-2 border-Lightpink rounded-full w-32 bg-White p-2' value={ticketcount2} />
+                <AddButton onButtonClick={() => handleTicketChange2(ticketcount2 + 1)} />
               </div>
             </div>
           </div>
     
       
           <div>
-            <Ticket ticketCount={ticketcount1} handleTicketChange={handleTicketChange} handleRemoveTicket={handleRemoveTicket} ticketPrice={799}
-             ticketCount2={ticketcount2} handleTicketChange2={handleTicketChange2} handleRemoveTicket2={handleRemoveTicket2} ticketPrice2={1299} />
+            <Ticket 
+            ticketcount1={ticketcount1} 
+            handleTicketChange={handleTicketChange} 
+            handleRemoveTicket={handleRemoveTicket} 
+            ticketPrice={799}
+             ticketcount2={ticketcount2} 
+             handleTicketChange2={handleTicketChange2} 
+             handleRemoveTicket2={handleRemoveTicket2} 
+             ticketPrice2={1299} />
           </div>
         </div>
     </div>
-    <button>stest</button>
     </form>
     </>
   );

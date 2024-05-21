@@ -1,16 +1,16 @@
 
 "use client"
 import React, { useState } from 'react';
-import TicketCalculator from '../components/TicketCalculator';
+import VipTicketCal from '../components/VipTicketCal';
 
 
-const ParentComponent = ({ticketCount, ticketPrice}) => {
+const ParentComponent = ({ticketcount, ticketPrice}) => {
 
   return (
     <>
     <div className='text-White flex gap-8'>
       <div>
-        <TicketCalculator ticketPrice={ticketPrice} ticketAmount={ticketCount} />
+        <VipTicketCal ticketPrice={ticketPrice} ticketAmount={ticketcount} />
       </div>
     </div>
   </>
