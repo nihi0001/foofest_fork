@@ -20,7 +20,6 @@ export default function Schedule() {
       <ScheduleBanner/>
       <h1 className={`text-White text-5xl -mt-5 text-center mb-8 md:text-8xl md:-mt-20 md:p-7 ${BowlbyOne.className}`}>SCHEDULE</h1>
 
-<<<<<<< HEAD
       <SchedulePoster/>
      
     </div>
@@ -33,7 +32,6 @@ export default function Schedule() {
 
 
 
-=======
 export const metadata = {
   title: "FooFest | Schedule",
 };
@@ -82,6 +80,5 @@ async function SchedulePage() {
     </>
   );
 }
->>>>>>> søn19maj
 
 export default SchedulePage;
