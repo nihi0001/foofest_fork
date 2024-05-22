@@ -9,12 +9,12 @@ const BowlbyOne = Bowlby_One({
 });
 
 export const metadata = {
-  title: "FooFest | Program",
+  title: "FooFest | Schedule",
 };
 
 
 async function SchedulePage() {
-  // Jonas har hjulpet med denne kodedel, hvor vi merger de to links sammen
+  // Merger to links sammen. Bands og schedule
   const bands = await fetch(
     "https://yielding-cooperative-tarsal.glitch.me/bands"
   ).then((r) => r.json());
@@ -46,7 +46,7 @@ async function SchedulePage() {
     <>
       <main>
         <h1
-          className={`text-6xl ${BowlbyOne.className} text-center text-Hotpink mt-20`}
+          className={`text-5xl ${BowlbyOne.className} text-center text-White mt-20`}
         >
           SCHEDULE
         </h1>

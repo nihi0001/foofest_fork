@@ -34,12 +34,13 @@ export default async function Page({ params }) {
   const url = `https://yielding-cooperative-tarsal.glitch.me/bands/${slug}`;
   const res = await fetch(url);
   const artist = await res.json()
-  console.log(artist)
+  const imageUrl = artist.logo.startsWith("http") ? artist.logo : `https://yielding-cooperative-tarsal.glitch.me/logos/${artist.logo}`;
+  
   return (
     <div className='max-w-2xl mx-auto mt-12 mb-12'>
-      <Image
+       <Image
         alt="Artist presentation"
-        src={`https://yielding-cooperative-tarsal.glitch.me/logos/${artist.logo}`}
+        src={imageUrl}
         width={350}
         height={350}
         className='mx-auto'

@@ -3,6 +3,7 @@ import React from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { Bowlby_One } from "next/font/google";
+import Image from 'next/image';
 
 const BowlbyOne = Bowlby_One({
   subsets: ["latin"],
@@ -10,47 +11,46 @@ const BowlbyOne = Bowlby_One({
   display: "swap",
 });
 
-function ActCard({ name, genre, start, end, src, slug, day }) {
+function ActCard({ name, genre, start, end, src, slug, day, scene }) {
 
   return (
     <motion.article
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       transition={{ duration: 1 }}
-      viewport={{once: true,}}
-      className="min-w-fit snap-start rounded-lg overflow-hidden relative mb-10 border-2 border-Hotpink"
+      viewport={{ once: true }}
+      className="rounded-lg mb-10 border-2 border-Hotpink hover:scale-105"
     >
-      <Link href={`/lineup/${slug}`} key={slug}>
-        {src && src.startsWith("http") ? (
-          <img
-            src= "/dummyImage.jpg"
-            className="aspect-square object-cover mx-auto relative"
-            width={250}
-            height={250}
-            alt="product image"
-          />
-        ) : (
-          <img
-          src= "/dummyImage.jpg"
-          className="aspect-square object-cover mx-auto relative"
-          width={250}
-          height={250}
-          alt="product image"
-        />
-        )}
-        <div className="absolute inset-x-0 bottom-0 pt-40 pl-2 bg-gradient-to-t from-fooGrey-800 to-transparent-200">
-          <p className="text-White font-bold">{genre}</p>
-          <h2 className={`text-xl ${BowlbyOne.className} text-Hotpink mb-2`}>
-            {name}
-          </h2>
-          <div className="flex items-baseline gap-2">
-            <h3 className="text-xl lg:text-2xl text-White ">
+
+        <Link href={`/lineup/${slug}`} prefetch={false}>
+        <div className="bg-Darkblue hover:bg-Navyblue grid grid-cols-3">
+
+          <section>
+            <p className="text-3xl text-White font-semibold">{name}</p>
+            <p className="text-White text-xl">{genre}</p>
+          </section>
+
+          <section className="text-center">
+            <p className="text-2xl text-Hotpink">
               {start} - {end}
-            </h3>
-            <p className="text-White ">{day}</p>
+            </p>
+            <p className="text-White text-2xl uppercase">{day}</p>
+          </section>
+
+          <section className="relative flex items-center justify-center">
+            <div className="relative w-full h-48">
+            <Image
+              alt="Artist presentation"
+              src={src.startsWith("http") ? src : `https://yielding-cooperative-tarsal.glitch.me/logos/${src}`}
+              layout="none"
+              objectFit="contain"
+              className="h-full w-full rounded-xl"
+            />
+            </div>
+          </section>
           </div>
-        </div>
-      </Link>
+
+        </Link>
     </motion.article>
   );
 }
