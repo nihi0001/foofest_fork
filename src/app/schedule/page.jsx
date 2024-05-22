@@ -4,6 +4,9 @@ import ScheduleBanner from '../components/ScheduleBanner';
 import SchedulePoster from '../components/SchedulePoster';
 
 
+import React from "react";
+import Schedule from "@/app/components/Schedule";
+import { Bowlby_One } from "next/font/google";
 
 const BowlbyOne = Bowlby_One({
   subsets: ["latin"],
@@ -17,6 +20,7 @@ export default function Schedule() {
       <ScheduleBanner/>
       <h1 className={`text-White text-5xl -mt-5 text-center mb-8 md:text-8xl md:-mt-20 md:p-7 ${BowlbyOne.className}`}>SCHEDULE</h1>
 
+<<<<<<< HEAD
       <SchedulePoster/>
      
     </div>
@@ -29,4 +33,55 @@ export default function Schedule() {
 
 
 
+=======
+export const metadata = {
+  title: "FooFest | Schedule",
+};
 
+
+async function SchedulePage() {
+  // Merger to links sammen. Bands og schedule
+  const bands = await fetch(
+    "https://yielding-cooperative-tarsal.glitch.me/bands"
+  ).then((r) => r.json());
+  const schedule = await fetch(
+    "https://yielding-cooperative-tarsal.glitch.me/schedule"
+  ).then((r) => r.json());
+
+  const scenes = ["Midgard", "Jotunheim", "Vanaheim"];
+  const days = ["mon", "tue", "wed", "thu", "fri", "sat", "sun"];
+
+  const merged = bands.map((band) => {
+    const newBand = { ...band };
+    scenes.forEach((scene) => {
+      days.forEach((day) => {
+        if (schedule[scene][day].find((item) => item.act === band.name)) {
+          const eventInfo = schedule[scene][day].find(
+            (item) => item.act === band.name
+          );
+          newBand.eventInfo = eventInfo;
+          newBand.scene = scene;
+          newBand.day = day;
+        }
+      });
+    });
+    return newBand;
+  });
+
+  return (
+    <>
+      <main>
+        <h1
+          className={`text-5xl ${BowlbyOne.className} text-center text-White mt-20`}
+        >
+          SCHEDULE
+        </h1>
+
+        <Schedule newArray={merged} days={days} />
+      </main>
+    </>
+  );
+}
+>>>>>>> søn19maj
+
+export default SchedulePage;
