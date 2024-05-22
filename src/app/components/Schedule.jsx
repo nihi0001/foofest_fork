@@ -49,7 +49,7 @@ function Schedule({ newArray, days }) {
 
         <div>
         {/* filter knapper efter ugedage */}
-          <div className="flex justify-center flex-wrap my-8 mb-20 gap-5">
+          <div className="flex justify-center flex-wrap my-8 mb-28 gap-5">
             {days.map((day) => (
               <button
                 key={day}
@@ -62,7 +62,7 @@ function Schedule({ newArray, days }) {
           </div>
 
         {/* grid starter her for scenerne */}
-          <section className="mx-auto max-w-4xl">
+          <section className="mx-auto max-w-6xl">
             <div>
               <motion.h3
                 initial={{ opacity: 0 }}
@@ -95,7 +95,7 @@ function Schedule({ newArray, days }) {
                 whileInView={{ opacity: 1 }}
                 transition={{ duration: 1 }}
                 viewport={{ once: true }}
-                className="text-3xl mb-5 text-White text-center font-semibold uppercase"
+                className="text-3xl mb-5 mt-32 text-White text-center font-semibold uppercase"
               >
                 Vanaheim
               </motion.h3>
@@ -121,7 +121,7 @@ function Schedule({ newArray, days }) {
                 whileInView={{ opacity: 1 }}
                 transition={{ duration: 1 }}
                 viewport={{ once: true }}
-                className="text-3xl mb-5 text-White text-center font-semibold uppercase"
+                className="text-3xl mb-5 mt-32 text-White text-center font-semibold uppercase"
               >
                 Jotunheim
               </motion.h3>

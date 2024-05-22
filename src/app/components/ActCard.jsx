@@ -19,32 +19,33 @@ function ActCard({ name, genre, start, end, src, slug, day, scene }) {
       whileInView={{ opacity: 1 }}
       transition={{ duration: 1 }}
       viewport={{ once: true }}
-      className="rounded-lg mb-10 border-2 border-Hotpink hover:scale-105"
+      className="rounded-xl mb-8 border-2 border-Hotpink hover:scale-105 bg-Darkblue hover:bg-Navyblue"
     >
 
         <Link href={`/lineup/${slug}`} prefetch={false}>
-        <div className="bg-Darkblue hover:bg-Navyblue grid grid-cols-3">
+        <div className=" grid grid-cols-3">
 
-          <section>
-            <p className="text-3xl text-White font-semibold">{name}</p>
+          <section className="flex flex-col justify-center items-center">
+            <p className="text-2xl text-White font-semibold">{name}</p>
             <p className="text-White text-xl">{genre}</p>
           </section>
 
-          <section className="text-center">
+          <section className="text-center flex flex-col justify-center items-center">
             <p className="text-2xl text-Hotpink">
               {start} - {end}
             </p>
             <p className="text-White text-2xl uppercase">{day}</p>
           </section>
 
-          <section className="relative flex items-center justify-center">
-            <div className="relative w-full h-48">
+          <section>
+            <div className="relative w-3/4 h-48 flex items-end">
             <Image
               alt="Artist presentation"
               src={src.startsWith("http") ? src : `https://yielding-cooperative-tarsal.glitch.me/logos/${src}`}
-              layout="none"
-              objectFit="contain"
-              className="h-full w-full rounded-xl"
+              layout="fill"
+              objectFit="cover"
+              className="rounded-xl"
+
             />
             </div>
           </section>
