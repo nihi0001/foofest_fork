@@ -1,19 +1,22 @@
-import React from "react";
+"use client"
+import BounceLoader from "react-spinners/BounceLoader";
 
-const Loader = () => {
+
+
+function loading() {
   return (
-    <div className="flex justify-center fixed top-0 left-0 bg-black z-50 w-full h-full">
-      {/*<img
-        className="animate-pulse"
-        src="/lpbanner.png"
-        width={150}
-        height={150}
-        alt="Loading logo"
-      />
-  */}
-  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere ex, suscipit animi dolorem temporibus sunt ipsam blanditiis cum, corporis voluptatum iusto, sequi cupiditate commodi accusamus dignissimos distinctio soluta sed impedit.</p>
+    <div className="flex justify-center items-center h-screen">
+      
+      <BounceLoader
+      color="#D500C0"
+      loading={true}
+      
+      size={60}
+      aria-label="Loading animation"
+      data-testid="loader"/>
     </div>
-  );
-};
+  )
+}
 
-export default Loader;
+export default loading
+
