@@ -6,7 +6,7 @@ import BuyTicket from './BuyTicket'
 export default function FooTicket() {
 
   return (
-    <div className='grid gap-4 bg-Darkblue border-solid border-Hotpink border-2 p-10 rounded-2xl w-72'>
+    <div className='grid gap-4 bg-Darkblue border-solid border-Hotpink border-2 p-10 rounded-2xl w-72 hover:scale-110 transition duration-0 hover:duration-150'>
       <h2 className='text-3xl text-start font-normal'>FOO TICKET</h2>
       
       <div className='text-start'>
