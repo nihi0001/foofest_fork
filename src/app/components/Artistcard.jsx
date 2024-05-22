@@ -76,27 +76,29 @@ export default function LineUp({ searchParams }) {
 
       {/* Bands opdelt efter genre */}
       {filteredBands.length > 0 ? (
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 justify-center max-w-6xl mx-auto p-6">
-          {filteredBands.map((band) => (
-            <div key={band.name}>
-              <Link href={`/lineup/${band.slug}`} prefetch={false}>
-                <div className="border-2 border-Hotpink rounded-lg cursor-pointer bg-Darkblue hover:scale-110 transition duration-0 hover:duration-150 hover:bg-Navyblue">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 md:gap-12 justify-center max-w-6xl mx-auto p-8 sm:p-6">
+        {filteredBands.map((band) => (
+          <div key={band.name} className="flex flex-col">
+            <Link href={`/lineup/${band.slug}`} prefetch={false}>
+              <div className="border-2 border-Hotpink rounded-lg cursor-pointer bg-Darkblue hover:scale-105 transition-transform duration-150 hover:bg-Navyblue">
+                <div className="w-full h-64 sm:h-72 md:h-80 relative">
                   <Image
                     alt="Artist presentation"
                     src={band.logo.startsWith("http") ? band.logo : `https://yielding-cooperative-tarsal.glitch.me/logos/${band.logo}`}
-                    width={350}
-                    height={350}
-                    className="object-cover rounded-lg"
+                    layout="fill"
+                    objectFit="cover"
+                    className="rounded-t-lg"
                   />
-                  <div className='p-4'>
-                  <p className="text-Hotpink mt-5 text-2xl font-medium">{band.genre}</p>
-                  <p className="text-White text-3xl font-bold uppercase mb-2">{band.name}</p>
-                  </div>
                 </div>
-              </Link>
-            </div>
-          ))}
-        </div>
+                <div className="p-2 sm:p-4">
+                  <p className="text-Hotpink mt-2 sm:mt-5 text-lg sm:text-2xl font-medium">{band.genre}</p>
+                  <p className="text-White text-xl sm:text-3xl font-bold uppercase mb-1 sm:mb-2">{band.name}</p>
+                </div>
+              </div>
+            </Link>
+          </div>
+        ))}
+      </div>
       ) : (
         <p className="text-White">No bands found for the selected genre.</p>
       )}
