@@ -1,6 +1,8 @@
 "use client"
 import { useState } from 'react'
-import Ticket from "@/app/components/Ticket";
+import priser from '@/js/settings';
+
+import Ticket from "@/app/components/Tickets/Ticket";
 import RemoveButton from '@/app/components/RemoveButton';
 import AddButton from '@/app/components/AddButton';
 
@@ -34,7 +36,7 @@ export default function Home() {
 
   return (
     <>
-    <form action="/booking/campingArea">
+    <form action='/booking/campingArea'>
     <div className="border-solid bg-Darkblue border-Hotpink border-2 rounded-3xl p-8 w-7/12 m-auto mt-10">
       <h1 className="text-White md:text-6xl">CHOOSE YOUR TICKET:</h1>
         <div className="flex justify-start p-8 gap-20">
@@ -47,7 +49,10 @@ export default function Home() {
               </div>
               <div className='flex flex-row gap-3 h-6 items-center mt-4'>
                 <RemoveButton onRemoveButtonClick={handleRemoveTicket} /> 
-                <input name="ticketcount1" className='border-solid border-2 border-Lightpink rounded-full w-32 bg-White p-2' value={ticketcount1} />
+                <input 
+                name="ticketcount1" 
+                className='border-solid border-2 border-Lightpink rounded-full w-32 bg-White p-2' 
+                value={ticketcount1} />
                 <AddButton onButtonClick={() => handleTicketChange(ticketcount1 + 1)} />
               </div>
             </div>
@@ -61,7 +66,10 @@ export default function Home() {
 
               <div className='flex flex-row gap-3 h-6 items-center mt-4'>
                 <RemoveButton onRemoveButtonClick={handleRemoveTicket2} /> 
-                <input name="ticketcount2" className='border-solid border-2 border-Lightpink rounded-full w-32 bg-White p-2' value={ticketcount2} />
+                <input 
+                name="ticketcount2" 
+                className='border-solid border-2 border-Lightpink rounded-full w-32 bg-White p-2' 
+                value={ticketcount2} />
                 <AddButton onButtonClick={() => handleTicketChange2(ticketcount2 + 1)} />
               </div>
             </div>

@@ -1,22 +1,35 @@
 "use client"
-import { useState } from 'react'
-import Ticket from "@/app/components/Ticket";
+import { useEffect, useState } from 'react'
+import { useSearchParams } from 'next/navigation';
+import CampingTickets from "@/app/components/Tickets/CampingTickets";
 import RemoveButton from '@/app/components/RemoveButton';
 import AddButton from '@/app/components/AddButton';
-import { useSearchParams } from 'next/navigation'
 
 
 export default function Home() {
-  const [ticketCount, setTicketCount] = useState(0);
-  const [ticketCount2, setTicketCount2] = useState(0);
+  const searchParams = useSearchParams()
+  const regular = searchParams.get('ticketcount1')
+  const vip = searchParams.get('ticketcount2')
+
+  // + laver det om til et tal fremfor en string
+  const [ticketCount1, setTicketCount1] = useState(+regular);
+  const [ticketCount2, setTicketCount2] = useState(+vip);
+
+
+  // const [campingArea, setCampingArea] = useState('');
+  // const [availableSpots, setAvailableSpots] = useState(null);
+
+  // const handleCampingArea = (area) => {
+  //   setCampingArea(prevArea => prevArea === area ? '' : area);
+  // };
 
   const handleTicketChange = (count) => {
-    setTicketCount(count);
+    setTicketCount1(count); 
   };
   
   const handleRemoveTicket = () => {
-    if (ticketCount > 0) {
-      setTicketCount(prevCount => prevCount - 1);
+    if (ticketCount1 > 0) {
+      setTicketCount1(prevCount => prevCount - 1);
     }
   };
 
@@ -30,28 +43,35 @@ export default function Home() {
     }
   };
 
-  const searchParams = useSearchParams()
- 
-  const ticketcount1 = searchParams.get('ticketcount1')
-  const ticketcount2 = searchParams.get('ticketcount2')
+  useEffect(() => {
+    const available = fetch('https://yielding-cooperative-tarsal.glitch.me/available-spots')
+      .then((res) => res.json());
+  }, []);
+
+
+  
+
+  // const totalprice = regular + vip;
 
 
 
   return (
     <>
+    <form action="">
     <div className="border-solid bg-Darkblue border-Hotpink border-2 rounded-3xl p-8 w-7/12 m-auto mt-10">
       <h1 className="text-White md:text-6xl">CHOOSE YOUR CAMPING AREA:</h1>
         <div className="flex justify-start p-8 gap-20">
-    
-          <div>
+          
+
+          <div> 
             <div className='grid grid-cols-2 text-White'>
-              <li value="">Svartheim</li>
-              <li value="">Nilfheim</li>
-              <li value="">Helheim</li>
-              <li value="">Muspelheim</li>
-              <li value="">Alfheim</li>
+            <label className='hover:text-Hotpink'><input type="checkbox" /> Svartheim</label>
+            <label className='hover:text-Hotpink'><input type="checkbox" /> Nilfheim</label>
+            <label className='hover:text-Hotpink'><input type="checkbox" /> Helheim</label>
+            <label className='hover:text-Hotpink'><input type="checkbox" /> Muspelheim</label>
+            <label className='hover:text-Hotpink'><input type="checkbox" /> Alfheim</label>
             </div>
-            <br />
+            <br />  
 
             <div className='flex gap-24'>
               <div className='text-White'>
@@ -60,8 +80,11 @@ export default function Home() {
               </div>
               <div className='flex flex-row gap-3 h-6 items-center mt-4'>
                 <RemoveButton onRemoveButtonClick={handleRemoveTicket} /> 
-                <input name="ticketcount1" className='border-solid border-2 border-Lightpink rounded-full w-32 bg-White p-2' value={ticketCount} />
-                <AddButton onButtonClick={() => handleTicketChange(ticketCount + 1)} />
+                <input 
+                name="ticketcount1" 
+                className='border-solid border-2 border-Lightpink rounded-full w-32 bg-White p-2' 
+                value={ticketCount1} />
+                <AddButton onButtonClick={() => handleTicketChange(ticketCount1 + 1)} />
               </div>
             </div>
 
@@ -74,7 +97,10 @@ export default function Home() {
 
               <div className='flex flex-row gap-3 h-6 items-center mt-4'>
                 <RemoveButton onRemoveButtonClick={handleRemoveTicket2} /> 
-                <input name="ticketcount2" className='border-solid border-2 border-Lightpink rounded-full w-32 bg-White p-2' value={ticketCount2} />
+                <input 
+                name="ticketcount2" 
+                className='border-solid border-2 border-Lightpink rounded-full w-32 bg-White p-2' 
+                value={ticketCount2} />
                 <AddButton onButtonClick={() => handleTicketChange2(ticketCount2 + 1)} />
               </div>
             </div>
@@ -83,18 +109,19 @@ export default function Home() {
     
       
           <div>
-            <Ticket 
-            ticketCount={ticketcount1} 
+            <CampingTickets 
+            ticketCount1={ticketCount1} 
             handleTicketChange={handleTicketChange} 
             handleRemoveTicket={handleRemoveTicket} 
             ticketPrice={799}
-             ticketCount2={ticketcount2} 
+             ticketCount2={ticketCount2} 
              handleTicketChange2={handleTicketChange2} 
              handleRemoveTicket2={handleRemoveTicket2} 
              ticketPrice2={1299} />
           </div>
         </div>
     </div>
+    </form>
     </>
   );
 }
