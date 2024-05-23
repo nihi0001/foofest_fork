@@ -26,7 +26,9 @@ function ArtistPoster() {
     return(
         <div className='p-4'>
         <div className='max-w-6xl mx-auto mt-12 mb-24 border-2 border-Hotpink bg-Navyblue p-6 md:p-12 rounded-xl'>
+       <Link href={`/lineup/`}>
         <h1 className={` text-White text-center text-4xl md:text-5xl mb-12 ${BowlbyOne.className}`}>LINE UP</h1>
+        </Link>
         
         <ol
             className={`flex flex-wrap gap-3 md:gap-5 items-baseline justify-center uppercase`}>
