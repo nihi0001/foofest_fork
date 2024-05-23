@@ -1,6 +1,8 @@
 // guest information / form 
+"use client"
 import { Bowlby_One } from "next/font/google";
 import GuestForm from "@/app/components/GuestForm";
+import { Suspense } from "react";
 
 const BowlbyOne = Bowlby_One({
   subsets: ["latin"],
@@ -15,6 +17,7 @@ export default function Formpage() {
  <h1 className={` text-White text-4xl mb-8 ${BowlbyOne.className}`}>INFORMATION</h1>
       <div className="grid grid-cols-2">
       <div>
+        <Suspense fallback="Loading..."></Suspense>
     <GuestForm/>
     </div>
     <div>
