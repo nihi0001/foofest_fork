@@ -1,7 +1,7 @@
-
-import SecondParentComponent from '../TicketComponent/SecondParentComponent';
-import ParentComponent from '../TicketComponent/ParentComponent';
-import ChooseTicket from './ChooseTicket';
+import priser from '@/js/settings';
+import SecondParentComponent from '../../TicketComponent/SecondParentComponent';
+import ParentComponent from '../../TicketComponent/ParentComponent';
+import ChooseTicket from '../ChooseTicket';  
 
 
 export default function Ticket(props) {
@@ -27,9 +27,6 @@ export default function Ticket(props) {
     handleTicketChange={props.handleTicketChange2} 
     handleRemoveTicket={props.handleRemoveTicket2} 
     ticketPrice={1299}/>
-
-    {/* <h2>Camping Area</h2>
-    <p>{props.selectedArea}</p> */}
 
     <h2>{ticketCount} TICKETS {TotalTicketCount}</h2>
     <p>BOOKING FEE {bookingFee} DKK</p>

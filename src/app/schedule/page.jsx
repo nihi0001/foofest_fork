@@ -10,9 +10,9 @@ const BowlbyOne = Bowlby_One({
 });
  
 export default function Schedule() {
-  const [schedule, setSchedule] = useState(null)
+  const [schedule, setSchedule] = useState(null);
   const [bands, setBands] = useState(null);
-  const [loading, setLoading] = useState(true)
+  const [loading, setLoading] = useState(true);
   const [selectedDay, setSelectedDay] = useState('All');
 
   const dayNames = {
