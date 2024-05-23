@@ -73,51 +73,16 @@ export default function GuestForm() {
   };
 
   return (
-    <div className="mt-10">
-      <form onSubmit={handleSubmit} className="m-6">
-        <h2 className="mb-4">Guest 1</h2>
-        <label>
-          <span>Country</span>
-          <select
-            className="rounded-md p-3 border-2 w-60 hover:bg-White active:bg-White focus:outline-none focus:ring focus:ring-Hotpink text-Darkblue"
-            onChange={(e) => setCountry(e.target.value)}
-            value={country}
-          >
-            <option value="Denmark">Denmark</option>
-            <option value="Sweden">Sweden</option>
-            <option value="Norway">Norway</option>
-          </select>
-        </label>
-        <div>
-          <label>
-            <span>First name</span>
-            <input
-              className="rounded-md p-2 border-2 hover:bg-White active:bg-White focus:outline-none focus:ring focus:ring-Hotpink text-Darkblue"
-              required
-              type="text"
-              placeholder="Jane"
-              name="firstname"
-              onChange={(e) => setFirstName(e.target.value)}
-              value={firstname}
-            />
-          </label>
-          <label>
-            <span>Last name</span>
-            <input
-              className="rounded-md p-2 border-2 hover:bg-White active:bg-White focus:outline-none focus:ring focus:ring-Hotpink text-Darkblue"
-              required
-              type="text"
-              placeholder="Doe"
-              name="lastname"
-              onChange={(e) => setLastName(e.target.value)}
-              value={lastname}
-            />
-          </label>
-        </div>
+    <section className="">
+      <h2 className="mb-4">Guest 1</h2>
+
+      <form onSubmit={handleSubmit} className="w-full max-w-sm">
+        
+      <div>
         <label>
           <span>Email</span>
           <input
-            className="rounded-md p-2 border-2 hover:bg-White active:bg-White focus:outline-none focus:ring focus:ring-Hotpink text-Darkblue"
+            className="border-2 p-2 rounded-md w-full hover:bg-White active:bg-White focus:outline-none focus:ring focus:ring-Hotpink text-Darkblue"
             required
             type="email"
             placeholder="example@gmail.com"
@@ -126,10 +91,79 @@ export default function GuestForm() {
             value={useremail}
           />
         </label>
+        </div>
+
+       
+
+        <div className="flex flex-wrap -mx-3 mb-6">
+          <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+          <label>
+            <span>First name</span>
+            <input
+              className="border-2 p-2 rounded-md block w-full hover:bg-White active:bg-White focus:outline-none focus:ring focus:ring-Hotpink text-Darkblue"
+              required
+              type="text"
+              placeholder="Jane"
+              name="firstname"
+              onChange={(e) => setFirstName(e.target.value)}
+              value={firstname}
+            />
+          </label>
+          </div>
+          <div className="w-full md:w-1/2 px-3">
+          <label>
+            <span>Last name</span>
+            <input
+              className="border-2 p-2 rounded-md block w-full hover:bg-White active:bg-White focus:outline-none focus:ring focus:ring-Hotpink text-Darkblue"
+              required
+              type="text"
+              placeholder="Doe"
+              name="lastname"
+              onChange={(e) => setLastName(e.target.value)}
+              value={lastname}
+            />
+            
+          </label>
+          </div>
+        </div>
+
+
+        <div>
+        <label>
+          <span>Address</span>
+          <input
+            className="border-2 p-2 rounded-md w-full hover:bg-White active:bg-White focus:outline-none focus:ring focus:ring-Hotpink text-Darkblue"
+            required
+            type="text"
+            placeholder="Address"
+            name="address"
+            onChange={(e) => setAddress(e.target.value)}
+            value={address}
+          />
+        </label>
+        </div>
+
+        <div className="">
+        <label>
+          <span>Country</span>
+          <select
+            className="border-2 p-2 rounded-md w-full hover:bg-White active:bg-White focus:outline-none focus:ring focus:ring-Hotpink text-Darkblue"
+            onChange={(e) => setCountry(e.target.value)}
+            value={country}
+          >
+            <option value="Denmark">Denmark</option>
+            <option value="Sweden">Sweden</option>
+            <option value="Norway">Norway</option>
+          </select>
+        </label>
+        </div>
+
+        <div className="flex flex-wrap -mx-3 mb-6">
+        <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
         <label>
           <span>Postal code</span>
           <input
-            className="rounded-md p-2 border-2 hover:bg-White active:bg-White focus:outline-none focus:ring focus:ring-Hotpink text-Darkblue"
+            className="border-2 p-2 rounded-md block w-full hover:bg-White active:bg-White focus:outline-none focus:ring focus:ring-Hotpink text-Darkblue"
             required
             type="text"
             placeholder="2950"
@@ -139,22 +173,13 @@ export default function GuestForm() {
             value={postalcode}
           />
         </label>
-        <label>
-          <span>Address</span>
-          <input
-            className="rounded-md p-2 border-2 hover:bg-White active:bg-White focus:outline-none focus:ring focus:ring-Hotpink text-Darkblue"
-            required
-            type="text"
-            placeholder="Address"
-            name="address"
-            onChange={(e) => setAddress(e.target.value)}
-            value={address}
-          />
-        </label>
+        </div>
+
+        <div className="w-full md:w-1/2 px-3">
         <label>
           <span>City</span>
           <input
-            className="rounded-md p-2 border-2 hover:bg-White active:bg-White focus:outline-none focus:ring focus:ring-Hotpink text-Darkblue"
+            className="border-2 p-2 rounded-md block w-full hover:bg-White active:bg-White focus:outline-none focus:ring focus:ring-Hotpink text-Darkblue"
             required
             type="text"
             placeholder="Paris"
@@ -163,10 +188,13 @@ export default function GuestForm() {
             value={city}
           />
         </label>
+        </div>
+        </div>
+<div>
         <label>
           <span>Phone number</span>
           <input
-            className="rounded-md p-2 border-2 hover:bg-White active:bg-White focus:outline-none focus:ring focus:ring-Hotpink text-Darkblue"
+            className="border-2 p-2 rounded-md w-full hover:bg-White active:bg-White focus:outline-none focus:ring focus:ring-Hotpink text-Darkblue"
             required
             type="text"
             placeholder="+45 12 34 56 78"
@@ -175,6 +203,9 @@ export default function GuestForm() {
             value={phonenumber}
           />
         </label>
+        </div>
+
+        <div>
         <button
           type="submit"
           className="text-center text-White p-2 mt-6 rounded-lg bg-Hotpink hover:bg-Lightpink w-60"
@@ -182,7 +213,8 @@ export default function GuestForm() {
         >
           {isLoading ? 'Submitting...' : 'Submit Information'}
         </button>
+        </div>
       </form>
-    </div>
+    </section>
   );
 }
