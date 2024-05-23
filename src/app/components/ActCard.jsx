@@ -31,10 +31,9 @@ function ActCard({ name, genre, start, end, src, slug, day, scene }) {
           </div>
 
           <div className="text-center flex flex-col justify-center items-center">
-            <p className="text-2xl text-Hotpink">
+            <p className="text-3xl font-semibold text-Hotpink">
               {start} - {end}
             </p>
-            <p className="text-White text-2xl uppercase">{day}</p>
           </div>
 
             <div className="relative h-32">
