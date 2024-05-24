@@ -1,13 +1,13 @@
 "use client"
 import { useEffect, useState } from 'react'
-import { useSearchParams } from 'next/navigation';
+// import { useSearchParams } from 'next/navigation';
 import CampingTickets from "@/app/components/Tickets/CampingTickets";
 import RemoveButton from '@/app/components/RemoveButton';
 import AddButton from '@/app/components/AddButton';
 
 
 export default function Home() {
-  const searchParams = useSearchParams()
+  // const searchParams = useSearchParams()
   const regular = searchParams.get('ticketcount1')
   const vip = searchParams.get('ticketcount2')
 
