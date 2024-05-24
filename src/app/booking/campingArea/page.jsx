@@ -12,26 +12,26 @@ export default function Home() {
   // const vip = searchParams.get('ticketcount2')
 
   // + laver det om til et tal fremfor en string
-  const [tentTicket, setTentTicket] = useState(0);
-  const [vipTentTicket, setVipTentTicket] = useState(0);
+  const [twoTentTicket, setTwoTentTicket] = useState(0);
+  const [threeTentTicket, setThreeTentTicket] = useState(0);
 
   const handleAddTent = (count) => {
-    setTentTicket(count); 
+    setTwoTentTicket(count);  
   };
   
   const handleRemoveTent = () => {
-    if (tentTicket > 0) {
-      setTentTicket(prevCount => prevCount - 1);
+    if (twoTentTicket > 0) {
+      setTwoTentTicket(prevCount => prevCount - 1);
     }
   };
 
   const handleAddVipTent = (count) => {
-    setVipTentTicket(count);
+    setThreeTentTicket(count);
   };
   
   const handleRemoveVipTent = () => {
-    if (vipTentTicket > 0) {
-      setVipTentTicket(prevCount => prevCount - 1);
+    if (threeTentTicket > 0) {
+      setThreeTentTicket(prevCount => prevCount - 1);
     }
   };
 
@@ -63,16 +63,15 @@ export default function Home() {
             <div className='flex gap-24'>
               <div className='text-White'>
                 <h2 className="text-xl text-White"><span className='font-bold text-Lightpink'>2</span> PERSON TENT</h2>
-                <p>799 DKK</p>
+                <p>299 DKK</p>
               </div>
               <div className='flex flex-row gap-3 h-6 items-center mt-4'>
                 <RemoveTent onRemoveTentClick={handleRemoveTent} /> 
                 <input 
-                name="tentTicket" 
-                value={tentTicket}
-                className='border-solid border-2 border-Lightpink rounded-full w-32 bg-White p-2' 
-                 />
-                <AddTent onAddTentClick={() => handleAddTent(tentTicket + 1)} />
+                name="twoTentTicket" 
+                value={twoTentTicket}
+                className='border-solid border-2 border-Lightpink rounded-full w-32 bg-White p-2' />
+                <AddTent onAddTentClick={() => handleAddTent(twoTentTicket + 1)} />
               </div>
             </div>
 
@@ -80,17 +79,17 @@ export default function Home() {
             <div className='flex gap-28'>
               <div>
                 <h2 className='text-White text-xl'><span className='font-bold text-Lightpink'>3</span>PERSON TENT</h2>
-                <p className='text-White text-base'>1299 DKK</p>
+                <p className='text-White text-base'>399 DKK</p>
               </div>
 
               <div className='flex flex-row gap-3 h-6 items-center mt-4'>
-                <RemoveTent onRemoveButtonClick={handleRemoveVipTent} /> 
+                <RemoveTent onRemoveTentClick={handleRemoveVipTent} /> 
                 <input 
-                name="vipTentTicket" 
-                value={vipTentTicket}
+                name="threeTentTicket" 
+                value={threeTentTicket}
                 className='border-solid border-2 border-Lightpink rounded-full w-32 bg-White p-2' 
                  />
-                <AddTent onAddTentClick={() => handleAddVipTent(vipTentTicket + 1)} />
+                <AddTent onAddTentClick={() => handleAddVipTent(threeTentTicket + 1)} />
               </div>
             </div>
             <br />
@@ -99,14 +98,14 @@ export default function Home() {
       
           <div> 
             <CampingTickets 
-            tentTicket={tentTicket} 
-            handleAddTentChange={handleAddTent} 
+            tentTicket={twoTentTicket} 
+            handleAddTent={handleAddTent} 
             handleRemoveTent={handleRemoveTent} 
-            tentPrice={799}
-            vipTentTicket={vipTentTicket} 
+            tentPrice={299}
+            threeTentTicket={threeTentTicket} 
              handleAddVipTent={handleAddVipTent} 
              handleRemoveVipTent={handleRemoveVipTent} 
-             VipTentPrice={1299} />
+             threeTentPrice={399} /> 
           </div>
         </div>
     </div>

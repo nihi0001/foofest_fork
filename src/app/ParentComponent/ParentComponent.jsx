@@ -1,7 +1,5 @@
-
 "use client"
-import TicketCalculator from '../components/TicketCalculator';
-
+import TicketCal from '../components/TicketCal';
 
 
 const ParentComponent = ({ticketCount, ticketPrice}) => {
@@ -10,7 +8,7 @@ const ParentComponent = ({ticketCount, ticketPrice}) => {
     <>
     <div className='text-White flex gap-8'>
       <div>
-        <TicketCalculator ticketPrice={ticketPrice} ticketAmount={ticketCount} />
+        <TicketCal ticketPrice={ticketPrice} ticketAmount={ticketCount} /> 
       </div>
     </div>
   </>

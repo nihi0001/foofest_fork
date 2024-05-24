@@ -1,6 +1,5 @@
-
-import SecondParentComponent from '../../TicketComponent/SecondParentComponent';
-import ParentComponent from '../../TicketComponent/ParentComponent';
+import SecondParentComponent from '../../ParentComponent/SecondParentComponent';
+import ParentComponent from '../../ParentComponent/ParentComponent';
 import ChooseTicket from '../ChooseTicket';  
 
 
@@ -22,8 +21,8 @@ export default function Ticket(props) {
      handleRemoveTicket={props.handleRemoveTicket} 
      ticketPrice={799}/>
 
-    <SecondParentComponent 
-    ticketcount={props.ticketcount2} 
+    <SecondParentComponent  
+    ticketCount={props.ticketcount2} 
     handleTicketChange={props.handleTicketChange2} 
     handleRemoveTicket={props.handleRemoveTicket2}  
     ticketPrice={1299}/>

@@ -1,14 +1,21 @@
+import TwoTentParent from '@/app/ParentComponent/TwoTentParent';
 import ChooseTicket from '../ChooseTicket';  
-import TentTicketCalculator from '../TentTicket/TentTicketCalulator';
-import VipTentTicketCal from '../TentTicket/VipTentTicketCal';
+import ThreeTentParent from '@/app/ParentComponent/ThreeTentParent';
 
 
 export default function TentTicket(props) {
 
-  const TentCount = props.VipTentPrice + props.tentPrice;
-  const TotalTentCount = props.tentPrice * 799 + props.VipTentPrice * 1299;
-  const bookingFee = TotalTentCount > 0 ? 99 : 0;
-  const totalTentPrice = TotalTentCount + bookingFee;
+
+  //Tent
+  const tentTicketCount = props.threeTentTicket + props.tentTicket;
+  const totalTentCount = props.tentTicket * 299 + props.threeTentTicket * 399;
+  const bookingFee = totalTentCount > 0 ? 99 : 0;
+  const totalTentPrice = totalTentCount + bookingFee;
+
+  //Ticket den forrige side
+  const ticketCount = props.ticketcount2 + props.ticketcount1;
+  const TotalTicketCount = props.ticketcount1 * 799 + props.ticketcount2 * 1299;
+  const totalPrice = TotalTicketCount + bookingFee;
 
 
 
@@ -16,24 +23,24 @@ export default function TentTicket(props) {
     <div className='grid gap-4 border-solid border-Hotpink border-2 rounded-3xl p-8 text-White w-64'>
     <h2 className='text-White text-2xl font-bold'>ITEMS</h2>
     
-    {/* <h2>X FOO TICKETS X</h2> */}
+    <h2>{ticketCount} TICKETS {totalPrice}</h2>
 
-    <TentTicketCalculator 
-    TentCount={props.tentPrice} 
-    handleAddTentChange={props.handleAddTentChange} 
+    <TwoTentParent 
+    tentTicketCount={props.tentTicket} 
+    handleAddTent={props.handleAddTent} 
     handleRemoveTent={props.handleRemoveTent} 
-    tentPrice={799}/>  
+    tentPrice={299}/>  
 
-    <VipTentTicketCal
-    TentCount={props.VipTentPrice} 
-    handleAddVipTent={props.handleAddVipTent} 
-    handleRemoveVipTent={props.handleRemoveVipTent} 
-    tentPrice={1299}/> 
+    <ThreeTentParent
+    tentTicketCount={props.threeTentTicket} 
+    handleAddTent={props.handleAddVipTent} 
+    handleRemoveTent={props.handleRemoveVipTent}    
+    tentPrice={399}/> 
 
     {/* <h2>Camping Area</h2>
     <p>{}</p> */}
 
-    <h2>{TentCount} TICKETS {TotalTentCount}</h2>
+    <h2>{tentTicketCount} TENTS <br /> {totalTentCount} DKK</h2>
     <p>BOOKING FEE {bookingFee} DKK</p>
 
     <p className='text-xl'><span className='text-Hotpink'>TOTAL</span> {totalTentPrice} DKK </p>

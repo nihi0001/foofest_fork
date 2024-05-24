@@ -1,8 +1,8 @@
 
 import React, { useState, useEffect } from 'react';
 
-const TentTicketCalculator = ({ tentPrice, tentAmount}) => {
-  const [tentTotalCost, setTentTotalCost] = useState(tentAmount * tentPrice );
+const TwoTentCal = ({ tentPrice, tentAmount}) => {
+  const [tentTotalCost, setTentTotalCost] = useState(tentAmount * tentPrice);
 
   useEffect(() => {
     setTentTotalCost(tentAmount * tentPrice); 
@@ -13,12 +13,12 @@ const TentTicketCalculator = ({ tentPrice, tentAmount}) => {
     <>
     <div>
       <div>{tentAmount}X 2 PERSON TENT </div>
-      <div> {tentTotalCost} DKK</div>
+      <div>{tentTotalCost} DKK</div>
     </div>
     </>
   );
 };
 
-export default TentTicketCalculator;
+export default TwoTentCal; 
 
 
