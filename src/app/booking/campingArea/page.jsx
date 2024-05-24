@@ -1,57 +1,44 @@
 "use client"
-import { useEffect, useState } from 'react'
-import { useSearchParams } from 'next/navigation';
+import { useState } from 'react'
+// import { useSearchParams } from 'next/navigation';
 import CampingTickets from "@/app/components/Tickets/CampingTickets";
-import RemoveButton from '@/app/components/RemoveButton';
-import AddButton from '@/app/components/AddButton';
+import RemoveTent from '@/app/components//Buttons/Removetent';
+import AddTent from '@/app/components//Buttons/AddTent';
 
 
 export default function Home() {
-  const searchParams = useSearchParams()
-  const regular = searchParams.get('ticketcount1')
-  const vip = searchParams.get('ticketcount2')
+  // const searchParams = useSearchParams()
+  // const regular = searchParams.get('ticketcount1')
+  // const vip = searchParams.get('ticketcount2')
 
   // + laver det om til et tal fremfor en string
-  const [ticketCount1, setTicketCount1] = useState(+regular);
-  const [ticketCount2, setTicketCount2] = useState(+vip);
+  const [tentTicket, setTentTicket] = useState(0);
+  const [vipTentTicket, setVipTentTicket] = useState(0);
 
-
-  // const [campingArea, setCampingArea] = useState('');
-  // const [availableSpots, setAvailableSpots] = useState(null);
-
-  // const handleCampingArea = (area) => {
-  //   setCampingArea(prevArea => prevArea === area ? '' : area);
-  // };
-
-  const handleTicketChange = (count) => {
-    setTicketCount1(count); 
+  const handleAddTent = (count) => {
+    setTentTicket(count); 
   };
   
-  const handleRemoveTicket = () => {
-    if (ticketCount1 > 0) {
-      setTicketCount1(prevCount => prevCount - 1);
+  const handleRemoveTent = () => {
+    if (tentTicket > 0) {
+      setTentTicket(prevCount => prevCount - 1);
     }
   };
 
-  const handleTicketChange2 = (count) => {
-    setTicketCount2(count);
+  const handleAddVipTent = (count) => {
+    setVipTentTicket(count);
   };
   
-  const handleRemoveTicket2 = () => {
-    if (ticketCount2 > 0) {
-      setTicketCount2(prevCount => prevCount - 1);
+  const handleRemoveVipTent = () => {
+    if (vipTentTicket > 0) {
+      setVipTentTicket(prevCount => prevCount - 1);
     }
   };
 
-  useEffect(() => {
-    const available = fetch('https://yielding-cooperative-tarsal.glitch.me/available-spots')
-      .then((res) => res.json());
-  }, []);
-
-
-  
-
-  // const totalprice = regular + vip;
+  // useEffect(() => {
+  //   const available = fetch('https://yielding-cooperative-tarsal.glitch.me/available-spots')
+  //     .then((res) => res.json());
+  // }, []);
 
 
 
@@ -79,12 +66,13 @@ export default function Home() {
                 <p>799 DKK</p>
               </div>
               <div className='flex flex-row gap-3 h-6 items-center mt-4'>
-                <RemoveButton onRemoveButtonClick={handleRemoveTicket} /> 
+                <RemoveTent onRemoveTentClick={handleRemoveTent} /> 
                 <input 
-                name="ticketcount1" 
+                name="tentTicket" 
+                value={tentTicket}
                 className='border-solid border-2 border-Lightpink rounded-full w-32 bg-White p-2' 
-                value={ticketCount1} />
-                <AddButton onButtonClick={() => handleTicketChange(ticketCount1 + 1)} />
+                 />
+                <AddTent onAddTentClick={() => handleAddTent(tentTicket + 1)} />
               </div>
             </div>
 
@@ -96,28 +84,29 @@ export default function Home() {
               </div>
 
               <div className='flex flex-row gap-3 h-6 items-center mt-4'>
-                <RemoveButton onRemoveButtonClick={handleRemoveTicket2} /> 
+                <RemoveTent onRemoveButtonClick={handleRemoveVipTent} /> 
                 <input 
-                name="ticketcount2" 
+                name="vipTentTicket" 
+                value={vipTentTicket}
                 className='border-solid border-2 border-Lightpink rounded-full w-32 bg-White p-2' 
-                value={ticketCount2} />
-                <AddButton onButtonClick={() => handleTicketChange2(ticketCount2 + 1)} />
+                 />
+                <AddTent onAddTentClick={() => handleAddVipTent(vipTentTicket + 1)} />
               </div>
             </div>
             <br />
           </div>
     
       
-          <div>
+          <div> 
             <CampingTickets 
-            ticketCount1={ticketCount1} 
-            handleTicketChange={handleTicketChange} 
-            handleRemoveTicket={handleRemoveTicket} 
-            ticketPrice={799}
-             ticketCount2={ticketCount2} 
-             handleTicketChange2={handleTicketChange2} 
-             handleRemoveTicket2={handleRemoveTicket2} 
-             ticketPrice2={1299} />
+            tentTicket={tentTicket} 
+            handleAddTentChange={handleAddTent} 
+            handleRemoveTent={handleRemoveTent} 
+            tentPrice={799}
+            vipTentTicket={vipTentTicket} 
+             handleAddVipTent={handleAddVipTent} 
+             handleRemoveVipTent={handleRemoveVipTent} 
+             VipTentPrice={1299} />
           </div>
         </div>
     </div>

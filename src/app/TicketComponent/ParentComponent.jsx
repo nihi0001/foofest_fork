@@ -17,4 +17,4 @@ const ParentComponent = ({ticketCount, ticketPrice}) => {
   );
 };
 
-export default ParentComponent;
+export default ParentComponent;  

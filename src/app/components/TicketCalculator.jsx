@@ -12,7 +12,7 @@ const TicketCalculator = ({ ticketPrice, ticketAmount }) => {
   return (
     <>
     <div>
-      <div>{ticketAmount} FOO TICKET </div>
+      <div>{ticketAmount} FOO TICKET </div> 
       <div> {totalCost} DKK</div>
     </div>
     </>
