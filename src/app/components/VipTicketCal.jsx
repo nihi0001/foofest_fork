@@ -1,7 +1,6 @@
-
 import React, { useState, useEffect } from 'react';
 
-const TicketCalculator = ({ ticketPrice, ticketAmount }) => {
+const VipTicketCal = ({ ticketPrice, ticketAmount }) => {
   const [totalCost, setTotalCost] = useState(ticketAmount * ticketPrice);
 
   useEffect(() => {
@@ -19,6 +18,6 @@ const TicketCalculator = ({ ticketPrice, ticketAmount }) => {
   );
 };
 
-export default TicketCalculator;
+export default VipTicketCal; 
 
 

@@ -1,6 +1,6 @@
 import React from 'react'
-import ParentComponent from '../TicketComponent/ParentComponent';
-import SecondParentComponent from '../TicketComponent/SecondParentComponent';
+import ParentComponent from '../ParentComponent/ParentComponent';
+import SecondParentComponent from '../ParentComponent/SecondParentComponent';
 
 export default function Campingarea() {
   return (

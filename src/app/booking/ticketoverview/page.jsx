@@ -1,9 +1,8 @@
 "use client"
 import { useState } from 'react'
-import priser from '@/js/settings';
 
 import Ticket from "@/app/components/Tickets/Ticket";
-import RemoveButton from '@/app/components/RemoveButton';
+import RemoveTicket from '@/app/components/RemoveTicket';
 import AddButton from '@/app/components/AddButton';
 
 
@@ -42,13 +41,13 @@ export default function Home() {
         <div className="flex justify-start p-8 gap-20">
     
           <div>
-            <div className='flex gap-24'>
+            <div className='flex gap-24'> 
               <div className='text-White'>
                 <h2 className="text-xl text-White">FOO TICKET</h2>
                 <p>799 DKK</p>
               </div>
               <div className='flex flex-row gap-3 h-6 items-center mt-4'>
-                <RemoveButton onRemoveButtonClick={handleRemoveTicket} /> 
+                <RemoveTicket onRemoveButtonClick={handleRemoveTicket} /> 
                 <input 
                 name="ticketcount1" 
                 className='border-solid border-2 border-Lightpink rounded-full w-32 bg-White p-2' 
@@ -65,7 +64,7 @@ export default function Home() {
               </div>
 
               <div className='flex flex-row gap-3 h-6 items-center mt-4'>
-                <RemoveButton onRemoveButtonClick={handleRemoveTicket2} /> 
+                <RemoveTicket onRemoveButtonClick={handleRemoveTicket2} /> 
                 <input 
                 name="ticketcount2" 
                 className='border-solid border-2 border-Lightpink rounded-full w-32 bg-White p-2' 
