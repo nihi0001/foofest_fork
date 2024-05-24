@@ -1,5 +1,5 @@
 "use client"
-import 'react-credit-cards-2/dist/es/styles-compiled.css';
+import "react-credit-cards-2/dist/es/styles-compiled.css";
 import React, { useState } from 'react';
 import Cards from 'react-credit-cards-2';
 import { Bowlby_One } from "next/font/google";
