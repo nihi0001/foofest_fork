@@ -74,7 +74,7 @@ export default function GuestForm() {
               className="border-2 p-2 rounded-md w-full hover:bg-White active:bg-White focus:outline-none focus:ring focus:ring-Hotpink text-Darkblue"
               required
               type="email"
-              placeholder="example@gmail.com"
+              placeholder="Email"
               name="email"
             />
           </label>
@@ -88,7 +88,7 @@ export default function GuestForm() {
                 className="border-2 p-2 rounded-md block w-full hover:bg-White active:bg-White focus:outline-none focus:ring focus:ring-Hotpink text-Darkblue"
                 required
                 type="text"
-                placeholder="Jane"
+                placeholder="First name"
                 name="firstname"
               />
             </label>
@@ -100,24 +100,11 @@ export default function GuestForm() {
                 className="border-2 p-2 rounded-md block w-full hover:bg-White active:bg-White focus:outline-none focus:ring focus:ring-Hotpink text-Darkblue"
                 required
                 type="text"
-                placeholder="Doe"
+                placeholder="Last name"
                 name="lastname"
               />
             </label>
           </div>
-        </div>
-
-        <div>
-          <label>
-            <span>Address</span>
-            <input
-              className="border-2 p-2 rounded-md w-full hover:bg-White active:bg-White focus:outline-none focus:ring focus:ring-Hotpink text-Darkblue"
-              required
-              type="text"
-              placeholder="Address"
-              name="address"
-            />
-          </label>
         </div>
 
         <div className="">
@@ -134,6 +121,21 @@ export default function GuestForm() {
           </label>
         </div>
 
+        <div>
+          <label>
+            <span>Address</span>
+            <input
+              className="border-2 p-2 rounded-md w-full hover:bg-White active:bg-White focus:outline-none focus:ring focus:ring-Hotpink text-Darkblue"
+              required
+              type="text"
+              placeholder="Address"
+              name="address"
+            />
+          </label>
+        </div>
+
+       
+
         <div className="flex flex-wrap -mx-3 mb-6">
           <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
             <label>
@@ -142,7 +144,7 @@ export default function GuestForm() {
                 className="border-2 p-2 rounded-md block w-full hover:bg-White active:bg-White focus:outline-none focus:ring focus:ring-Hotpink text-Darkblue"
                 required
                 type="text"
-                placeholder="2950"
+                placeholder="Postal code"
                 name="postalcode"
                 maxLength="4"
               />
@@ -156,7 +158,7 @@ export default function GuestForm() {
                 className="border-2 p-2 rounded-md block w-full hover:bg-White active:bg-White focus:outline-none focus:ring focus:ring-Hotpink text-Darkblue"
                 required
                 type="text"
-                placeholder="Paris"
+                placeholder="City"
                 name="city"
               />
             </label>
@@ -170,7 +172,7 @@ export default function GuestForm() {
               className="border-2 p-2 rounded-md w-full hover:bg-White active:bg-White focus:outline-none focus:ring focus:ring-Hotpink text-Darkblue"
               required
               type="text"
-              placeholder="+45 12 34 56 78"
+              placeholder="Phone number"
               name="phonenumber"
             />
           </label>
@@ -180,7 +182,7 @@ export default function GuestForm() {
           <button
             aria-disabled={state.pending}
             type="submit"
-            className="text-center text-White p-2 mt-6 rounded-lg bg-Hotpink hover:bg-Lightpink w-60"
+            className=" text-center text-White p-2 mt-6 rounded-lg bg-Hotpink hover:bg-Lightpink w-60"
           >
             Submit
           </button>
