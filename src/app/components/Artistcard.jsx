@@ -76,7 +76,7 @@ export default function LineUp({ searchParams }) {
 
       {/* Bands opdelt efter genre */}
       {filteredBands.length > 0 ? (
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 md:gap-12 justify-center max-w-6xl mx-auto p-8 sm:p-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 sm:gap-6 md:gap-12 justify-center max-w-6xl mx-auto p-8 sm:p-12">
         {filteredBands.map((band) => (
           <div key={band.name} className="flex flex-col">
             <Link href={`/lineup/${band.slug}`} prefetch={false}>

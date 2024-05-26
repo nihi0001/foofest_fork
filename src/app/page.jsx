@@ -7,7 +7,6 @@ import VipTicket from "./components/VipTicket";
 import ForsideCamping from "./components/ForsideCamping";
 import ForsideQnA from "./components/ForsideQnA";
 import Nyhedsbrev from "./components/Nyhedsbrev";
-import RotateBanner from "./components/RotateBanner";
 
 
 const BowlbyOne = Bowlby_One({
@@ -35,7 +34,6 @@ export default function Home() {
 
       <ForsideQnA/>
       <Nyhedsbrev/>
-      <RotateBanner/>
 
     </>
   );

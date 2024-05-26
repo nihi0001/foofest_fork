@@ -62,7 +62,7 @@ function Schedule({ newArray, days }) {
           </div>
 
         {/* grid starter her for scenerne */}
-          <section className="mx-auto max-w-6xl">
+          <section className="mx-auto max-w-6xl mb-24">
             <div>
               <motion.h3
                 initial={{ opacity: 0 }}
