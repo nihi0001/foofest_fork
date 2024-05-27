@@ -53,7 +53,7 @@ export default async function Page({ params }) {
             src={imageUrl}
             width={350}
             height={350}
-            className='rounded-xl w-full h-full object-cover'
+            className='rounded-xl w-full h-full object-cover opacity-55'
           />
           </div>
 
