@@ -58,7 +58,7 @@ export default function LineUp({ searchParams }) {
       {/* Dropdown for valg af genre */}
       <div className="flex justify-center items-center h-full">
         <div className="m-4">
-          <label htmlFor="genre" className="text-Hotpink text-3xl mb-3 mr-4">Choose a genre:</label>
+          <label htmlFor="genre" className="text-Hotpink text-2xl sm:text-3xl mb-3 mr-4 font-semibold">Choose a genre:</label>
           <select
             id="genre"
             name="genre"

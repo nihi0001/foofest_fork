@@ -10,7 +10,7 @@ const BowlbyOne = Bowlby_One({
 function ForsideQnA() {
   return (
     <div className='p-4'>
-          <div className="max-w-3xl mx-auto mb-32">
+          <div className="max-w-3xl mx-auto mb-28">
         <h2 className={`text-White text-4xl md:text-5xl mb-12 text-center ${BowlbyOne.className}`}>Q&A</h2>
         <details className="border-b mb-6 border-Hotpink">
           <summary style={{ color: 'Hotpink' }}>
@@ -35,7 +35,13 @@ function ForsideQnA() {
             <span className="text-xl md:text-2xl text-White">What are the options for camping at Foo Festival?</span>
 
           </summary>
-          <p className="text-White mt-5 mb-5 max-w-2xl text-lg">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Harum nostrum impedit, quibusdam labore sint corporis neque repellat quisquam cupiditate officia, error hic reiciendis sed dignissimos quas doloribus mollitia. Dolorem, repellat.</p>
+          <p className="text-White mt-5 mb-5 max-w-2xl text-lg">When it comes to camping at FOO Festival, weve got you covered with a variety of options tailored to suit your preferences. Dive into the heart of the festival action at Svartheim, where vibrant energy and excitement abound. For those seeking tranquility, Nilfheim offers a serene escape from the festival buzz. Helheim strikes the perfect balance between proximity to the festivities and a peaceful retreat. Join the lively community of festival-goers at Muspelheim, where the atmosphere is electric. And for nature lovers, Alfheim provides a picturesque camping experience amidst lush greenery. Whatever your camping style, FOO Festival has the perfect spot for you to relax and recharge between performances.
+
+
+
+
+
+</p>
         </details>
       </div>
     </div>
