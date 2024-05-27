@@ -2,6 +2,7 @@
 "use client"
 import { Bowlby_One } from "next/font/google";
 import GuestForm from "@/app/components/GuestForm";
+import CampingTickets from "@/app/components/Tickets/CampingTickets";
 
 
 const BowlbyOne = Bowlby_One({
@@ -21,6 +22,7 @@ export default function Formpage() {
     <GuestForm/>
     </div>
     <div>
+      <CampingTickets/>
       </div>
     </div>
     </div>

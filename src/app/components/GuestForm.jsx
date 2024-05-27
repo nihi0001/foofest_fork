@@ -1,6 +1,9 @@
 "use client";
 
 import { useState } from 'react';
+import { redirect } from 'next/navigation'
+import { useRouter } from 'next/navigation'
+
 
 async function FormSubmit(formData) {
   const headersList = {
@@ -25,6 +28,7 @@ async function FormSubmit(formData) {
     }
 
     const data = await res.json();
+    
     return data;
   } catch (error) {
     console.error('Submission error:', error);
@@ -34,7 +38,7 @@ async function FormSubmit(formData) {
 
 export default function GuestForm() {
   const [state, setState] = useState({ message: '', pending: false });
-
+  const router = useRouter()
   const handleSubmit = async (event) => {
     event.preventDefault();
     setState({ ...state, pending: true });
@@ -53,9 +57,13 @@ export default function GuestForm() {
     try {
       const response = await FormSubmit(formData);
       setState({ message: 'Form submitted successfully!', pending: false });
+      router.push("/booking/orderConfirmation")
+      
     } catch (error) {
       setState({ message: `Form submission failed: ${error.message}`, pending: false });
     }
+    
+    
   };
 
   return (
