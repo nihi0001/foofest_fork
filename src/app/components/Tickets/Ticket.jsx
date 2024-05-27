@@ -28,8 +28,10 @@ export default function Ticket(props) {
     handleRemoveTicket={props.handleRemoveTicket2}  
     ticketPrice={1299}/>
 
-    <h2>{ticketCount} TICKETS {TotalTicketCount}</h2>
-    <p>BOOKING FEE {bookingFee} DKK</p>
+    <hr className='text-Hotpink'/>
+
+    <h2 className='text-xl -mb-5'>{ticketCount} TICKETS {TotalTicketCount}</h2>
+    <p className='text-xs'>BOOKING FEE {bookingFee} DKK</p>
 
     <p className='text-xl'><span className='text-Hotpink'>TOTAL</span> {totalPrice} DKK </p>
   

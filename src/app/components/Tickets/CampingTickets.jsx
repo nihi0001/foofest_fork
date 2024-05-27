@@ -35,7 +35,7 @@ export default function TentTicket(props) {
     <h2>{+footicket + +vipticket} TICKETS {totalPrice}</h2>
 
     <TwoTentParent 
-    tentTicketCount={props.tentTicket} 
+    tentTicketCount={props.tentTicket}
     handleAddTent={props.handleAddTent} 
     handleRemoveTent={props.handleRemoveTent} 
     tentPrice={299}/>  
@@ -47,6 +47,7 @@ export default function TentTicket(props) {
     tentPrice={399}/> 
 
     <h2 className='-mb-4'>Camping Area</h2>
+    <p>{props.campingArea}</p>
     <p>{area}</p>
 
     <h2>{tentTicketCount} TENTS <br /> {totalTentCount} DKK</h2>

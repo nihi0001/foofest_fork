@@ -2,7 +2,7 @@
 "use client"
 import { Bowlby_One } from "next/font/google";
 import GuestForm from "@/app/components/GuestForm";
-import CampingTickets from "@/app/components/Tickets/CampingTickets";
+import GuestInformation from "@/app/components/Tickets/GuestInformation";
 
  
 import { useSearchParams } from 'next/navigation'
@@ -27,7 +27,7 @@ export default function Formpage() {
     <GuestForm/>
     </div>
     <div>
-      <CampingTickets/>
+      <GuestInformation />
       </div>
     </div>
     </div>
