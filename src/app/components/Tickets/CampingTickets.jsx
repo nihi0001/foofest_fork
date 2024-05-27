@@ -49,8 +49,6 @@ export default function TentTicket(props) {
     <p>BOOKING FEE {bookingFee} DKK</p>
 
     <p className='text-xl'><span className='text-Hotpink'>TOTAL</span> {totalTentPrice} DKK </p>
-  
-    <ChooseTicket />
     </div>
   );
 }
