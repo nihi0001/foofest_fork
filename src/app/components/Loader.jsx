@@ -3,7 +3,7 @@ import BounceLoader from "react-spinners/BounceLoader";
 
 
 
-function loading() {
+function Loading() {
   return (
     <div className="flex justify-center items-center h-screen">
       
@@ -18,5 +18,5 @@ function loading() {
   )
 }
 
-export default loading
+export default Loading
 
