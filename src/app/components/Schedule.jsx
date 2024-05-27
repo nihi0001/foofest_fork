@@ -53,7 +53,7 @@ function Schedule({ newArray, days }) {
             {days.map((day) => (
               <button
                 key={day}
-                className={`text-xl px-4 text-White p-1 w-20 rounded-xl bg-Hotpink uppercase transition ease-in-out hover:-translate-y-1 hover:scale-110 hover:bg-Lightpink duration-300 cursor-pointer focus:text-White`}
+                className={`text-xl px-7 py-1 text-White p-1 rounded-full bg-Hotpink uppercase transition ease-in-out hover:-translate-y-1 hover:scale-110 hover:bg-Lightpink duration-300 cursor-pointer focus:text-White`}
                 onClick={() => filterActsByDay(day)}
               >
                 {day}
