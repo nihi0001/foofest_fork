@@ -91,8 +91,8 @@ export default function LineUp({ searchParams }) {
                   />
                 </div>
                 <div className="p-2 sm:p-4">
-                  <p className="text-Hotpink mt-2 sm:mt-5 text-lg sm:text-2xl font-medium">{band.genre}</p>
-                  <p className="text-White text-xl sm:text-3xl font-bold uppercase mb-1 sm:mb-2">{band.name}</p>
+                  <p className="text-Hotpink mt-2 sm:mt-5 text-xl sm:text-2xl font-medium">{band.genre}</p>
+                  <p className="text-White text-2xl sm:text-3xl font-bold uppercase mb-1 sm:mb-2">{band.name}</p>
                 </div>
               </div>
             </Link>

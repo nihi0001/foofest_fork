@@ -19,7 +19,7 @@ export default async function Header() {
         </p>
       </div>
 
-      <nav className="sticky top-0 z-50 flex justify-between bg-Darkblue text-White px-4 py-3 2xl:py-5 items-center md:px-10">
+      <nav className="sticky top-0 z-50 flex justify-between bg-Darkblue text-White px-4 py-4 2xl:py-5 items-center md:px-10">
         <ul className="flex gap-2">
           <li>
             <Link
@@ -37,7 +37,7 @@ export default async function Header() {
             <Link
               href="/booking"
               prefetch={false}
-              className="bg-Hotpink font-bold text-sm md:text-mg 2xl:text-xl rounded-full py-1 px-2 md:px-4 hover:bg-Lightpink"
+              className="bg-Hotpink font-bold text-sm md:text-mg 2xl:text-xl rounded-full py-1 px-2 md:px-6 md:py-2 hover:bg-Lightpink"
             >
               BUY TICKETS
             </Link>
