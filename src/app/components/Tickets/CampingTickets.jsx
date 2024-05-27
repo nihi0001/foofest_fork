@@ -23,7 +23,7 @@ export default function TentTicket(props) {
   const bookingFee = totalTentCount > 0 ? 99 : 0;
   const totalPrice =TotalTicketCount + bookingFee;
 
-  const totalTentPrice = totalTentCount + bookingFee + totalPrice;
+  const totalTentPrice = totalTentCount + bookingFee + totalPrice; 
 
 
 
