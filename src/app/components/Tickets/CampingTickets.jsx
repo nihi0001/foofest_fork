@@ -20,7 +20,7 @@ export default function TentTicket(props) {
   const bookingFee = totalTentCount > 0 ? 99 : 0;
   const totalPrice =TotalTicketCount + bookingFee;
 
-  const totalTentPrice = totalTentCount + bookingFee + totalPrice;
+  const totalTentPrice = totalTentCount + bookingFee + totalPrice; 
 
 
 
@@ -31,7 +31,7 @@ export default function TentTicket(props) {
     <h2>{+footicket + +vipticket} TICKETS {totalPrice}</h2>
 
     <TwoTentParent 
-    tentTicketCount={props.tentTicket} 
+    tentTicketCount={props.tentTicket}
     handleAddTent={props.handleAddTent} 
     handleRemoveTent={props.handleRemoveTent} 
     tentPrice={299}/>  
@@ -42,7 +42,7 @@ export default function TentTicket(props) {
     handleRemoveTent={props.handleRemoveVipTent}    
     tentPrice={399}/> 
 
-    <h2>Camping Area</h2>
+    <h2 className='-mb-4'>Camping Area</h2>
     <p>{props.campingArea}</p>
 
     <h2>{tentTicketCount} TENTS <br /> {totalTentCount} DKK</h2>

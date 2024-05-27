@@ -2,8 +2,8 @@
 import { useState } from 'react'
  import { useSearchParams } from 'next/navigation';
 import CampingTickets from "@/app/components/Tickets/CampingTickets";
-import RemoveTent from '@/app/components//Buttons/Removetent';
-import AddTent from '@/app/components//Buttons/AddTent';
+import RemoveTent from '@/app/components/Buttons/Removetent';
+import AddTent from '@/app/components/Buttons/AddTent';
 import ChooseTicket from '@/app/components/ChooseTicket';
 
 
@@ -58,8 +58,8 @@ export default function Home() {
   return (
     <>
     <form action="/booking/guestInformation">
-      <input type="text" name="ticketcount1" value={regular}/>
-      <input type="text" name="ticketcount2" value={vip}/>
+      <input type="hidden" name="ticketcount1" value={regular}/>
+      <input type="hidden" name="ticketcount2" value={vip}/>
     <div className="border-solid bg-Darkblue border-Hotpink border-2 rounded-3xl p-8 w-7/12 m-auto mt-10">
       <h1 className="text-White md:text-6xl">CHOOSE YOUR CAMPING AREA:</h1>
         <div className="flex justify-start p-8 gap-20">
