@@ -1,15 +1,16 @@
 "use client"
 import { useState } from 'react'
-// import { useSearchParams } from 'next/navigation';
+ import { useSearchParams } from 'next/navigation';
 import CampingTickets from "@/app/components/Tickets/CampingTickets";
 import RemoveTent from '@/app/components//Buttons/Removetent';
 import AddTent from '@/app/components//Buttons/AddTent';
+import ChooseTicket from '@/app/components/ChooseTicket';
 
 
 export default function Home() {
-  // const searchParams = useSearchParams()
-  // const regular = searchParams.get('ticketcount1')
-  // const vip = searchParams.get('ticketcount2')
+   const searchParams = useSearchParams()
+   const regular = searchParams.get('ticketcount1')
+   const vip = searchParams.get('ticketcount2')
 
   // + laver det om til et tal fremfor en string
   const [twoTentTicket, setTwoTentTicket] = useState(0);
@@ -56,7 +57,9 @@ export default function Home() {
 
   return (
     <>
-    <form action="">
+    <form action="/booking/guestInformation">
+      <input type="text" name="ticketcount1" value={regular}/>
+      <input type="text" name="ticketcount2" value={vip}/>
     <div className="border-solid bg-Darkblue border-Hotpink border-2 rounded-3xl p-8 w-7/12 m-auto mt-10">
       <h1 className="text-White md:text-6xl">CHOOSE YOUR CAMPING AREA:</h1>
         <div className="flex justify-start p-8 gap-20">
@@ -106,8 +109,8 @@ export default function Home() {
             </div>
             <br />
           </div>
-    
-      
+
+          <div className='grid gap-5'>
           <div> 
             <CampingTickets 
             tentTicket={twoTentTicket} 
@@ -119,8 +122,11 @@ export default function Home() {
              handleRemoveVipTent={handleRemoveVipTent} 
              threeTentPrice={399} 
              campingArea={campingArea}
-             /> 
-             
+             />  
+          </div>
+          <div className='flex'>
+            <ChooseTicket />
+          </div>
           </div>
         </div>
     </div>

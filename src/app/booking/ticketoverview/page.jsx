@@ -31,8 +31,6 @@ export default function Home() {
   };
   
 
-
-
   return (
     <>
     <form action='/booking/campingArea'>
