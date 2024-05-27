@@ -69,7 +69,7 @@ function Schedule({ newArray, days }) {
                 whileInView={{ opacity: 1 }}
                 transition={{ duration: 2 }}
                 viewport={{ once: true }}
-                className="text-3xl mb-5 text-White text-center font-semibold uppercase"
+                className={`text-3xl sm:text-5xl mb-7 mt-32 text-White text-center font-semibold uppercase ${BowlbyOne.className}`}
               >
                 Midgard
               </motion.h3>
@@ -95,7 +95,7 @@ function Schedule({ newArray, days }) {
                 whileInView={{ opacity: 1 }}
                 transition={{ duration: 1 }}
                 viewport={{ once: true }}
-                className="text-3xl mb-5 mt-32 text-White text-center font-semibold uppercase"
+                className={`text-3xl sm:text-5xl mb-7 mt-24 sm:mt-32 text-White text-center font-semibold uppercase ${BowlbyOne.className}`}
               >
                 Vanaheim
               </motion.h3>
@@ -121,7 +121,7 @@ function Schedule({ newArray, days }) {
                 whileInView={{ opacity: 1 }}
                 transition={{ duration: 1 }}
                 viewport={{ once: true }}
-                className="text-3xl mb-5 mt-32 text-White text-center font-semibold uppercase"
+                className={` text-3xl sm:text-5xl mb-7 mt-24 sm:mt-32 text-White text-center font-semibold uppercase ${BowlbyOne.className}`}
               >
                 Jotunheim
               </motion.h3>

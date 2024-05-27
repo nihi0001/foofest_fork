@@ -24,17 +24,17 @@ function ActCard({ name, genre, start, end, src, slug, day, scene }) {
 
         <Link href={`/lineup/${slug}`} prefetch={false}>
         <section className=" grid grid-cols-3">
-
-          <div className="flex flex-col justify-center items-center">
-            <p className="pl-4 sm:text-2xl text-md text-White text-center font-bold uppercase">{name}</p>
-            <p className="text-Hotpink sm:text-2xl text-md mt-4 font-medium text-center">{genre}</p>
-          </div>
-
-          <div className="text-center flex flex-col justify-center items-center">
-            <p className="text-sm sm:text-2xl font-semibold text-White bg-Hotpink px-2 py-1 sm:px-3 sm:py-1 rounded-xl">
+        <div className="text-center flex flex-col justify-center items-center">
+            <p className="text-lg sm:text-4xl font-semibold text-White">
               {start} - {end}
             </p>
           </div>
+
+          <div className="flex flex-col justify-center items-center">
+            <p className="pl-4 text-lg sm:text-3xl  text-White text-center font-bold uppercase">{name}</p>
+          </div>
+
+    
 
             <div className="relative h-40 sm:h-44">
             <Image

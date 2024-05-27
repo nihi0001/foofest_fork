@@ -37,7 +37,7 @@ export default async function Header() {
             <Link
               href="/booking"
               prefetch={false}
-              className="bg-Hotpink font-bold text-sm md:text-mg rounded-full py-1 px-2 md:px-4 hover:bg-Lightpink"
+              className="bg-Hotpink font-bold text-sm md:text-mg 2xl:text-xl rounded-full py-1 px-2 md:px-4 hover:bg-Lightpink"
             >
               BUY TICKETS
             </Link>
