@@ -14,16 +14,16 @@ export default async function Header() {
   return (
     <>
       <div className="bg-Hotpink py-2">
-        <p className="text-xs sm:text-sm text-White text-center font-normal tracking-wider">
+        <p className="text-xs sm:text-sm 2xl:text-xl text-White text-center font-normal tracking-wider">
           Camping Spots Still Available - Reserve Yours Today!
         </p>
       </div>
 
-      <nav className="sticky top-0 z-50 flex justify-between bg-Darkblue text-White px-4 py-3 items-center md:px-10">
+      <nav className="sticky top-0 z-50 flex justify-between bg-Darkblue text-White px-4 py-3 2xl:py-5 items-center md:px-10">
         <ul className="flex gap-2">
           <li>
             <Link
-              className={`font-bold text-sm sm:text-2xl ${BowlbyOne.className}`}
+              className={`font-bold text-sm sm:text-2xl 2xl:text-xl ${BowlbyOne.className}`}
               href="/"
               prefetch={false}
             >
@@ -44,7 +44,7 @@ export default async function Header() {
           </li>
           <li>
             <Link
-              className="font-bold text-sm md:text-mg"
+              className="font-bold text-sm md:text-mg 2xl:text-xl"
               href="/lineup"
               prefetch={false}
             >
@@ -53,7 +53,7 @@ export default async function Header() {
           </li>
           <li>
             <Link
-              className="font-bold text-sm md:text-mg"
+              className="font-bold text-sm md:text-mg 2xl:text-xl"
               href="/schedule"
               prefetch={false}
             >
