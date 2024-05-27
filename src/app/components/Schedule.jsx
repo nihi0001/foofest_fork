@@ -53,7 +53,7 @@ function Schedule({ newArray, days }) {
             {days.map((day) => (
               <button
                 key={day}
-                className={`text-xl px-7 py-1 text-White p-1 rounded-full bg-Hotpink uppercase transition ease-in-out hover:-translate-y-1 hover:scale-110 hover:bg-Lightpink duration-300 cursor-pointer focus:text-White`}
+                className={`text-lg sm:text-xl px-7 py-1 text-White rounded-full bg-Hotpink uppercase transition ease-in-out hover:-translate-y-1 hover:scale-110 hover:bg-Lightpink duration-300 cursor-pointer focus:text-White mt-2`}
                 onClick={() => filterActsByDay(day)}
               >
                 {day}
@@ -69,7 +69,7 @@ function Schedule({ newArray, days }) {
                 whileInView={{ opacity: 1 }}
                 transition={{ duration: 2 }}
                 viewport={{ once: true }}
-                className={`text-3xl sm:text-5xl mb-7 mt-32 text-White text-center font-semibold uppercase ${BowlbyOne.className}`}
+                className={`text-3xl sm:text-5xl mb-7 mt-16 sm:mt-32 text-White text-center font-semibold uppercase ${BowlbyOne.className}`}
               >
                 Midgard
               </motion.h3>
