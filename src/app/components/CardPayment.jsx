@@ -32,9 +32,9 @@ const CardPayment = () => {
   }
 
   return (
-    <div className='p-6 m-12 rounded-md border-2 border-Hotpink bg-Darkblue max-w-5xl mx-auto'>
-       <h1 className={`text-center text-White text-4xl m-4 ${BowlbyOne.className}`}>PAYMENT</h1>
-      <div className='grid grid-cols-2 justify-center items-center'>
+    <div className=' p-6 m-12 rounded-md border-2 border-Hotpink bg-Darkblue max-w-5xl mx-auto'>
+       <h1 className={` text-2xl text-center text-White md:text-4xl mt-2 mb-8 ${BowlbyOne.className}`}>PAYMENT DETAILS</h1>
+      <div className='md:grid grid-cols-2 justify-center items-center'>
         <section>
       <Cards
         number={state.number}
@@ -91,7 +91,7 @@ const CardPayment = () => {
         />
         </div>
         
-        <Link className=" text-center text-White p-2 m-4 rounded-lg bg-Hotpink hover:bg-Lightpink text-white w-60" href={`/`}>
+        <Link className=" text-center text-White p-2 m-4 rounded-lg bg-Hotpink hover:bg-Lightpink text-white w-60" href={`/booking/orderConfirmation`}>
         COMPLETE PURCHASE</Link>
        
       </form>

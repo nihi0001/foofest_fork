@@ -57,7 +57,7 @@ export default function GuestForm() {
     try {
       const response = await FormSubmit(formData);
       setState({ message: 'Form submitted successfully!', pending: false });
-      router.push("/booking/orderConfirmation")
+      router.push("/booking/payment")
       
     } catch (error) {
       setState({ message: `Form submission failed: ${error.message}`, pending: false });
