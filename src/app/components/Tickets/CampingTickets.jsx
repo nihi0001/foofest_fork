@@ -1,5 +1,5 @@
-"use client"
 import TwoTentParent from '@/app/ParentComponent/TwoTentParent';
+import ChooseTicket from '../ChooseTicket';  
 import ThreeTentParent from '@/app/ParentComponent/ThreeTentParent';
 import { useSearchParams } from 'next/navigation';
 
@@ -9,16 +9,13 @@ export default function TentTicket(props) {
   const searchParams = useSearchParams()
   const footicket = searchParams.get('ticketcount1')
   const vipticket = searchParams.get('ticketcount2')
-  const area = searchParams.get('area')
-  const twoTentTicket = searchParams.get('twoTentTicket')
-  const threeTentTicket = searchParams.get('threeTentTicket')
 
   //Tent
   const tentTicketCount = props.threeTentTicket + props.tentTicket;
   const totalTentCount = props.tentTicket * 299 + props.threeTentTicket * 399;
 
   //Ticket den forrige side
-  // const ticketCount = vipticket + footicket;
+  const ticketCount = vipticket + footicket;
   const TotalTicketCount = footicket * 799 + vipticket * 1299;
   const bookingFee = totalTentCount > 0 ? 99 : 0;
   const totalPrice =TotalTicketCount + bookingFee;
@@ -28,7 +25,6 @@ export default function TentTicket(props) {
 
 
   return (
-    <>
     <div className='grid gap-4 border-solid border-Hotpink border-2 rounded-3xl p-8 text-White w-64'>
     <h2 className='text-White text-2xl font-bold'>ITEMS</h2>
     
@@ -46,15 +42,16 @@ export default function TentTicket(props) {
     handleRemoveTent={props.handleRemoveVipTent}    
     tentPrice={399}/> 
 
-    <h2 className='-mb-4'>Camping Area</h2>
-    <p>{area}</p>
+    <h2>Camping Area</h2>
+    <p>{props.campingArea}</p>
 
     <h2>{tentTicketCount} TENTS <br /> {totalTentCount} DKK</h2>
     <p>BOOKING FEE {bookingFee} DKK</p>
 
     <p className='text-xl'><span className='text-Hotpink'>TOTAL</span> {totalTentPrice} DKK </p>
+  
+    <ChooseTicket />
     </div>
-    </>
   );
 }
 
