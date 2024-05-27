@@ -7,6 +7,7 @@ export default function Ticket(props) {
 
   const ticketCount = props.ticketcount2 + props.ticketcount1;
   const TotalTicketCount = props.ticketcount1 * 799 + props.ticketcount2 * 1299;
+  console.log(typeof TotalTicketCount);
   const bookingFee = TotalTicketCount > 0 ? 99 : 0;
   const totalPrice = TotalTicketCount + bookingFee;
 

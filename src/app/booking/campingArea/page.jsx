@@ -14,6 +14,9 @@ export default function Home() {
   // + laver det om til et tal fremfor en string
   const [twoTentTicket, setTwoTentTicket] = useState(0);
   const [threeTentTicket, setThreeTentTicket] = useState(0);
+  const [campingArea, setCampingArea] = useState('');
+  const [tickets, setTickets] = useState(0);
+
 
   const handleAddTent = (count) => {
     setTwoTentTicket(count);  
@@ -35,6 +38,15 @@ export default function Home() {
     }
   };
 
+  const handleCampingArea = (e) => {
+    if(e.target.checked){
+      setCampingArea(e.target.value)
+    } else setCampingArea('')
+    
+  }
+
+  
+
   // useEffect(() => {
   //   const available = fetch('https://yielding-cooperative-tarsal.glitch.me/available-spots')
   //     .then((res) => res.json());
@@ -52,11 +64,11 @@ export default function Home() {
 
           <div> 
             <div className='grid grid-cols-2 text-White'>
-            <label className='hover:text-Hotpink'><input type="checkbox" /> Svartheim</label>
-            <label className='hover:text-Hotpink'><input type="checkbox" /> Nilfheim</label>
-            <label className='hover:text-Hotpink'><input type="checkbox" /> Helheim</label>
-            <label className='hover:text-Hotpink'><input type="checkbox" /> Muspelheim</label>
-            <label className='hover:text-Hotpink'><input type="checkbox" /> Alfheim</label>
+            <label className='hover:text-Hotpink'><input defaultValue="Svartheim" onChange={handleCampingArea} type="radio" name='area'  /> Svartheim</label>
+            <label className='hover:text-Hotpink'><input defaultValue="Nilfheim" onChange={handleCampingArea} type="radio" name='area' /> Nilfheim</label>
+            <label className='hover:text-Hotpink'><input defaultValue="Helheim" onChange={handleCampingArea} type="radio" name='area' /> Helheim</label>
+            <label className='hover:text-Hotpink'><input defaultValue="Muspelheim" onChange={handleCampingArea} type="radio" name='area' /> Muspelheim</label>
+            <label className='hover:text-Hotpink'><input defaultValue="Alfheim" onChange={handleCampingArea} type="radio" name='area' /> Alfheim</label>
             </div>
             <br />  
 
@@ -69,7 +81,7 @@ export default function Home() {
                 <RemoveTent onRemoveTentClick={handleRemoveTent} /> 
                 <input 
                 name="twoTentTicket" 
-                value={twoTentTicket}
+                defaultValue={twoTentTicket}
                 className='border-solid border-2 border-Lightpink rounded-full w-32 bg-White p-2' />
                 <AddTent onAddTentClick={() => handleAddTent(twoTentTicket + 1)} />
               </div>
@@ -86,7 +98,7 @@ export default function Home() {
                 <RemoveTent onRemoveTentClick={handleRemoveVipTent} /> 
                 <input 
                 name="threeTentTicket" 
-                value={threeTentTicket}
+                defaultValue={threeTentTicket}
                 className='border-solid border-2 border-Lightpink rounded-full w-32 bg-White p-2' 
                  />
                 <AddTent onAddTentClick={() => handleAddVipTent(threeTentTicket + 1)} />
@@ -105,7 +117,10 @@ export default function Home() {
             threeTentTicket={threeTentTicket} 
              handleAddVipTent={handleAddVipTent} 
              handleRemoveVipTent={handleRemoveVipTent} 
-             threeTentPrice={399} /> 
+             threeTentPrice={399} 
+             campingArea={campingArea}
+             /> 
+             
           </div>
         </div>
     </div>
