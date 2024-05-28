@@ -4,8 +4,6 @@ import { Bowlby_One } from "next/font/google";
 import GuestForm from "@/app/components/GuestForm";
 import InformationBasket from "@/app/components/Tickets/InformationBasket";
 
- 
-import { useSearchParams } from 'next/navigation'
 
 const BowlbyOne = Bowlby_One({
   subsets: ["latin"],
@@ -15,9 +13,7 @@ const BowlbyOne = Bowlby_One({
 
 
 export default function Formpage() {
- // const searchParams = useSearchParams()
- 
-  //const area = searchParams.get('area ')
+
   return (
     <main>
       <div className=" text-White bg-darkblue p-4 sm:p-8 md:p-12 m-2 sm:m-4 md:m-20 mt-10 sm:mt-12 md:mt-20 rounded-md border-2 border-Hotpink">

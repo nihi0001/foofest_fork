@@ -25,7 +25,6 @@ export default function Home() {
   const [twoTentTicket, setTwoTentTicket] = useState(0);
   const [threeTentTicket, setThreeTentTicket] = useState(0);
   const [campingArea, setCampingArea] = useState('');
-  const [tickets, setTickets] = useState(0);
 
 
   const handleAddTent = (count) => {
@@ -78,13 +77,13 @@ export default function Home() {
             </div>
             <br />  
 
-            <div className='grid lg:flex lg:gap-24'>
+            <div className='grid 2xl:flex 2xl:gap-24'>
               <div className='text-White'>
                 <h2 className="text-xl text-White"><span className='font-bold text-Hotpink'>2</span> PERSON TENT</h2>
                 <p>299 DKK</p>
               </div>
 
-              <div className='flex flex-row gap-3 h-6 items-center mt-4 mb-5'>
+              <div className='flex flex-row gap-3 h-6 items-center mt-4 mb-5 2xl:ml-4'>
                 <RemoveTent onRemoveTentClick={handleRemoveTent} /> 
                 <input 
                 name="twoTentTicket" 
@@ -95,7 +94,7 @@ export default function Home() {
             </div>
 
             <br />
-            <div className='grid lg:flex lg:gap-28'>
+            <div className='grid 2xl:flex 2xl:gap-28'>
               <div>
                 <h2 className='text-White text-xl'><span className='font-bold text-Hotpink'> 3 </span>PERSON TENT</h2>
                 <p className='text-White text-base'>399 DKK</p>

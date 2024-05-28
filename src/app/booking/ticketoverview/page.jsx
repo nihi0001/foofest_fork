@@ -43,11 +43,11 @@ export default function Home() {
     <>
     <form action='/booking/campingArea'>
     <div className="sm:w-11/12 border-solid bg-Darkblue border-Hotpink border-2 rounded-3xl p-8 lg:w-7/12 m-auto mt-10">
-      <h1 className={` ${BowlbyOne.className} text-White text-2xl md:text-6xl mb-5`}>CHOOSE YOUR TICKET:</h1>
+      <h1 className={` ${BowlbyOne.className} text-White text-2xl lg:text-5xl mb-5`}>CHOOSE YOUR TICKET:</h1>
         <div className="grid md:flex justify-start md:p-8 gap-28">
     
           <div>
-            <div className='grid mb-5 lg:flex lg:gap-24'> 
+            <div className='grid mb-5 2xl:flex 2xl:gap-24'> 
               <div className='text-White'>
                 <h2 className="text-xl text-White"><span className='text-Hotpink font-bold'>FOO</span> TICKET</h2>
                 <p>799 DKK</p>
@@ -63,7 +63,7 @@ export default function Home() {
             </div>
 
             <br />
-            <div className='grid lg:flex lg:gap-28'>
+            <div className='grid 2xl:flex 2xl:gap-28'>
               <div>
                 <h2 className='text-White text-xl'><span className='font-bold text-Hotpink'>VIP</span> TICKET</h2>
                 <p className='text-White text-base'>1299 DKK</p>
