@@ -14,7 +14,7 @@ export default async function Header() {
   return (
     <>
       <div className="bg-Hotpink py-2">
-        <p className="text-xs sm:text-sm 2xl:text-xl text-White text-center font-normal tracking-wider">
+        <p className="text-xs sm:text-sm 2xl:text-xl text-White text-center font-medium tracking-wider">
           Camping Spots Still Available - Reserve Yours Today!
         </p>
       </div>
@@ -23,7 +23,7 @@ export default async function Header() {
         <ul className="flex gap-2">
           <li>
             <Link
-              className={`font-bold text-sm sm:text-2xl 2xl:text-xl ${BowlbyOne.className}`}
+              className={`font-bold text-sm sm:text-2xl 2xl:text-xl ${BowlbyOne.className} hover:text-Hotpink`}
               href="/"
               prefetch={false}
             >
@@ -44,7 +44,7 @@ export default async function Header() {
           </li>
           <li>
             <Link
-              className="font-bold text-sm md:text-mg 2xl:text-xl"
+              className="font-bold text-sm md:text-mg 2xl:text-xl hover:text-Hotpink"
               href="/lineup"
               prefetch={false}
             >
@@ -53,7 +53,7 @@ export default async function Header() {
           </li>
           <li>
             <Link
-              className="font-bold text-sm md:text-mg 2xl:text-xl"
+              className="font-bold text-sm md:text-mg 2xl:text-xl hover:text-Hotpink"
               href="/schedule"
               prefetch={false}
             >

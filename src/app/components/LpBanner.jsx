@@ -13,7 +13,7 @@ function LpBanner() {
   return (
     <div className="bg-[url('/LPBANNERIMAGE.webp')] bg-cover bg-center p-12 h-screen">
       <div className="h-screen flex justify-center items-center">
-        <div className="text-center">
+        <div className="text-center -mt-24 md:mt-0">
         
           <h1 className={` text-White text-7xl md:text-8xl ${BowlbyOne.className}`}>FOO FESTIVAL</h1>
           <p className={` text-White text-2xl md:text-4xl ${BowlbyOne.className}`}>July 3rd - 10th 2024</p>
