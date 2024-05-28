@@ -1,9 +1,17 @@
 "use client"
 import { useState } from 'react'
-
+import { Bowlby_One } from "next/font/google";
 import Ticket from "@/app/components/Tickets/Ticket";
 import RemoveTicket from '@/app/components/RemoveTicket';
 import AddButton from '@/app/components/AddButton';
+
+
+
+const BowlbyOne = Bowlby_One({
+  subsets: ["latin"],
+  weight: "400",
+  display: "swap",
+});
 
 
 export default function Home() {
@@ -34,14 +42,14 @@ export default function Home() {
   return (
     <>
     <form action='/booking/campingArea'>
-    <div className="border-solid bg-Darkblue border-Hotpink border-2 rounded-3xl p-8 w-7/12 m-auto mt-10">
-      <h1 className="text-White md:text-6xl">CHOOSE YOUR TICKET:</h1>
-        <div className="flex justify-start p-8 gap-20">
+    <div className="sm:w-11/12 border-solid bg-Darkblue border-Hotpink border-2 rounded-3xl p-8 lg:w-7/12 m-auto mt-10">
+      <h1 className={` ${BowlbyOne.className} text-White text-2xl md:text-6xl mb-5`}>CHOOSE YOUR TICKET:</h1>
+        <div className="grid md:flex justify-start md:p-8 gap-28">
     
           <div>
-            <div className='flex gap-24'> 
+            <div className='grid mb-5 lg:flex lg:gap-24'> 
               <div className='text-White'>
-                <h2 className="text-xl text-White">FOO TICKET</h2>
+                <h2 className="text-xl text-White"><span className='text-Hotpink font-bold'>FOO</span> TICKET</h2>
                 <p>799 DKK</p>
               </div>
               <div className='flex flex-row gap-3 h-6 items-center mt-4'>
@@ -55,9 +63,9 @@ export default function Home() {
             </div>
 
             <br />
-            <div className='flex gap-28'>
+            <div className='grid lg:flex lg:gap-28'>
               <div>
-                <h2 className='text-White text-xl'><span className='font-bold text-Lightpink'>VIP</span> TICKET</h2>
+                <h2 className='text-White text-xl'><span className='font-bold text-Hotpink'>VIP</span> TICKET</h2>
                 <p className='text-White text-base'>1299 DKK</p>
               </div>
 
