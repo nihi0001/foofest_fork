@@ -48,7 +48,7 @@ export default function TentTicket(props) {
   return (
     <>
     <form action="">
-    <div className='grid gap-4 border-solid border-Hotpink border-2 rounded-3xl p-8 text-White w-96'>
+    <div className='grid gap-4 border-solid border-Hotpink border-2 rounded-3xl p-8 text-White w-80'>
     <h2 className='text-White text-2xl font-bold'>ITEMS</h2>
     
     <h2>{footicket}X <span className='text-Hotpink font-bold'>FOO</span> TICKETS <br /> {fooTicketsPrice} DKK</h2>

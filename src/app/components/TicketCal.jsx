@@ -12,7 +12,7 @@ const TicketCal = ({ ticketPrice, ticketAmount }) => {
   return (
     <>
     <div>
-      <div>{ticketAmount} FOO TICKET </div> 
+      <div>{ticketAmount} <span className='text-Hotpink font-bold'>FOO</span> TICKET </div> 
       <div> {totalCost} DKK</div>
     </div>
     </>

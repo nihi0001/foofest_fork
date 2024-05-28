@@ -24,10 +24,11 @@ export default function TentTicket(props) {
 
 
   return (
-    <div className='grid gap-4 border-solid border-Hotpink border-2 rounded-3xl p-8 text-White w-64'>
+    <div className='grid gap-4 border-solid border-Hotpink border-2 rounded-3xl p-8 text-White w-72'>
     <h2 className='text-White text-2xl font-bold'>ITEMS</h2>
     
-    <h2>{+footicket + +vipticket} TICKETS <br /> {TotalTicketCount} DKK</h2>
+    <h2 className='text-xl'>{+footicket + +vipticket} TICKETS <br /> 
+    <span className='text-base'>{TotalTicketCount} DKK</span></h2>
 
     <TwoTentParent 
     tentTicketCount={props.tentTicket}
@@ -41,8 +42,8 @@ export default function TentTicket(props) {
     handleRemoveTent={props.handleRemoveVipTent}    
     tentPrice={399}/> 
 
-    <h2 className='-mb-4'>Camping Area</h2>
-    <p>{props.campingArea}</p>
+    <h2 className='-mb-4 text-xl'>Camping Area</h2>
+    <p className='text-Hotpink'>{props.campingArea}</p>
 
     <h2>{tentTicketCount} TENTS <br /> {totalTentCount} DKK</h2>
 

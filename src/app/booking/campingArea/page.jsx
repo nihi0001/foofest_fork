@@ -1,10 +1,18 @@
 "use client"
 import { useState } from 'react'
+import { Bowlby_One } from "next/font/google";
  import { useSearchParams } from 'next/navigation';
 import CampingTickets from "@/app/components/Tickets/CampingTickets";
 import RemoveTent from '@/app/components/Buttons/RemoveTent';
 import AddTent from '@/app/components/Buttons/AddTent';
 import ChooseTicket from '@/app/components/ChooseTicket';
+
+
+const BowlbyOne = Bowlby_One({
+  subsets: ["latin"],
+  weight: "400",
+  display: "swap",
+});
 
 
 export default function Home() {
@@ -60,9 +68,10 @@ export default function Home() {
     <form action="/booking/guestInformation">
       <input type="hidden" name="ticketcount1" value={regular}/>
       <input type="hidden" name="ticketcount2" value={vip}/>
-    <div className="border-solid bg-Darkblue border-Hotpink border-2 rounded-3xl p-8 w-7/12 m-auto mt-10">
-      <h1 className="text-White md:text-6xl">CHOOSE YOUR CAMPING AREA:</h1>
-        <div className="flex justify-start p-8 gap-20">
+
+    <div className="w-11/12 border-solid bg-Darkblue border-Hotpink border-2 rounded-3xl p-8 lg:w-7/12 m-auto mt-10">
+      <h1 className={`text-White text-2xl mb-5 md:mb-0 lg:text-5xl ${BowlbyOne.className}`}>CHOOSE YOUR CAMPING AREA:</h1>
+        <div className="grid lg:flex justify-start gap-10 lg:gap-20 lg:py-8 lg:px-2">
           
 
           <div> 
@@ -75,12 +84,13 @@ export default function Home() {
             </div>
             <br />  
 
-            <div className='flex gap-24'>
+            <div className='grid lg:flex lg:gap-24'>
               <div className='text-White'>
-                <h2 className="text-xl text-White"><span className='font-bold text-Lightpink'>2</span> PERSON TENT</h2>
+                <h2 className="text-xl text-White"><span className='font-bold text-Hotpink'>2</span> PERSON TENT</h2>
                 <p>299 DKK</p>
               </div>
-              <div className='flex flex-row gap-3 h-6 items-center mt-4'>
+
+              <div className='flex flex-row gap-3 h-6 items-center mt-4 mb-5'>
                 <RemoveTent onRemoveTentClick={handleRemoveTent} /> 
                 <input 
                 name="twoTentTicket" 
@@ -91,9 +101,9 @@ export default function Home() {
             </div>
 
             <br />
-            <div className='flex gap-28'>
+            <div className='grid lg:flex lg:gap-28'>
               <div>
-                <h2 className='text-White text-xl'><span className='font-bold text-Lightpink'>3</span>PERSON TENT</h2>
+                <h2 className='text-White text-xl'><span className='font-bold text-Hotpink'> 3 </span>PERSON TENT</h2>
                 <p className='text-White text-base'>399 DKK</p>
               </div>
 
