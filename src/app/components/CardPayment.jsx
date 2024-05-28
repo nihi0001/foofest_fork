@@ -91,7 +91,7 @@ const CardPayment = () => {
         />
         </div>
         
-        <Link className=" text-center text-White p-2 m-4 rounded-lg bg-Hotpink hover:bg-Lightpink text-white w-60" href={`/booking/orderConfirmation`}>
+        <Link className=" text-center text-White p-2 m-4 font-bold rounded-full bg-Hotpink hover:bg-Lightpink text-white w-60" href={`/booking/orderConfirmation`}>
         COMPLETE PURCHASE</Link>
        
       </form>
