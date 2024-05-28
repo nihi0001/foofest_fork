@@ -67,16 +67,16 @@ export default function GuestForm() {
 
   return (
     <section className="">
-      <h2 className="mb-4">Guest 1</h2>
+      <h2 className="mb-2 font-semibold text-xl">Guest 1</h2>
 
       <form onSubmit={handleSubmit} className="w-full max-w-sm">
-        <div className="text-md text-Hotpink py-4">
+        <div className="text-md text-Hotpink py-2">
           {state.message}
         </div>
         
         <div>
           <label>
-            <span>Email</span>
+            <span>Email</span><span className='text-Hotpink'> *</span>
             <input
               className="border-2 p-2 rounded-md w-full hover:bg-White active:bg-White focus:outline-none focus:ring focus:ring-Hotpink text-Darkblue"
               required
@@ -90,7 +90,7 @@ export default function GuestForm() {
         <div className="flex flex-wrap -mx-3 mb-6">
           <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
             <label>
-              <span>First name</span>
+              <span>First name</span><span className='text-Hotpink'> *</span>
               <input
                 className="border-2 p-2 rounded-md block w-full hover:bg-White active:bg-White focus:outline-none focus:ring focus:ring-Hotpink text-Darkblue"
                 required
@@ -102,7 +102,7 @@ export default function GuestForm() {
           </div>
           <div className="w-full md:w-1/2 px-3">
             <label>
-              <span>Last name</span>
+              <span>Last name</span><span className='text-Hotpink'> *</span>
               <input
                 className="border-2 p-2 rounded-md block w-full hover:bg-White active:bg-White focus:outline-none focus:ring focus:ring-Hotpink text-Darkblue"
                 required
@@ -116,7 +116,7 @@ export default function GuestForm() {
 
         <div className="">
           <label>
-            <span>Country</span>
+            <span>Country</span><span className='text-Hotpink'> *</span>
             <select
               className="border-2 p-2 rounded-md w-full hover:bg-White active:bg-White focus:outline-none focus:ring focus:ring-Hotpink text-Darkblue"
               name="country"
@@ -130,7 +130,7 @@ export default function GuestForm() {
 
         <div>
           <label>
-            <span>Address</span>
+            <span>Address</span><span className='text-Hotpink'> *</span>
             <input
               className="border-2 p-2 rounded-md w-full hover:bg-White active:bg-White focus:outline-none focus:ring focus:ring-Hotpink text-Darkblue"
               required
@@ -146,7 +146,7 @@ export default function GuestForm() {
         <div className="flex flex-wrap -mx-3 mb-6">
           <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
             <label>
-              <span>Postal code</span>
+              <span>Postal code</span><span className='text-Hotpink'> *</span>
               <input
                 className="border-2 p-2 rounded-md block w-full hover:bg-White active:bg-White focus:outline-none focus:ring focus:ring-Hotpink text-Darkblue"
                 required
@@ -160,7 +160,7 @@ export default function GuestForm() {
 
           <div className="w-full md:w-1/2 px-3">
             <label>
-              <span>City</span>
+              <span>City</span><span className='text-Hotpink'> *</span>
               <input
                 className="border-2 p-2 rounded-md block w-full hover:bg-White active:bg-White focus:outline-none focus:ring focus:ring-Hotpink text-Darkblue"
                 required
@@ -174,7 +174,7 @@ export default function GuestForm() {
 
         <div>
           <label>
-            <span>Phone number</span>
+            <span>Phone number</span><span className='text-Hotpink'> *</span>
             <input
               className="border-2 p-2 rounded-md w-full hover:bg-White active:bg-White focus:outline-none focus:ring focus:ring-Hotpink text-Darkblue"
               required
