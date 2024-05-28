@@ -11,7 +11,7 @@ const VipTicketCal = ({ ticketPrice, ticketAmount }) => {
   return (
     <>
     <div>
-      <div>{ticketAmount} VIP TICKET </div>
+      <div>{ticketAmount} <span className='text-Hotpink font-bold'>VIP</span> TICKET </div>
       <div> {totalCost} DKK</div>
     </div>
     </>
