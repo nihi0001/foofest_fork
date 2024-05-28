@@ -62,7 +62,7 @@ export default function LineUp({ searchParams }) {
           <select
             id="genre"
             name="genre"
-            className="rounded-lg p-2 border-2 border-Hotpink"
+            className="rounded-full px-6 py-2 border-2 border-Hotpink"
             onChange={handleGenreChange}
             value={selectedGenre}
           >
