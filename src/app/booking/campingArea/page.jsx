@@ -55,13 +55,6 @@ export default function Home() {
     
   }
 
-  
-
-  // useEffect(() => {
-  //   const available = fetch('https://yielding-cooperative-tarsal.glitch.me/available-spots')
-  //     .then((res) => res.json());
-  // }, []);
-
 
 
   return (
