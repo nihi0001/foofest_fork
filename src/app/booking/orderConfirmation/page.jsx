@@ -8,6 +8,11 @@ const BowlbyOne = Bowlby_One({
   display: "swap",
 });
 
+export const metadata = {
+  title: "FooFest | Order Confirmation",
+  description: "Thank you for your order! See you at FOO Festival 2024.",
+};
+
 function page() {
   return (
     <section>

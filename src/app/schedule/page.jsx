@@ -12,6 +12,8 @@ const BowlbyOne = Bowlby_One({
 
 export const metadata = {
   title: "FooFest | Schedule",
+  description: "Check out the complete schedule for FOO Festival 2024 and plan your ultimate festival experience!",
+
 };
 
 

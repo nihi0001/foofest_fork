@@ -10,6 +10,12 @@ const BowlbyOne = Bowlby_One({
   display: 'swap',
 });
 
+export const metadata = {
+  title: "FooFest | Line up",
+  description: "Explore the FOO Festival 2024 lineup and discover the top techno artists set to perform.",
+
+};
+
 
 function page() {
   return (
