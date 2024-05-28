@@ -94,7 +94,7 @@ export default function Home() {
                 <RemoveTent onRemoveTentClick={handleRemoveTent} /> 
                 <input 
                 name="twoTentTicket" 
-                defaultValue={twoTentTicket}
+                value={twoTentTicket}
                 className='border-solid border-2 border-Lightpink rounded-full w-32 bg-White p-2' />
                 <AddTent onAddTentClick={() => handleAddTent(twoTentTicket + 1)} />
               </div>
@@ -111,7 +111,7 @@ export default function Home() {
                 <RemoveTent onRemoveTentClick={handleRemoveVipTent} /> 
                 <input 
                 name="threeTentTicket" 
-                defaultValue={threeTentTicket}
+                value={threeTentTicket}
                 className='border-solid border-2 border-Lightpink rounded-full w-32 bg-White p-2' 
                  />
                 <AddTent onAddTentClick={() => handleAddVipTent(threeTentTicket + 1)} />
