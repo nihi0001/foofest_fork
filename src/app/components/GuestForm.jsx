@@ -114,7 +114,7 @@ export default function GuestForm() {
           </div>
         </div>
 
-        <div className="">
+        <div>
           <label>
             <span>Country</span><span className='text-Hotpink'> *</span>
             <select
