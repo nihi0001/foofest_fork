@@ -31,7 +31,7 @@ export default function Ticket(props) {
     <hr className='text-Hotpink'/>
 
     <h2 className='text-xl -mb-5'>{ticketCount} TICKETS {TotalTicketCount}</h2>
-    <p className='text-xs'>BOOKING FEE {bookingFee} DKK</p>
+    <p className='text-xs'>BOOKING FEE 99 DKK</p>
 
     <p className='text-xl'><span className='text-Hotpink'>TOTAL</span> {totalPrice} DKK </p>
   
