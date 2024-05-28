@@ -1,3 +1,4 @@
+//credit card information page
 import CardPayment from '@/app/components/CardPayment'
 import React from 'react'
 
