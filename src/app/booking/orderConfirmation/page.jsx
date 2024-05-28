@@ -11,12 +11,13 @@ const BowlbyOne = Bowlby_One({
 function page() {
   return (
     <section>
-    <div className="text-White bg-Darkblue p-6 md:p-16 m-20 rounded-md border-2 border-Hotpink">
+    <div className="text-White bg-Darkblue p-6 m-12 md:p-16 md:m-20 rounded-md border-2 border-Hotpink">
     
-      <h1 className={`font-bold text-center mb-3 text-2xl md:text-4xl ${BowlbyOne.className}`}>THANK <span className='text-Hotpink'>YOU</span> FOR YOUR ORDER</h1>
-      <h2 className="text-lg text-center md:text-xl mb-7">We have sent an order confirmation along with your tickets to your email!</h2>
+      <h1 className={`font-bold text-center mb-3 text-xl md:text-4xl ${BowlbyOne.className}`}>THANK <span className='text-Hotpink'>YOU</span> FOR YOUR ORDER</h1>
+      <h2 className="text-md text-center md:text-xl mb-2 md:mb-7">We have sent an order confirmation along with your tickets to your email!</h2>
       <div className='flex items-center justify-center'>
-      <Link className=" text-sm md:text-lg text-center text-White p-4 mt-8 rounded-2xl bg-Hotpink hover:bg-Lightpink text-white max-w-auto" href={`/`}>
+      <Link className="font-bold text-sm md:text-lg text-center text-White px-4 py-2 md:px-10 md:py-4 mt-8 rounded-full
+       bg-Hotpink hover:bg-Lightpink text-white max-w-auto" href={`/`}>
         REDIRECT TO FRONT PAGE</Link>
       </div>
     </div>
