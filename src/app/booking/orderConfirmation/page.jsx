@@ -17,7 +17,7 @@ function page() {
       <h2 className="text-md text-center md:text-xl mb-2 md:mb-7">We have sent an order confirmation along with your tickets to your email!</h2>
       <div className='flex items-center justify-center'>
       <Link className="font-bold text-sm md:text-lg text-center text-White px-4 py-2 md:px-10 md:py-4 mt-8 rounded-full
-       bg-Hotpink hover:bg-Lightpink text-white max-w-auto" href={`/`}>
+       bg-Hotpink hover:bg-Lightpink max-w-auto" href={`/`}>
         REDIRECT TO FRONT PAGE</Link>
       </div>
     </div>

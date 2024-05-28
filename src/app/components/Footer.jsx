@@ -14,10 +14,10 @@ export default function Footer() {
         
         <div className='order-2 md:order-1'>
           <h2 className='text-Hotpink font-bold text-3xl mb-2'>LINKS</h2>
-          <p className='text-md md:text-lg text-White'>About Foo Festival</p>
-          <p className='text-md md:text-lg text-White'>Privacy policy</p>
-          <p className='text-md md:text-lg text-White'>Terms of use</p>
-          <p className='text-md md:text-lg text-White'>FAQ</p>
+          <p className='text-md md:text-lg text-White hover:text-Hotpink'>About Foo Festival</p>
+          <p className='text-md md:text-lg text-White hover:text-Hotpink'>Privacy policy</p>
+          <p className='text-md md:text-lg text-White hover:text-Hotpink'>Terms of use</p>
+          <p className='text-md md:text-lg text-White hover:text-Hotpink'>FAQ</p>
         </div>
 
         <div className='order-1 md:order-2 md:flex md:flex-col md:items-center'>
