@@ -2,7 +2,7 @@
 import { useState } from 'react'
  import { useSearchParams } from 'next/navigation';
 import CampingTickets from "@/app/components/Tickets/CampingTickets";
-import RemoveTent from '@/app/components/Buttons/Removetent';
+import RemoveTent from '@/app/components/Buttons/RemoveTent';
 import AddTent from '@/app/components/Buttons/AddTent';
 import ChooseTicket from '@/app/components/ChooseTicket';
 
