@@ -13,10 +13,6 @@ const BowlbyOne = Bowlby_One({
   display: "swap",
 });
 
-export const metadata = {
-  title: "FooFest | Guest information",
-  description: "Complete your festival experience by providing your personal details for FOO Festival 2024. ",
-};
 
 export default function Formpage() {
  // const searchParams = useSearchParams()
