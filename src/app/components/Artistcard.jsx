@@ -11,7 +11,6 @@ const BowlbyOne = Bowlby_One({
 
 export default function LineUp({ searchParams }) {
   const [bands, setBands] = useState(null);
-  const [loading, setLoading] = useState(true);
   const [selectedGenre, setSelectedGenre] = useState('All');
 
   useEffect(() => {
@@ -20,10 +19,8 @@ export default function LineUp({ searchParams }) {
         const response = await fetch(`https://yielding-cooperative-tarsal.glitch.me/bands`);
         const data = await response.json();
         setBands(data);
-        setLoading(false);
       } catch (error) {
         console.error('Error fetching data:', error);
-        setLoading(false);
       }
     };
 
@@ -34,8 +31,7 @@ export default function LineUp({ searchParams }) {
     setSelectedGenre(event.target.value);
   };
 
-  if (loading) return <p>Loading...</p>;
-  if (!bands) return <p>No bands data</p>;
+  if (!bands) return null;
 
   // Filtrering af bands efter valgt genre
   const filteredBands = selectedGenre === 'All' ? bands : bands.filter((band) => band.genre === selectedGenre);
@@ -75,7 +71,7 @@ export default function LineUp({ searchParams }) {
       </div>
 
       {/* Bands opdelt efter genre */}
-      {filteredBands.length > 0 ? (
+      {filteredBands.length > 0 && (
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 sm:gap-6 md:gap-12 justify-center max-w-6xl mx-auto p-8 sm:p-12">
         {filteredBands.map((band) => (
           <div key={band.name} className="flex flex-col">
@@ -99,8 +95,6 @@ export default function LineUp({ searchParams }) {
           </div>
         ))}
       </div>
-      ) : (
-        <p className="text-White">No bands found for the selected genre.</p>
       )}
     </section>
   );
