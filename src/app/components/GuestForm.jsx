@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from 'react';
-import { redirect } from 'next/navigation'
 import { useRouter } from 'next/navigation'
 
 
@@ -31,7 +30,6 @@ async function FormSubmit(formData) {
     
     return data;
   } catch (error) {
-    console.error('Submission error:', error);
     throw error;
   }
 }
@@ -39,6 +37,7 @@ async function FormSubmit(formData) {
 export default function GuestForm() {
   const [state, setState] = useState({ message: '', pending: false });
   const router = useRouter()
+  
   const handleSubmit = async (event) => {
     event.preventDefault();
     setState({ ...state, pending: true });
