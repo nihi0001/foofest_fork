@@ -14,12 +14,12 @@ export default function TentTicket(props) {
   const totalTentCount = props.tentTicket * 299 + props.threeTentTicket * 399;
 
   //Ticket den forrige side
-  const ticketCount = vipticket + footicket;
+  const ticketCount = +vipticket + +footicket;
   const TotalTicketCount = footicket * 799 + vipticket * 1299;
   const bookingFee = totalTentCount > 0 ? 99 : 0;
   const totalPrice = TotalTicketCount;
 
-  const totalTentPrice = totalTentCount + bookingFee + totalPrice; 
+  const totalTentPrice = totalTentCount + totalPrice + bookingFee; 
 
 
 
@@ -27,8 +27,8 @@ export default function TentTicket(props) {
     <div className='grid gap-4 border-solid border-Hotpink border-2 rounded-3xl p-8 text-White w-72'>
     <h2 className='text-White text-2xl font-bold'>ITEMS</h2>
     
-    <h2 className='text-xl'>{+footicket + +vipticket} TICKETS <br /> 
-    <span className='text-base'>{TotalTicketCount} DKK</span></h2>
+    <h2 className='text-xl'>{ticketCount}X TICKETS <br /> 
+    <span className='text-base'>{totalPrice} DKK</span></h2>
 
     <TwoTentParent 
     tentTicketCount={props.tentTicket}

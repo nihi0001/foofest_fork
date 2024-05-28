@@ -8,8 +8,7 @@ export default function Ticket(props) {
   const ticketCount = props.ticketcount2 + props.ticketcount1;
   const TotalTicketCount = props.ticketcount1 * 799 + props.ticketcount2 * 1299;
   console.log(typeof TotalTicketCount);
-  const bookingFee = TotalTicketCount > 0 ? 99 : 0;
-  const totalPrice = TotalTicketCount + bookingFee;
+  const totalPrice = TotalTicketCount;
 
 
   return (
@@ -28,12 +27,9 @@ export default function Ticket(props) {
     handleRemoveTicket={props.handleRemoveTicket2}  
     ticketPrice={1299}/>
 
+    <h2 className='text-xl'>{ticketCount} TICKETS {TotalTicketCount}</h2>
     <hr className='text-Hotpink'/>
-
-    <h2 className='text-xl -mb-5'>{ticketCount} TICKETS {TotalTicketCount}</h2>
-    <p className='text-xs'>BOOKING FEE 99 DKK</p>
-
-    <p className='text-xl'><span className='text-Hotpink'>TOTAL</span> {totalPrice} DKK </p>
+    <h2 className='text-xl'><span className='text-Hotpink'>TOTAL</span> {totalPrice} DKK </h2>
   
     <ChooseTicket />
     </div>

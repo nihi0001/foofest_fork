@@ -1,7 +1,8 @@
 "use client"
 import { useState } from 'react'
 import { Bowlby_One } from "next/font/google";
- import { useSearchParams } from 'next/navigation';
+import { useSearchParams } from 'next/navigation';
+
 import CampingTickets from "@/app/components/Tickets/CampingTickets";
 import RemoveTent from '@/app/components/Buttons/RemoveTent';
 import AddTent from '@/app/components/Buttons/AddTent';

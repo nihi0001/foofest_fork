@@ -33,14 +33,14 @@ export default function TentTicket(props) {
   const twoTentsPrice = twoTentTicket * 299;
   const threeTentsPrice = threeTentTicket * 399;
 
-  const TicketsPrice = footicket * 799 + twoTentTicket * 1299;
+  const TicketsPrice = footicket * 799 + vipticket * 1299;
   const TentsPrice = twoTentTicket * 299 + threeTentTicket * 399;
   
 //Booking fee på 99 kr
   const bookingFee = totalTentCount > 0 ? 99 : 0;
 
   const tentAndTicketsPrice = TicketsPrice + TentsPrice;
-  const totalPrice = bookingFee + TicketsPrice + TentsPrice;
+  const totalPrice = bookingFee + tentAndTicketsPrice;
 
 
 
