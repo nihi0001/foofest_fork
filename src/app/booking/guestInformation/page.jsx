@@ -2,7 +2,7 @@
 "use client"
 import { Bowlby_One } from "next/font/google";
 import GuestForm from "@/app/components/GuestForm";
-import GuestInformation from "@/app/components/Tickets/GuestInformation";
+import InformationBasket from "@/app/components/Tickets/InformationBasket";
 
  
 import { useSearchParams } from 'next/navigation'
@@ -31,7 +31,7 @@ export default function Formpage() {
           </div>
           <div className="flex justify-center w-full">
             <div className="w-full max-w-sm mb-6 md:mb-2">
-              <GuestInformation />
+              <InformationBasket />
             </div>
           </div>
         </div>

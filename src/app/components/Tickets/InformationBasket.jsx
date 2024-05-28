@@ -63,11 +63,11 @@ export default function TentTicket(props) {
     <p className='text-Hotpink'>{area}</p>
 
     <h2>{tentCount} TENTS <br /> {ticketCount} TICKETS <span className='ml-4'>{tentAndTicketsPrice} DKK</span></h2>
-    <p className='text-xs'>BOOKING FEE 99 DKK</p>
 
     <hr className='text-Hotpink'/>
 
     <p className='text-xl -mb-4'><span className='text-Hotpink'>TOTAL</span> {totalPrice} DKK </p>
+    <p className='text-xs'>BOOKING FEE 99 DKK</p>
     
     </div>
     </form>
