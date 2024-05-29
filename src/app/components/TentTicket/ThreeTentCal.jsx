@@ -12,7 +12,7 @@ const ThreeTentCal = ({ tentPrice, tentAmount}) => {
   return (
     <>
     <div>
-      <div>{tentAmount}X <span className='text-Hotpink text-xl'>3</span> PERSON TENT </div>
+      <div className='text-xl'>{tentAmount}X <span className='text-Hotpink text-xl font-bold'>3</span> PERSON TENT </div>
       <div>{tentTotalCost} DKK</div>
     </div>
     </>

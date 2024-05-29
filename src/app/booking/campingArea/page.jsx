@@ -62,20 +62,22 @@ export default function Home() {
       <input type="hidden" name="ticketcount1" value={regular}/>
       <input type="hidden" name="ticketcount2" value={vip}/>
 
-    <div className="w-11/12 border-solid bg-Darkblue border-Hotpink border-2 rounded-3xl p-8 lg:w-7/12 m-auto mt-10">
-      <h1 className={`text-White text-2xl mb-5 md:mb-0 lg:text-5xl ${BowlbyOne.className}`}>CHOOSE YOUR CAMPING AREA:</h1>
+    <div className="w-11/12 border-solid bg-Darkblue border-Hotpink border-2 rounded-3xl p-20 lg:w-9/12 m-auto mt-10">
+      <h1 className={`text-White text-2xl mb-10 md:mb-0 lg:text-4xl ${BowlbyOne.className}`}>CAMPING AREA</h1>
         <div className="grid lg:flex justify-start gap-10 lg:gap-20 lg:py-8 lg:px-2">
-          
 
-          <div> 
+          <div className=''> 
+            <h2 className='text-White text-2xl font-bold mb-5'>CHOOSE YOUR CAMPING AREA</h2>
             <div className='grid grid-cols-2 text-White'>
-            <label className='hover:text-Hotpink'><input defaultValue="Svartheim" onChange={handleCampingArea} type="radio" name='area'  /> Svartheim</label>
-            <label className='hover:text-Hotpink'><input defaultValue="Nilfheim" onChange={handleCampingArea} type="radio" name='area' /> Nilfheim</label>
-            <label className='hover:text-Hotpink'><input defaultValue="Helheim" onChange={handleCampingArea} type="radio" name='area' /> Helheim</label>
-            <label className='hover:text-Hotpink'><input defaultValue="Muspelheim" onChange={handleCampingArea} type="radio" name='area' /> Muspelheim</label>
-            <label className='hover:text-Hotpink'><input defaultValue="Alfheim" onChange={handleCampingArea} type="radio" name='area' /> Alfheim</label>
+            <label className='hover:text-Hotpink text-xl mt-2'><input className='w-5 h-5' defaultValue="Svartheim" onChange={handleCampingArea} type="radio" name='area'  /> Svartheim</label>
+            <label className='hover:text-Hotpink text-xl mt-2'><input className='w-5 h-5' defaultValue="Nilfheim" onChange={handleCampingArea} type="radio" name='area' /> Nilfheim</label>
+            <label className='hover:text-Hotpink text-xl mt-2'><input className='w-5 h-5' defaultValue="Helheim" onChange={handleCampingArea} type="radio" name='area' /> Helheim</label>
+            <label className='hover:text-Hotpink text-xl mt-2'><input className='w-5 h-5' defaultValue="Muspelheim" onChange={handleCampingArea} type="radio" name='area' /> Muspelheim</label>
+            <label className='hover:text-Hotpink text-xl mt-2'><input className='w-5 h-5' defaultValue="Alfheim" onChange={handleCampingArea} type="radio" name='area' /> Alfheim</label>
             </div>
             <br />  
+
+            <h2 className='text-White text-2xl mb-5 mt-10 font-bold'>TENTS</h2>
 
             <div className='grid 2xl:flex 2xl:gap-24'>
               <div className='text-White'>
