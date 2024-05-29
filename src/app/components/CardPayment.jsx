@@ -1,53 +1,38 @@
-"use client";
+"use client"
 import "react-credit-cards-2/dist/es/styles-compiled.css";
-import React, { useState, useEffect } from 'react';
-import { useRouter } from 'next/navigation';
+import React, { useState } from 'react';
 import Cards from 'react-credit-cards-2';
 import { Bowlby_One } from "next/font/google";
-
-
+import Link from "next/link";
+ 
 const BowlbyOne = Bowlby_One({
   subsets: ["latin"],
   weight: "400",
   display: "swap",
 });
 
+
 const CardPayment = () => {
-  const [creditCardInfo, setCreditCardInfo] = useState({
+  const [state, setState] = useState({
     number: '',
     expiry: '',
     cvc: '',
     name: '',
     focus: '',
   });
-  const [isFormValid, setIsFormValid] = useState(false);
-  const router = useRouter();
-
-  useEffect(() => {
-    
-    const isValid = creditCardInfo.number && creditCardInfo.expiry && creditCardInfo.cvc && creditCardInfo.name;
-    setIsFormValid(isValid);
-  }, [creditCardInfo]);
 
   const handleInputChange = (evt) => {
     const { name, value } = evt.target;
-    setCreditCardInfo((prev) => ({ ...prev, [name]: value }));
+    
+    setState((prev) => ({ ...prev, [name]: value }));
   }
 
   const handleInputFocus = (evt) => {
-    setCreditCardInfo((prev) => ({ ...prev, focus: evt.target.name }));
+    setState((prev) => ({ ...prev, focus: evt.target.name }));
   }
-
-  const handleSubmit = (evt) => {
-    evt.preventDefault();
-    if (isFormValid) {
-      router.push('/booking/orderConfirmation');
-    }
-  }
-
   return (
     <div className='p-6 m-12 rounded-3xl border-2 border-Hotpink bg-Darkblue max-w-5xl mx-auto'>
-       <h1 className={` text-2xl text-center text-White md:text-4xl mt-2 mb-8 ${BowlbyOne.className}`}>PAYMENT DETAILS</h1>
+      <h1 className={`text-2xl text-center text-White md:text-4xl mt-2 mb-8 ${BowlbyOne.className}`}>PAYMENT DETAILS</h1>
       <div className='md:grid grid-cols-2 justify-center items-center'>
         <section>
       <Cards
