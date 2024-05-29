@@ -31,15 +31,17 @@ export default function LineUp() {
     fetchData();
   }, []);
 
-  const handleGenreChange = (event) => {
-    setSelectedGenre(event.target.value);
-  };
-
   // Hvis loading er sand, vis loader-komponenten
   if (loading) return <Loader />;
 
   // Hvis bands ikke er tilgængelige, vis besked om ingen bands data
   if (!bands) return <p>No bands data</p>;
+
+  const handleGenreChange = (event) => {
+    setSelectedGenre(event.target.value);
+  };
+
+
 
   // Filtrering af bands efter valgt genre
   const filteredBands = selectedGenre === 'All' ? bands : bands.filter((band) => band.genre === selectedGenre);
@@ -81,28 +83,28 @@ export default function LineUp() {
       {/* Bands opdelt efter genre */}
       {filteredBands.length > 0 ? (
         <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 md:gap-12 justify-center max-w-6xl mx-auto p-4 sm:p-12">
-        {filteredBands.map((band) => (
-          <div key={band.name} className="flex flex-col">
-            <Link href={`/lineup/${band.slug}`} prefetch={false}>
-              <div className="border-2 border-Hotpink rounded-lg cursor-pointer bg-Darkblue hover:scale-105 transition-transform duration-150 hover:bg-Navyblue">
-                <div className="w-full h-40 sm:h-72 md:h-80 relative">
-                  <Image
-                    alt="Artist presentation"
-                    src={band.logo.startsWith("http") ? band.logo : `https://yielding-cooperative-tarsal.glitch.me/logos/${band.logo}`}
-                    layout="fill"
-                    objectFit="cover"
-                    className="rounded-t-lg"
-                  />
+          {filteredBands.map((band) => (
+            <div key={band.name} className="flex flex-col">
+              <Link href={`/lineup/${band.slug}`} prefetch={false}>
+                <div className="border-2 border-Hotpink rounded-lg cursor-pointer bg-Darkblue hover:scale-105 transition-transform duration-150 hover:bg-Navyblue">
+                  <div className="w-full h-40 sm:h-72 md:h-80 relative">
+                    <Image
+                      alt="Artist presentation"
+                      src={band.logo.startsWith("http") ? band.logo : `https://yielding-cooperative-tarsal.glitch.me/logos/${band.logo}`}
+                      layout="fill"
+                      objectFit="cover"
+                      className="rounded-t-lg"
+                    />
+                  </div>
+                  <div className="p-2 sm:p-4">
+                    <p className="text-Hotpink mt-2 sm:mt-5 text-md sm:text-2xl font-semibold">{band.genre}</p>
+                    <p className="text-White text-lg sm:text-3xl font-bold uppercase mb-1 sm:mb-2">{band.name}</p>
+                  </div>
                 </div>
-                <div className="p-2 sm:p-4">
-                  <p className="text-Hotpink mt-2 sm:mt-5 text-md sm:text-2xl font-semibold">{band.genre}</p>
-                  <p className="text-White text-lg sm:text-3xl font-bold uppercase mb-1 sm:mb-2">{band.name}</p>
-                </div>
-              </div>
-            </Link>
-          </div>
-        ))}
-      </div>
+              </Link>
+            </div>
+          ))}
+        </div>
       ) : (
         <p className="text-White">No bands found for the selected genre.</p>
       )}
