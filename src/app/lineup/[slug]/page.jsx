@@ -8,11 +8,6 @@ const BowlbyOne = Bowlby_One({
   display: "swap",
 });
 
-export const metadata = {
-  title: "",
-  description: "",
-};
-
 export async function generateStaticParams() {
   const res = await fetch("https://yielding-cooperative-tarsal.glitch.me/bands/");
   const pages = await res.json();
