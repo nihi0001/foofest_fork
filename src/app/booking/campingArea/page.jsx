@@ -62,13 +62,13 @@ export default function Home() {
       <input type="hidden" name="ticketcount1" value={regular}/>
       <input type="hidden" name="ticketcount2" value={vip}/>
 
-    <div className="w-11/12 p-10 border-solid bg-Darkblue border-Hotpink border-2 rounded-3xl xl:p-20 lg:w-9/12 m-auto mt-10">
+    <div className="w-11/12 p-3 border-solid bg-Darkblue border-Hotpink border-2 rounded-3xl xl:p-20 lg:w-9/12 m-auto mt-10">
       <h1 className={`text-White text-2xl mb-10 md:mb-0 lg:text-4xl ${BowlbyOne.className}`}>CAMPING AREA</h1>
         <div className="grid gap-10 xl:flex xl:justify-between xl:py-8">
 
           <div className=''> 
-            <h2 className='text-White text-2xl font-bold mb-5'>CHOOSE YOUR CAMPING AREA</h2>
-            <div className='grid grid-cols-2 text-White'>
+            <h2 className='text-White sm:text-base xl:text-2xl font-bold mb-5'>CHOOSE YOUR CAMPING AREA</h2>
+            <div className='grid xl:grid-cols-2 text-White'>
             <label className='hover:text-Hotpink text-xl mt-2'><input className='w-5 h-5' defaultValue="Svartheim" onChange={handleCampingArea} type="radio" name='area'  /> Svartheim</label>
             <label className='hover:text-Hotpink text-xl mt-2'><input className='w-5 h-5' defaultValue="Nilfheim" onChange={handleCampingArea} type="radio" name='area' /> Nilfheim</label>
             <label className='hover:text-Hotpink text-xl mt-2'><input className='w-5 h-5' defaultValue="Helheim" onChange={handleCampingArea} type="radio" name='area' /> Helheim</label>
@@ -116,7 +116,7 @@ export default function Home() {
           </div>
 
           <div className='grid gap-5'>
-          <div className='mr-44'> 
+          <div className='m-auto xl:mr-44'> 
             <CampingTickets 
             tentTicket={twoTentTicket} 
             handleAddTent={handleAddTent} 
@@ -129,7 +129,7 @@ export default function Home() {
              campingArea={campingArea}
              />  
           </div>
-          <div className='ml-32'>
+          <div className='m-auto xl:ml-32'>
             <ChooseTicket />
           </div>
           </div>
