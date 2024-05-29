@@ -41,8 +41,6 @@ export default function LineUp() {
     setSelectedGenre(event.target.value);
   };
 
-
-
   // Filtrering af bands efter valgt genre
   const filteredBands = selectedGenre === 'All' ? bands : bands.filter((band) => band.genre === selectedGenre);
 
