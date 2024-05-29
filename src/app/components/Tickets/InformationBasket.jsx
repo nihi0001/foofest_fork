@@ -48,26 +48,39 @@ export default function TentTicket(props) {
   return (
     <>
     <form action="">
-    <div className='grid gap-4 border-solid border-Hotpink border-2 rounded-3xl p-8 text-White w-80'>
-    <h2 className='text-White text-2xl font-bold'>ITEMS</h2>
+    <div className='grid gap-4 border-solid border-Hotpink border-2 rounded-3xl p-8 text-White w-96'>
+    <h2 className='text-White text-4xl font-bold'>ITEMS</h2>
     
-    <h2>{footicket}X <span className='text-Hotpink font-bold'>FOO</span> TICKETS <br /> {fooTicketsPrice} DKK</h2>
+    <div className='flex gap-2 text-xl'>
+      <h2>{footicket}X</h2>
+      <h2><span className='text-Hotpink font-bold'>FOO</span> TICKETS <br /> {fooTicketsPrice} DKK</h2>
+    </div>
 
-    <h2>{vipticket}X <span className='text-Hotpink font-bold'>VIP</span> TICKETS <br /> {vipTicketsPrice} DKK</h2>
+    <div className='flex gap-2 text-xl'>
+      <h2>{vipticket}X</h2>
+      <h2><span className='text-Hotpink font-bold'>VIP</span> TICKETS <br /> {vipTicketsPrice} DKK</h2>
+    </div>
 
-    <h2>{twoTentTicket}X <span className='text-Hotpink font-bold'>2</span> PERSONS TENT <br /> {twoTentsPrice} DKK</h2>
+    <div className='flex gap-2 text-xl'>
+      <h2>{twoTentTicket}X </h2>
+      <h2><span className='text-Hotpink font-bold'>2</span> PERSONS TENT <br /> {twoTentsPrice} DKK</h2>
+    </div>
 
-    <h2>{threeTentTicket}X <span className='text-Hotpink font-bold'>3</span> PERSONS TENT <br /> {threeTentsPrice} DKK</h2>
+    <div className='flex gap-2 text-xl'>
+      <h2>{threeTentTicket}X</h2>
+      <h2><span className='text-Hotpink font-bold'>3</span> PERSONS TENT <br /> {threeTentsPrice} DKK</h2>
+    </div>  
 
-    <h2 className='-mb-4 text-2xl'>Area</h2>
-    <p className='text-Hotpink'>{area}</p>
-
-    <h2>{tentCount} TENTS <br /> {ticketCount} TICKETS <span className='ml-4'>{tentAndTicketsPrice} DKK</span></h2>
+    <h2 className='-mb-4 text-xl'>AREA</h2>
+    <p className='text-Hotpink text-xl'>{area}</p>
 
     <hr className='text-Hotpink'/>
 
-    <p className='text-xl -mb-4'><span className='text-Hotpink'>TOTAL</span> {totalPrice} DKK </p>
+    <h2 className='text-xl -mb-4'>{tentCount} TENTS {TentsPrice} DKK </h2>
+    <h2 className='text-xl -mb-4'>{ticketCount} TICKETS {tentAndTicketsPrice} DKK</h2> 
     <p className='text-xs'>BOOKING FEE 99 DKK</p>
+
+    <p className='text-xl'><span className='text-Hotpink font-bold'>TOTAL</span> {totalPrice} DKK </p>  
     
     </div>
     </form>

@@ -24,12 +24,12 @@ export default function TentTicket(props) {
 
 
   return (
-    <div className='grid gap-4 border-solid border-Hotpink border-2 rounded-3xl p-8 text-White w-72'>
+    <div className='grid gap-4 border-solid border-Hotpink border-2 rounded-3xl p-8 text-White w-96'>
     <h2 className='text-White text-4xl font-bold mb-5'>ITEMS</h2>
     
-    <div className='flex gap-2'>
+    <div className='flex gap-2 text-xl'>
       <h2>{ticketCount}X</h2>
-      <h2>TICKETS <br /> <span className='text-base'>{totalPrice} DKK</span></h2>
+      <h2>TICKETS <br /> <span>{totalPrice} DKK</span></h2>
     </div>
 
     <TwoTentParent 
@@ -47,12 +47,14 @@ export default function TentTicket(props) {
     <h2 className='-mb-4 text-xl'>CAMPING AREA</h2>
     <p className='text-Hotpink'>{props.campingArea}</p>
 
-    <h2>{tentTicketCount} TENTS <br /> {totalTentCount} DKK</h2>
-
     <hr className='text-Hotpink border-t-2'/>
 
-    <p className='text-xl -mb-5'><span className='text-Hotpink font-bold'>TOTAL</span> {totalTentPrice} DKK </p>
+    <h2 className='text-xl -mb-5'>{tentTicketCount}X TENTS {totalTentCount} DKK</h2>
+    <h2 className='text-xl -mb-5'>{ticketCount}X TICKETS <span>{totalPrice} DKK</span></h2>
     <p className='text-xs'>BOOKING FEE 99 DKK</p>
+
+    <p className='text-xl'><span className='text-Hotpink font-bold'>TOTAL</span> {totalTentPrice} DKK </p>
+    
     </div>
   );
 }

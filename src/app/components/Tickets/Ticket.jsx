@@ -1,6 +1,5 @@
 import SecondParentComponent from '../../ParentComponent/SecondParentComponent';
 import ParentComponent from '../../ParentComponent/ParentComponent';
-import ChooseTicket from '../ChooseTicket';  
 
 
 export default function Ticket(props) {
@@ -12,7 +11,7 @@ export default function Ticket(props) {
 
   return (
     <div className='grid gap-4 border-solid border-Hotpink border-2 rounded-3xl p-8 text-White w-72'>
-    <h2 className='text-White text-2xl font-bold'>ITEMS</h2> 
+    <h2 className='text-White text-4xl font-bold'>ITEMS</h2> 
     
     <ParentComponent 
      ticketCount={props.ticketcount1} 
@@ -26,11 +25,11 @@ export default function Ticket(props) {
     handleRemoveTicket={props.handleRemoveTicket2}  
     ticketPrice={1299}/>
 
-    <h2 className='text-xl'>{ticketCount} TICKETS {TotalTicketCount}</h2>
-    <hr className='text-Hotpink'/>
-    <h2 className='text-xl'><span className='text-Hotpink'>TOTAL</span> {totalPrice} DKK </h2>
-  
-    <ChooseTicket />
+    <hr className='text-Hotpink border-t-2'/>
+
+    <h2 className='text-xl'>{ticketCount} TICKETS  {TotalTicketCount} DKK</h2>
+    
+    <h2 className='text-xl'><span className='text-Hotpink font-bold'>TOTAL</span> {totalPrice} DKK </h2>
     </div>
   );
 }

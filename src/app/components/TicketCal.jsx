@@ -11,9 +11,9 @@ const TicketCal = ({ ticketPrice, ticketAmount }) => {
 
   return (
     <>
-    <div>
-      <div>{ticketAmount} <span className='text-Hotpink font-bold'>FOO</span> TICKET </div> 
-      <div> {totalCost} DKK</div>
+    <div className='flex gap-2 text-xl'>
+      <h2>{ticketAmount}</h2>
+      <h2><span className='text-Hotpink font-bold'>FOO</span> TICKET <br />{totalCost} DKK </h2> 
     </div>
     </>
   );

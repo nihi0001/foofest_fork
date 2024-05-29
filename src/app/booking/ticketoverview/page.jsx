@@ -4,6 +4,7 @@ import { Bowlby_One } from "next/font/google";
 import Ticket from "@/app/components/Tickets/Ticket";
 import RemoveTicket from '@/app/components/RemoveTicket';
 import AddButton from '@/app/components/AddButton';
+import ChooseTicket from '@/app/components/ChooseTicket';
 
 
 
@@ -44,7 +45,7 @@ export default function Home() {
     <form action='/booking/campingArea'>
     <div className="sm:w-11/12 border-solid bg-Darkblue border-Hotpink border-2 rounded-3xl p-8 lg:w-7/12 m-auto mt-10">
       <h1 className={` ${BowlbyOne.className} text-White text-2xl lg:text-4xl mb-5`}>CHOOSE YOUR TICKET:</h1>
-        <div className="grid md:flex justify-start md:p-8 gap-28">
+        <div className="grid md:flex md:p-8 gap-28">
     
           <div>
             <div className='grid mb-5 2xl:flex 2xl:gap-24'> 
@@ -79,8 +80,8 @@ export default function Home() {
               </div>
             </div>
           </div>
-    
-      
+
+          <div className='grid gap-5 m-auto'>
           <div>
             <Ticket 
             ticketcount1={ticketcount1} 
@@ -91,6 +92,10 @@ export default function Home() {
              handleTicketChange2={handleTicketChange2} 
              handleRemoveTicket2={handleRemoveTicket2} 
              ticketPrice2={1299} />
+          </div>
+          <div className='m-auto'>
+            <ChooseTicket />
+          </div>
           </div>
         </div>
     </div>
