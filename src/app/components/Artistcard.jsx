@@ -10,7 +10,7 @@ const BowlbyOne = Bowlby_One({
   display: 'swap',
 });
 
-export default function LineUp({ searchParams }) {
+export default function LineUp() {
   const [bands, setBands] = useState(null);
   const [loading, setLoading] = useState(true);
   const [selectedGenre, setSelectedGenre] = useState('All');
@@ -62,11 +62,11 @@ export default function LineUp({ searchParams }) {
       {/* Dropdown for valg af genre */}
       <div className="flex justify-center items-center h-full">
         <div className="m-4">
-          <label htmlFor="genre" className="text-Hotpink text-2xl sm:text-3xl mb-3 mr-4 font-semibold">Choose a genre:</label>
+          <label htmlFor="genre" className="text-Hotpink text-xl sm:text-3xl mb-3 mr-4 font-semibold">Choose a genre:</label>
           <select
             id="genre"
             name="genre"
-            className="rounded-full px-6 py-2 border-2 border-Hotpink"
+            className="rounded-full px-2 md:px-6 py-2 border-2 border-Hotpink"
             onChange={handleGenreChange}
             value={selectedGenre}
           >
@@ -80,12 +80,12 @@ export default function LineUp({ searchParams }) {
 
       {/* Bands opdelt efter genre */}
       {filteredBands.length > 0 ? (
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 sm:gap-6 md:gap-12 justify-center max-w-6xl mx-auto p-8 sm:p-12">
+        <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 md:gap-12 justify-center max-w-6xl mx-auto p-4 sm:p-12">
         {filteredBands.map((band) => (
           <div key={band.name} className="flex flex-col">
             <Link href={`/lineup/${band.slug}`} prefetch={false}>
               <div className="border-2 border-Hotpink rounded-lg cursor-pointer bg-Darkblue hover:scale-105 transition-transform duration-150 hover:bg-Navyblue">
-                <div className="w-full h-64 sm:h-72 md:h-80 relative">
+                <div className="w-full h-40 sm:h-72 md:h-80 relative">
                   <Image
                     alt="Artist presentation"
                     src={band.logo.startsWith("http") ? band.logo : `https://yielding-cooperative-tarsal.glitch.me/logos/${band.logo}`}
@@ -95,8 +95,8 @@ export default function LineUp({ searchParams }) {
                   />
                 </div>
                 <div className="p-2 sm:p-4">
-                  <p className="text-Hotpink mt-2 sm:mt-5 text-xl sm:text-2xl font-medium">{band.genre}</p>
-                  <p className="text-White text-2xl sm:text-3xl font-bold uppercase mb-1 sm:mb-2">{band.name}</p>
+                  <p className="text-Hotpink mt-2 sm:mt-5 text-md sm:text-2xl font-semibold">{band.genre}</p>
+                  <p className="text-White text-lg sm:text-3xl font-bold uppercase mb-1 sm:mb-2">{band.name}</p>
                 </div>
               </div>
             </Link>
