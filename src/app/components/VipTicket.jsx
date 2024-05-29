@@ -10,9 +10,11 @@ export default function VipTicket() {
       </h2>
       
       <div className='text-start'>
+        <ul className='list-disc list-inside'>
       <li>Priority entry</li>
       <li>VIP restrooms</li>
       <li>Access to afterparties</li>
+      </ul>
       </div>
       
       
