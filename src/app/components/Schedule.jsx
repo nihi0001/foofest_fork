@@ -49,7 +49,7 @@ function Schedule({ newArray, days }) {
 
         <div>
         {/* filter knapper efter ugedage */}
-          <div className="flex justify-center flex-wrap my-8 mb-8 sm:mb-12 gap-5 p-2">
+          <div className="flex justify-center flex-wrap my-8 mb-4 md:mb-8 gap-5 p-2">
             {days.map((day) => (
               <button
                 key={day}
