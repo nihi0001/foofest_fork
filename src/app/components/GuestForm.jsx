@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import { useRouter } from 'next/navigation'
 
-
+//HeadersList for at få adgang til databasen i Supabase
 async function FormSubmit(formData) {
   const headersList = {
     "Accept": "*/*",
@@ -12,8 +12,10 @@ async function FormSubmit(formData) {
     "Content-Type": "application/json"
   };
 
+  //Konvertere data til JSON streng
   const bodyContent = JSON.stringify(formData);
 
+  //Sender post request
   try {
     let res = await fetch("https://uvfmifhkbamwmagnqhri.supabase.co/rest/v1/FooFestBooking", { 
       method: "POST",
@@ -21,27 +23,33 @@ async function FormSubmit(formData) {
       headers: headersList
     });
 
+    //Hvis request fejler så vis fejlen
     if (!res.ok) {
       const errorDetail = await res.json();
       throw new Error(`Error: ${res.status} - ${res.statusText}: ${JSON.stringify(errorDetail)}`);
     }
 
+    //Parser svaret som JSON
     const data = await res.json();
     
+    //Returnere den parset data
     return data;
   } catch (error) {
     throw error;
   }
 }
 
+//Definere GuestForm funktionen
 export default function GuestForm() {
   const [state, setState] = useState({ message: '', pending: false });
   const router = useRouter()
   
+  //Funktionen som sender dataen til databasen når submit knappen klikkes på
   const handleSubmit = async (event) => {
     event.preventDefault();
     setState({ ...state, pending: true });
 
+    //Dataen fra de input felter som skal sendes til databasen
     const formData = {
       email: event.target.email.value,
       firstname: event.target.firstname.value,
@@ -53,11 +61,13 @@ export default function GuestForm() {
       phonenumber: event.target.phonenumber.value
     };
 
+    //Hvis det lykkedes at sende dataen, så vis 'Form submitted successfully!' og send kunden over på næste side i booking flowet
     try {
       const response = await FormSubmit(formData);
       setState({ message: 'Form submitted successfully!', pending: false });
       router.push("/booking/payment")
       
+      //Hvis det fejler, så vis `Form submission failed`
     } catch (error) {
       setState({ message: `Form submission failed: ${error.message}`, pending: false });
     }
