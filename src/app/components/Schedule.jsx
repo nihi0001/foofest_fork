@@ -49,7 +49,7 @@ function Schedule({ newArray, days }) {
 
         <div>
         {/* filter knapper efter ugedage */}
-          <div className="flex justify-center flex-wrap my-8 mb-28 gap-5">
+          <div className="flex justify-center flex-wrap my-8 mb-8 sm:mb-12 gap-5">
             {days.map((day) => (
               <button
                 key={day}
@@ -62,7 +62,7 @@ function Schedule({ newArray, days }) {
           </div>
 
         {/* grid starter her for scenerne */}
-          <section className="mx-auto max-w-6xl mb-24">
+          <section className="mx-auto max-w-6xl mb-24 p-4">
             <div>
               <motion.h3
                 initial={{ opacity: 0 }}
