@@ -23,9 +23,9 @@ function ActCard({ name, genre, start, end, src, slug, day, scene }) {
     >
 
         <Link href={`/lineup/${slug}`} prefetch={false}>
-        <section className=" grid grid-cols-3 gap-6 sm:gap-24">
+        <section className=" grid grid-cols-3 gap-4 sm:gap-24">
         <div className="text-center flex flex-col justify-center items-center">
-            <p className="text-md md:text-3xl font-semibold text-White">
+            <p className="text-md md:text-3xl font-semibold text-White ">
               {start} - {end}
             </p>
           </div>
@@ -36,7 +36,7 @@ function ActCard({ name, genre, start, end, src, slug, day, scene }) {
 
     
 
-            <div className="relative h-28 sm:h-44">
+            <div className="relative h-24 md:h-44">
             <Image
               alt="Artist presentation"
               src={src.startsWith("http") ? src : `https://yielding-cooperative-tarsal.glitch.me/logos/${src}`}
