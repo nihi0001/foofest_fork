@@ -12,6 +12,7 @@ export async function generateStaticParams() {
   const res = await fetch("https://yielding-cooperative-tarsal.glitch.me/bands/");
   const pages = await res.json();
 
+  // generer stier baseret på bandets slug
   const paths = pages.map((page) => {
     return { slug: page.slug };
   });
@@ -24,6 +25,8 @@ export default async function Page({ params }) {
   const url = `https://yielding-cooperative-tarsal.glitch.me/bands/${slug}`;
   const res = await fetch(url);
   const artist = await res.json();
+  
+  // Bestem billede url - linjen tjekker om url starter med http eller ej. Hvis det gør, hentes billeder fra unsplash. Hvis ikke hentes billeder fra glitch.
   const imageUrl = artist.logo.startsWith("http") ? artist.logo : `https://yielding-cooperative-tarsal.glitch.me/logos/${artist.logo}`;
 
   // Del medlemmerne op i en liste
