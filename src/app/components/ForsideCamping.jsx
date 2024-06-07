@@ -11,7 +11,7 @@ function ForsideCamping() {
   return (
     <div className="max-w-5xl mx-auto mb-24 p-4">
       <div className="flex flex-col items-center ">
-        <h2 className={`text-White text-4xl md:text-5xl mb-12 text-center ${BowlbyOne.className}`}>LATEST FESTIVAL ANNOUNCEMENTS</h2>
+        <h2 className={`text-White text-4xl md:text-6xl mb-12 text-center ${BowlbyOne.className}`}>LATEST FESTIVAL ANNOUNCEMENTS</h2>
 
         <div className="grid sm:grid-cols-1 md:grid-cols-3 gap-9  text-White">
 
