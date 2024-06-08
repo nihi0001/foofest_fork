@@ -45,45 +45,47 @@ export default function Home() {
       <form action='/booking/campingArea'>
         <div className='p-4'>
           <div className="max-w-6xl mx-auto border-solid bg-Darkblue border-Hotpink border-2 rounded-3xl p-8 mt-10">
-          <h1 className={`${BowlbyOne.className} text-White text-4xl sm:text-6xl mb-5 md:p-8 text-start sm:text-center`}>TICKETS</h1>
-            <div className="grid md:flex md:p-8 gap-28">
-
-              <div>
+            <h1 className={`${BowlbyOne.className} text-White text-4xl sm:text-6xl mb-5 md:p-8 text-start md:text-center`}>TICKETS</h1>
+            <div className="grid sm:flex md:p-8 sm:gap-16 md:gap-28">
+              <div className='md:mx-auto'>
+                {/* venstre side, valg af billet*/}
+                {/* h2 choose your tickets*/}
                 <h2 className='mb-8 text-xl xl:text-2xl text-White font-semibold'>Choose your tickets:</h2>
+                {/* Foo ticket */}
                 <div className='grid mb-5 2xl:flex 2xl:gap-24'>
                   <div className='text-White'>
-                    <h2 className="text-xl text-White"><span className='text-Hotpink font-bold'>FOO</span> TICKET</h2>
+                    <h2 className="text-xl"><span className='text-Hotpink font-bold'>FOO</span> TICKET</h2>
                     <p>799 DKK</p>
                   </div>
                   <div className='flex flex-row gap-3 h-6 items-center mt-4'>
                     <RemoveTicket onRemoveButtonClick={handleRemoveTicket} />
                     <input
                       name="ticketcount1"
-                      className='border-solid border-2 border-Lightpink rounded-full w-32 bg-White p-2'
+                      className='border-solid border-2 border-Lightpink rounded-full w-36 bg-White p-2'
                       value={ticketcount1} />
                     <AddButton onButtonClick={() => handleTicketChange(ticketcount1 + 1)} />
                   </div>
                 </div>
 
                 <br />
-                <div className='grid 2xl:flex 2xl:gap-28'>
-                  <div>
-                    <h2 className='text-White text-xl'><span className='font-bold text-Hotpink'>VIP</span> TICKET</h2>
-                    <p className='text-White text-base'>1299 DKK</p>
+                {/* VIP ticket */}
+                <div className='grid mb-12 2xl:flex 2xl:gap-24'>
+                  <div className='text-White'>
+                    <h2 className='text-xl'><span className='font-bold text-Hotpink'>VIP</span> TICKET</h2>
+                    <p>1299 DKK</p>
                   </div>
-
                   <div className='flex flex-row gap-3 h-6 items-center mt-4'>
                     <RemoveTicket onRemoveButtonClick={handleRemoveTicket2} />
                     <input
                       name="ticketcount2"
-                      className='border-solid border-2 border-Lightpink rounded-full w-32 bg-White p-2'
+                      className='border-solid border-2 border-Lightpink rounded-full w-36 bg-White p-2'
                       value={ticketcount2} />
                     <AddButton onButtonClick={() => handleTicketChange2(ticketcount2 + 1)} />
                   </div>
                 </div>
               </div>
 
-              <div className='grid gap-5 m-auto'>
+              <div className='grid gap-5 md:mx-auto'>
                 <div>
                   <Ticket
                     ticketcount1={ticketcount1}
@@ -95,7 +97,7 @@ export default function Home() {
                     handleRemoveTicket2={handleRemoveTicket2}
                     ticketPrice2={1299} />
                 </div>
-                <div className='m-auto'>
+                <div className='sm:flex sm:justify-center'>
                   <ChooseTicket />
                 </div>
               </div>
