@@ -1,4 +1,4 @@
-"use client";
+"use client"
 import React, { useState, useEffect } from "react";
 import ActCard from "./ActCard";
 import { motion } from "framer-motion";
@@ -14,6 +14,7 @@ const BowlbyOne = Bowlby_One({
 function Schedule({ newArray, days }) {
   const [selectedDay, setSelectedDay] = useState("");
   const [isLoading, setIsLoading] = useState(true);
+  const [selectedButton, setSelectedButton] = useState("");
 
   useEffect(() => {
     const today = new Date()
@@ -28,6 +29,7 @@ function Schedule({ newArray, days }) {
 
   const filterActsByDay = (day) => {
     setSelectedDay(day);
+    setSelectedButton(day);
   };
 
   const sortedByTime = (scene) => {
@@ -44,16 +46,14 @@ function Schedule({ newArray, days }) {
     <>
       {isLoading ? (
         <Loader />
-
       ) : (
-
         <div>
-        {/* filter knapper efter ugedage */}
           <div className="flex justify-center flex-wrap my-8 mb-4 md:mb-8 gap-5 p-2">
             {days.map((day) => (
               <button
                 key={day}
-                className={`text-lg font-bold md:text-2xl px-6 md:px-8 py-1 md:py-2 text-White rounded-full bg-Hotpink uppercase transition ease-in-out hover:-translate-y-1 hover:scale-110 hover:bg-Lightpink duration-300 cursor-pointer focus:text-White mt-3`}
+                style={{ backgroundColor: selectedButton === day ? '#FF68E4' : '#E80AD1' }}
+                className={`text-lg font-bold md:text-2xl px-6 md:px-8 py-1 md:py-2 text-White rounded-full uppercase transition ease-in-out hover:-translate-y-1 hover:scale-110 duration-300 cursor-pointer focus:text-White mt-3`}
                 onClick={() => filterActsByDay(day)}
               >
                 {day}
@@ -61,7 +61,6 @@ function Schedule({ newArray, days }) {
             ))}
           </div>
 
-        {/* grid starter her for scenerne */}
           <section className="mx-auto max-w-6xl mb-24 p-2">
             <div>
               <motion.h3
@@ -121,7 +120,7 @@ function Schedule({ newArray, days }) {
                 whileInView={{ opacity: 1 }}
                 transition={{ duration: 1 }}
                 viewport={{ once: true }}
-                className={` text-3xl sm:text-5xl mb-7 mt-24 sm:mt-32 text-White text-center font-semibold uppercase ${BowlbyOne.className}`}
+                className={`text-3xl sm:text-5xl mb-7 mt-24 sm:mt-32 text-White text-center font-semibold uppercase ${BowlbyOne.className}`}
               >
                 Jotunheim
               </motion.h3>
