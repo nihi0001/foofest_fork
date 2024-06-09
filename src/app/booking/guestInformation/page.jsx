@@ -58,7 +58,6 @@ export default function Formpage() {
             </div>
           </div>
           <div className="w-full md:flex">
-        
             <div className="w-full max-w-md mb-6">
               <InformationBasket />
             </div>
