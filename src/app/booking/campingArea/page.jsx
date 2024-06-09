@@ -130,7 +130,7 @@ export default function Home() {
                     campingArea={campingArea}
                   />
                 </div>
-                <div className='sm:flex sm:justify-center'>
+                <div className='sm:flex sm:justify-center sm:-mt-28 lg:-mt-24 xl:mt-0'>
                   <ChooseTicket />
                 </div>
               </div>

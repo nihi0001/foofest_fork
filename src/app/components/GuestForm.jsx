@@ -199,7 +199,7 @@ export default function GuestForm() {
           <button
             aria-disabled={state.pending}
             type="submit"
-            className=" text-center text-White p-2 mt-6 font-bold rounded-full bg-Hotpink hover:bg-Lightpink w-60"
+            className=" text-center text-White py-2 px-16 mt-6 font-bold rounded-full bg-Hotpink hover:bg-Lightpink"
           >
             SUBMIT
           </button>
