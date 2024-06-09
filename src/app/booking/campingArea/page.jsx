@@ -56,12 +56,15 @@ export default function Home() {
         <input type="hidden" name="ticketcount1" value={regular} />
         <input type="hidden" name="ticketcount2" value={vip} />
 
-        <div className='p-4'>
+        <div className='p-4 md:p-8'>
           <div className="max-w-6xl mx-auto border-solid bg-Darkblue border-Hotpink border-2 rounded-3xl p-8 mt-10">
             <h1 className={`${BowlbyOne.className} text-White text-4xl sm:text-6xl mb-5 md:p-8 text-start sm:text-center`}>CAMPING AREA</h1>
-            <div className="grid sm:grid-cols-2 gap-10">
 
-              <div className="md:p-8">
+            {/* grid starter her */}
+            <div className="grid sm:flex md:p-8 sm:gap-16 md:gap-28">
+              {/* venstre side*/}
+              <div className="md:mx-auto">
+                {/* vælg campingområde*/}
                 <h2 className='mb-8 text-xl xl:text-2xl text-White font-semibold'>Choose your camping area</h2>
                 <div className='grid xl:grid-cols-2 text-White'>
                   <label className='hover:text-Hotpink text-xl mt-2'><input className='w-5 h-5' defaultValue="Svartheim" onChange={handleCampingArea} type="radio" name='area' /> Svartheim</label>
@@ -72,26 +75,29 @@ export default function Home() {
                 </div>
                 <br />
 
+                {/* valg af telt */}
                 <h2 className='text-White text-xl xl:text-2xl mb-8 mt-12 font-semibold'>Choose your tents</h2>
 
-                <div className='grid 2xl:flex 2xl:gap-24'>
+                {/* 2 pers telt */}
+                <div className='grid mb-5 2xl:flex 2xl:gap-24'>
                   <div className='text-White'>
                     <h2 className="text-xl text-White"><span className='font-bold text-Hotpink'>2</span> PERSON TENT</h2>
                     <p>299 DKK</p>
                   </div>
 
-                  <div className='flex flex-row gap-3 h-6 items-center mt-4 mb-5 2xl:ml-4'>
+                  <div className='flex flex-row gap-3 h-6 items-center mt-4'>
                     <RemoveTent onRemoveTentClick={handleRemoveTent} />
                     <input
                       name="twoTentTicket"
                       value={twoTentTicket}
-                      className='border-solid border-2 border-Lightpink rounded-full w-32 bg-White p-2 text-center' />
+                      className='border-solid border-2 border-Lightpink rounded-full w-36 bg-White p-2 text-center' />
                     <AddTent onAddTentClick={() => handleAddTent(twoTentTicket + 1)} />
                   </div>
                 </div>
 
                 <br />
-                <div className='grid 2xl:flex 2xl:gap-28'>
+                {/* 3 pers telt */}
+                <div className='grid mb-12 2xl:flex 2xl:gap-24'>
                   <div>
                     <h2 className='text-White text-xl'><span className='font-bold text-Hotpink'> 3 </span>PERSON TENT</h2>
                     <p className='text-White text-base'>399 DKK</p>
@@ -102,16 +108,16 @@ export default function Home() {
                     <input
                       name="threeTentTicket"
                       value={threeTentTicket}
-                      className='border-solid border-2 border-Lightpink rounded-full w-32 bg-White p-2 text-center'
+                      className='border-solid border-2 border-Lightpink rounded-full w-36 bg-White p-2 text-center'
                     />
                     <AddTent onAddTentClick={() => handleAddVipTent(threeTentTicket + 1)} />
                   </div>
                 </div>
-                <br />
               </div>
 
-              <div className='grid gap-5'>
-                <div className='m-auto'>
+              {/* item basket */}
+              <div className='grid gap-5 md:mx-auto'>
+                <div >
                   <CampingTickets
                     tentTicket={twoTentTicket}
                     handleAddTent={handleAddTent}
@@ -124,7 +130,7 @@ export default function Home() {
                     campingArea={campingArea}
                   />
                 </div>
-                <div className='m-auto'>
+                <div className='sm:flex sm:justify-center'>
                   <ChooseTicket />
                 </div>
               </div>
